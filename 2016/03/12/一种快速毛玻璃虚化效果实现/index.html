@@ -74,7 +74,7 @@
 <meta property="og:image" content="http://wingjay.com/post/一种快速毛玻璃虚化效果实现/memory_50.png">
 <meta property="og:image" content="http://wingjay.com/post/一种快速毛玻璃虚化效果实现/memory_100.png">
 <meta property="og:image" content="http://wingjay.com/post/一种快速毛玻璃虚化效果实现/memory_300.png">
-<meta property="og:updated_time" content="2016-03-12T03:23:14.000Z">
+<meta property="og:updated_time" content="2016-03-12T04:38:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一种快速毛玻璃虚化效果实现">
 <meta name="twitter:description" content="在iOS设备上我们随处可见毛玻璃效果，而且最近越来越多的场合应用到了这种美观的虚化效果，包括本人的一个开源项目BlureImageView也是受此启发。所以，恰到好处的虚化效果能很好的改善用户体验，而且也能让你的app显得更加优雅。
@@ -386,6 +386,7 @@ Log.i(&quot;blurtime&quot;, String.valueOf(System.currentTimeMillis() - start));
 <li>loopCount = 100<br><img src="/post/一种快速毛玻璃虚化效果实现/memory_100.png" alt=""></li>
 <li>loopCount = 300<br><img src="/post/一种快速毛玻璃虚化效果实现/memory_300.png" alt=""></li>
 </ul>
+<p>从上面的内存消耗图，可以看出虚化的确会占用一定内存，如果大量的虚化同时发生，则会由于UI线程突然加载很多bitmap而导致内存抖动。</p>
 </span>
       
     </div>
