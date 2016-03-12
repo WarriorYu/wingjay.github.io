@@ -353,7 +353,8 @@ imageView.setImageBitmap(blurBitmap);
 <pre><code>long start = System.currentTimeMillis();
 Bitmap scaledBitmap, blurBitmap;
 int scaleRatio = 10;
-for (int i=0; i&lt;100; i++) {
+int loopCount = 100
+for (int i=0; i&lt;loopCount; i++) {
   scaledBitmap = Bitmap.createScaledBitmap(originBitmap,
       originBitmap.getWidth() / scaleRatio,
       originBitmap.getHeight() / scaleRatio,
@@ -371,6 +372,15 @@ Log.i(&quot;blurtime&quot;, String.valueOf(System.currentTimeMillis() - start));
 <p>为了方便读者了解效果，我通过多组数据拟合了下面的曲线：<br><img src="/post/一种快速毛玻璃虚化效果实现/timeconsume_statisic.png" alt=""></p>
 <p>从该模拟图可以看出时间随着缩放比的增大而不断减小，当缩放比达到30以上时所消耗的时间不到1ms，因此，我认为应该是完全不会产生时延破坏用户体验的。</p>
 <h4 id="Memory_Consuming"><a href="#Memory_Consuming" class="headerlink" title="Memory Consuming"></a>Memory Consuming</h4><p>既然时间没问题，那么，主要问题：内存占用就来了，所以我们需要考察生成一张虚化图片所占用的内存。</p>
+<p>为了测试对一张图片进行虚化所占用内存的变化，我们改变虚化次数，即修改上面的<code>loopCount</code>并观察对内存的变化。其中scaleRatio = 10，以获得相对较大的内存消耗。</p>
+<ul>
+<li>loopCount = 1<br><img src="/post/一种快速毛玻璃虚化效果实现/memory_1.png" alt=""></li>
+<li>loopCount = 10<br><img src="/post/一种快速毛玻璃虚化效果实现/memory_10.png" alt=""></li>
+<li>loopCount = 20<br><img src="/post/一种快速毛玻璃虚化效果实现/memory_20.png" alt=""></li>
+<li>loopCount = 50<br><img src="/post/一种快速毛玻璃虚化效果实现/memory_50.png" alt=""></li>
+<li>loopCount = 100<br><img src="/post/一种快速毛玻璃虚化效果实现/memory_100.png" alt=""></li>
+<li>loopCount = 300<br><img src="/post/一种快速毛玻璃虚化效果实现/memory_300.png" alt=""></li>
+</ul>
 
             
           </span>
