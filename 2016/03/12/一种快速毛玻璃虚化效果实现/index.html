@@ -74,7 +74,8 @@
 <meta property="og:image" content="http://wingjay.com/post/一种快速毛玻璃虚化效果实现/memory_50.png">
 <meta property="og:image" content="http://wingjay.com/post/一种快速毛玻璃虚化效果实现/memory_100.png">
 <meta property="og:image" content="http://wingjay.com/post/一种快速毛玻璃虚化效果实现/memory_300.png">
-<meta property="og:updated_time" content="2016-03-12T04:38:44.000Z">
+<meta property="og:image" content="https://avatars0.githubusercontent.com/u/9619875?v=3&s=460">
+<meta property="og:updated_time" content="2016-03-12T04:40:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一种快速毛玻璃虚化效果实现">
 <meta name="twitter:description" content="在iOS设备上我们随处可见毛玻璃效果，而且最近越来越多的场合应用到了这种美观的虚化效果，包括本人的一个开源项目BlureImageView也是受此启发。所以，恰到好处的虚化效果能很好的改善用户体验，而且也能让你的app显得更加优雅。
@@ -387,6 +388,10 @@ Log.i(&quot;blurtime&quot;, String.valueOf(System.currentTimeMillis() - start));
 <li>loopCount = 300<br><img src="/post/一种快速毛玻璃虚化效果实现/memory_300.png" alt=""></li>
 </ul>
 <p>从上面的内存消耗图，可以看出虚化的确会占用一定内存，如果大量的虚化同时发生，则会由于UI线程突然加载很多bitmap而导致内存抖动。</p>
+<h4 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h4><p>希望大家如果有其他测试方法或者意见多多留言，从而继续改进性能。</p>
+<p>谢谢！</p>
+<h2 id="Reach_me"><a href="#Reach_me" class="headerlink" title="Reach me"></a>Reach me</h2><p>欢迎各位关注<br><a href="https://github.com/wingjay" target="_blank" rel="external">我的Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br>和<br><a href="http://wingjay.com">我的个人博客</a>: <a href="http://wingjay.com">http://wingjay.com</a><br>和<br><a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">我的简书</a>: <a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/da333fd63fe5/latest_articles</a><br>和<br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a><br>如果有问题，可以给我留言或发邮件<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x79;&#x69;&#x6e;&#x6a;&#105;&#x65;&#x73;&#x68;&#64;&#49;&#50;&#54;&#46;&#x63;&#111;&#x6d;">&#x79;&#x69;&#x6e;&#x6a;&#105;&#x65;&#x73;&#x68;&#64;&#49;&#50;&#54;&#46;&#x63;&#111;&#x6d;</a></p>
+<p><img src="https://avatars0.githubusercontent.com/u/9619875?v=3&amp;s=460" alt=""></p>
 </span>
       
     </div>
@@ -554,7 +559,7 @@ Log.i(&quot;blurtime&quot;, String.valueOf(System.currentTimeMillis() - start));
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#StackBlur"><span class="nav-number">1.</span> <span class="nav-text">StackBlur</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OOM"><span class="nav-number">2.</span> <span class="nav-text">OOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ReScale"><span class="nav-number">3.</span> <span class="nav-text">ReScale</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance_analysis"><span class="nav-number">4.</span> <span class="nav-text">Performance analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Time_Consuming"><span class="nav-number">4.1.</span> <span class="nav-text">Time Consuming</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Memory_Consuming"><span class="nav-number">4.2.</span> <span class="nav-text">Memory Consuming</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#StackBlur"><span class="nav-number">1.</span> <span class="nav-text">StackBlur</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OOM"><span class="nav-number">2.</span> <span class="nav-text">OOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ReScale"><span class="nav-number">3.</span> <span class="nav-text">ReScale</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance_analysis"><span class="nav-number">4.</span> <span class="nav-text">Performance analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Time_Consuming"><span class="nav-number">4.1.</span> <span class="nav-text">Time Consuming</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Memory_Consuming"><span class="nav-number">4.2.</span> <span class="nav-text">Memory Consuming</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Conclusion"><span class="nav-number">4.3.</span> <span class="nav-text">Conclusion</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reach_me"><span class="nav-number"></span> <span class="nav-text">Reach me</span></a></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
