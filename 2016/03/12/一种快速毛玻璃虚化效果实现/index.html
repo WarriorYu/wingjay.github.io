@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="cool,动效," />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -51,36 +51,28 @@
 
 
 
-<meta name="description" content="直接上图：
-几日前在OF Course公众号看到一篇蛮有意思的文章－简单法则的魅力，觉得里面的动效很有意思，能够基于简单的数学法则通过修改几个参数便画出千变万化的优美的曲线，实在有趣。而且这篇文章里还给出了代码，简直给力。
-于是忍不住，自己动手实现了一下，动态效果图如图，下面给出本人随意得出的其它曲线。">
+<meta name="description" content="在iOS设备上我们随处可见毛玻璃效果，而且最近越来越多的场合应用到了这种美观的虚化效果，包括本人的一个开源项目BlureImageView也是受此启发。所以，恰到好处的虚化效果能很好的改善用户体验，而且也能让你的app显得更加优雅。
+不过，我们目前在android上很少见到毛玻璃效果，我认为很重要的原因是性能问题，虚化一张图片所需要的时间会因设备而异，如果为了虚化使得用户需要刻意等待，那么就是弊大">
 <meta property="og:type" content="article">
-<meta property="og:title" content="有趣的曲线在Android上的实现">
-<meta property="og:url" content="http://wingjay.com/2016/01/25/有趣的曲线在Android上的实现/index.html">
+<meta property="og:title" content="一种快速毛玻璃虚化效果实现">
+<meta property="og:url" content="http://wingjay.com/2016/03/12/一种快速毛玻璃虚化效果实现/index.html">
 <meta property="og:site_name" content="wingjay">
-<meta property="og:description" content="直接上图：
-几日前在OF Course公众号看到一篇蛮有意思的文章－简单法则的魅力，觉得里面的动效很有意思，能够基于简单的数学法则通过修改几个参数便画出千变万化的优美的曲线，实在有趣。而且这篇文章里还给出了代码，简直给力。
-于是忍不住，自己动手实现了一下，动态效果图如图，下面给出本人随意得出的其它曲线。">
-<meta property="og:image" content="http://wingjay.com/img/有趣的曲线在Android上的实现/7.png">
-<meta property="og:image" content="http://wingjay.com/img/有趣的曲线在Android上的实现/ring.gif">
-<meta property="og:image" content="http://wingjay.com/img/有趣的曲线在Android上的实现/box.gif">
-<meta property="og:image" content="http://wingjay.com/img/有趣的曲线在Android上的实现/1.png">
-<meta property="og:image" content="http://wingjay.com/img/有趣的曲线在Android上的实现/2.png">
-<meta property="og:image" content="http://wingjay.com/img/有趣的曲线在Android上的实现/3.png">
-<meta property="og:image" content="http://wingjay.com/img/有趣的曲线在Android上的实现/4.png">
-<meta property="og:image" content="http://wingjay.com/img/有趣的曲线在Android上的实现/5.png">
-<meta property="og:image" content="http://wingjay.com/img/有趣的曲线在Android上的实现/6.png">
-<meta property="og:image" content="http://wingjay.com/img/有趣的曲线在Android上的实现/7.png">
-<meta property="og:image" content="http://wingjay.com/img/有趣的曲线在Android上的实现/8.png">
-<meta property="og:image" content="http://wingjay.com/img/有趣的曲线在Android上的实现/9.jpg">
-<meta property="og:image" content="http://wingjay.com/img/有趣的曲线在Android上的实现/10.png">
-<meta property="og:image" content="http://wingjay.com/img/有趣的曲线在Android上的实现/11.png">
-<meta property="og:updated_time" content="2016-01-25T10:47:49.000Z">
+<meta property="og:description" content="在iOS设备上我们随处可见毛玻璃效果，而且最近越来越多的场合应用到了这种美观的虚化效果，包括本人的一个开源项目BlureImageView也是受此启发。所以，恰到好处的虚化效果能很好的改善用户体验，而且也能让你的app显得更加优雅。
+不过，我们目前在android上很少见到毛玻璃效果，我认为很重要的原因是性能问题，虚化一张图片所需要的时间会因设备而异，如果为了虚化使得用户需要刻意等待，那么就是弊大">
+<meta property="og:image" content="http://wingjay.com/post/一种快速毛玻璃虚化效果实现/iosblur.jpg">
+<meta property="og:image" content="http://wingjay.com/post/一种快速毛玻璃虚化效果实现/androidblur_1.png">
+<meta property="og:image" content="http://wingjay.com/post/一种快速毛玻璃虚化效果实现/androidblur_2.png">
+<meta property="og:image" content="http://wingjay.com/post/一种快速毛玻璃虚化效果实现/fastblur_10.png">
+<meta property="og:image" content="http://wingjay.com/post/一种快速毛玻璃虚化效果实现/fastblur_20.png">
+<meta property="og:image" content="http://wingjay.com/post/一种快速毛玻璃虚化效果实现/fastblur_35.png">
+<meta property="og:image" content="http://wingjay.com/post/一种快速毛玻璃虚化效果实现/fastblur_50.png">
+<meta property="og:image" content="http://wingjay.com/post/一种快速毛玻璃虚化效果实现/fastblur_100.png">
+<meta property="og:image" content="http://wingjay.com/post/一种快速毛玻璃虚化效果实现/timeconsume_statisic.png">
+<meta property="og:updated_time" content="2016-03-12T03:04:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="有趣的曲线在Android上的实现">
-<meta name="twitter:description" content="直接上图：
-几日前在OF Course公众号看到一篇蛮有意思的文章－简单法则的魅力，觉得里面的动效很有意思，能够基于简单的数学法则通过修改几个参数便画出千变万化的优美的曲线，实在有趣。而且这篇文章里还给出了代码，简直给力。
-于是忍不住，自己动手实现了一下，动态效果图如图，下面给出本人随意得出的其它曲线。">
+<meta name="twitter:title" content="一种快速毛玻璃虚化效果实现">
+<meta name="twitter:description" content="在iOS设备上我们随处可见毛玻璃效果，而且最近越来越多的场合应用到了这种美观的虚化效果，包括本人的一个开源项目BlureImageView也是受此启发。所以，恰到好处的虚化效果能很好的改善用户体验，而且也能让你的app显得更加优雅。
+不过，我们目前在android上很少见到毛玻璃效果，我认为很重要的原因是性能问题，虚化一张图片所需要的时间会因设备而异，如果为了虚化使得用户需要刻意等待，那么就是弊大">
 
 
 
@@ -92,7 +84,7 @@
   };
 </script>
 
-  <title> 有趣的曲线在Android上的实现 | wingjay </title>
+  <title> 一种快速毛玻璃虚化效果实现 | wingjay </title>
   <!-- <link rel="canonical" href=" { { site.url } }{ { page.url } }" /> -->
   <script type="text/javascript">
     // var host = "wingjay.com";
@@ -271,7 +263,7 @@
             
             
               
-                有趣的曲线在Android上的实现
+                一种快速毛玻璃虚化效果实现
               
             
           </h1>
@@ -280,8 +272,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-01-25T18:41:43+08:00" content="2016-01-25">
-              2016-01-25
+            <time itemprop="dateCreated" datetime="2016-03-12T09:30:50+08:00" content="2016-03-12">
+              2016-03-12
             </time>
           </span>
 
@@ -291,8 +283,8 @@
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2016/01/25/有趣的曲线在Android上的实现/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/25/有趣的曲线在Android上的实现/" itemprop="commentsCount"></span>
+              <a href="/2016/03/12/一种快速毛玻璃虚化效果实现/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/12/一种快速毛玻璃虚化效果实现/" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -311,11 +303,73 @@
       
 
       
-        <span itemprop="articleBody"><p>直接上图：<br><img src="/img/有趣的曲线在Android上的实现/7.png" alt="ring"></p>
-<p>几日前在OF Course公众号看到一篇蛮有意思的文章－<a href="http://mp.weixin.qq.com/s?__biz=MzA4NTc5MDU5OQ==&amp;mid=411441608&amp;idx=1&amp;sn=5e846a882f58a7ba1b5312bdbeaafccf&amp;scene=23&amp;srcid=0120GiYhMXjmNDoN9MFQj7f5#rd" target="_blank" rel="external">简单法则的魅力</a>，觉得里面的动效很有意思，能够基于简单的数学法则通过修改几个参数便画出千变万化的优美的曲线，实在有趣。而且这篇文章里还给出了代码，简直给力。</p>
-<p>于是忍不住，自己动手实现了一下，动态效果图如图，下面给出本人随意得出的其它曲线。</p>
-<a id="more"></a>
-<p><img src="/img/有趣的曲线在Android上的实现/ring.gif" alt="ring"><br><img src="/img/有趣的曲线在Android上的实现/box.gif" alt="ring"><br><img src="/img/有趣的曲线在Android上的实现/1.png" alt="ring"><br><img src="/img/有趣的曲线在Android上的实现/2.png" alt="ring"><br><img src="/img/有趣的曲线在Android上的实现/3.png" alt="ring"><br><img src="/img/有趣的曲线在Android上的实现/4.png" alt="ring"><br><img src="/img/有趣的曲线在Android上的实现/5.png" alt="ring"><br><img src="/img/有趣的曲线在Android上的实现/6.png" alt="ring"><br><img src="/img/有趣的曲线在Android上的实现/7.png" alt="ring"><br><img src="/img/有趣的曲线在Android上的实现/8.png" alt="ring"><br><img src="/img/有趣的曲线在Android上的实现/9.jpg" alt="ring"><br><img src="/img/有趣的曲线在Android上的实现/10.png" alt="ring"><br><img src="/img/有趣的曲线在Android上的实现/11.png" alt="ring"></p>
+        <span itemprop="articleBody"><p><img src="/post/一种快速毛玻璃虚化效果实现/iosblur.jpg" alt="个人博客"></p>
+<p>在iOS设备上我们随处可见毛玻璃效果，而且最近越来越多的场合应用到了这种美观的虚化效果，包括本人的一个开源项目<a href="https://github.com/wingjay/BlurImageView" target="_blank" rel="external">BlureImageView</a>也是受此启发。所以，恰到好处的虚化效果能很好的改善用户体验，而且也能让你的app显得更加优雅。</p>
+<p>不过，我们目前在android上很少见到毛玻璃效果，我认为很重要的原因是性能问题，虚化一张图片所需要的时间会因设备而异，如果为了虚化使得用户需要刻意等待，那么就是弊大于利。另外，Google官方提供的renderScript一般只是做一些小幅度的虚化，很难达到毛玻璃这类深度虚化效果。</p>
+<p>所以本文的角度是能够在android设备上快速实现毛玻璃效果。<br><img src="/post/一种快速毛玻璃虚化效果实现/androidblur_1.png" alt="blur1"><br><img src="/post/一种快速毛玻璃虚化效果实现/androidblur_2.png" alt="blur2"></p>
+<h3 id="StackBlur"><a href="#StackBlur" class="headerlink" title="StackBlur"></a>StackBlur</h3><p>首先，为了实现毛玻璃效果，本文采用的是<a href="http://www.quasimondo.com/StackBlurForCanvas/StackBlurDemo.html" target="_blank" rel="external"><code>StackBlur</code>模糊算法</a>，这种算法应用非常广泛，能得到非常良好的毛玻璃效果。在这里，我们使用的是它的Java实现代码<a href="https://github.com/wingjay/BlurImageView/blob/master/blurimageviewlib/src/main/java/com/wingjay/blurimageviewlib/FastBlurUtil.java" target="_blank" rel="external">FastBlur.java</a>。</p>
+<pre><code>public static Bitmap doBlur(Bitmap sentBitmap, int radius, boolean canReuseInBitmap)
+</code></pre><p>可以看出，使用方法非常简单，传入待虚化的bitmap、虚化程序(一般为8)、和是否重用flag。</p>
+<p>然后，如果要对上面这张图片进行虚化，我们可以通过把它转化成bitmap传入虚化，看起来很简单就解决了，但事实并非如此。</p>
+<h3 id="OOM"><a href="#OOM" class="headerlink" title="OOM"></a>OOM</h3><p>如果直接把一张大图传入，很容易就会发生OOM内存溢出</p>
+<pre><code>03-11 21:02:02.014 16727-16742/com.wingjay.jayandroid I/art: Clamp target GC heap from 109MB to 96MB
+03-11 21:02:02.026 16727-16727/com.wingjay.jayandroid I/art: Clamp target GC heap from 109MB to 96MB
+03-11 21:02:02.030 16727-16727/com.wingjay.jayandroid I/art: Clamp target GC heap from 109MB to 96MB
+03-11 21:02:02.031 16727-16727/com.wingjay.jayandroid I/art: Forcing collection of SoftReferences for 30MB allocation
+03-11 21:02:02.035 16727-16727/com.wingjay.jayandroid I/art: Clamp target GC heap from 109MB to 96MB
+03-11 21:02:02.036 16727-16727/com.wingjay.jayandroid E/art: Throwing OutOfMemoryError &quot;Failed to allocate a 32175012 byte allocation with 2648672 free bytes and 2MB until OOM&quot;
+03-11 21:02:02.036 16727-16727/com.wingjay.jayandroid D/AndroidRuntime: Shutting down VM
+</code></pre><p>这是我直接对原图进行虚化得到的log信息。可以看出当虚化开始时，虚拟机开始不断进行内存回收，包括把所有软引用的内存回收。然而，仍然导致了内存溢出。</p>
+<p>那就意味着我只能虚化小图，这样才能防止内存溢出。但是我并不想换其他图，那么，我们就应该把这张图<code>缩放</code>。</p>
+<h3 id="ReScale"><a href="#ReScale" class="headerlink" title="ReScale"></a>ReScale</h3><pre><code>public static Bitmap createScaledBitmap(Bitmap src, int dstWidth, int dstHeight, boolean filter) {}
+</code></pre><p>我们可以利用这个function来进行bitmap的缩放。其中前三个参数很明显，其中宽高我们可以选择为原图尺寸的1/10；第四个filter是指缩放的效果，filter为true则会得到一个边缘平滑的bitmap，反之，则会得到边缘锯齿、pixelrelated的bitmap。这里我们要对缩放的图片进行虚化，所以无所谓边缘效果，<code>filter=false</code>。</p>
+<p>所以，我们要使用</p>
+<pre><code>int scaleRatio = 10;
+int blurRadius = 8;
+Bitmap scaledBitmap = Bitmap.createScaledBitmap(originBitmap,
+    originBitmap.getWidth() / scaleRatio,
+    originBitmap.getHeight() / scaleRatio,
+    false);
+Bitmap blurBitmap = FastBlur.doBlur(scaledBitmap, blurRadius, true);
+imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+imageView.setImageBitmap(blurBitmap);
+</code></pre><p>可以得到如下效果:<br><img src="/post/一种快速毛玻璃虚化效果实现/fastblur_10.png" alt="scaleRatio_10"></p>
+<p>从图中可以看出，首先可以确定思路是对的；然后，可以看出毛玻璃效果还不是特别的明显。为了得到如iOS那样的虚化效果，我们有两种方法：</p>
+<ul>
+<li>增大scaleRatio缩放比，使用一样更小的bitmap去虚化可以得到更好的模糊效果，而且有利于占用内存的减小；</li>
+<li>增大blurRadius，可以得到更高程度的虚化，不过会导致CPU更加intensive</li>
+</ul>
+<p>这里本人通过<code>增大缩放比</code>来实验。</p>
+<ul>
+<li>scaleRatio = 20<br><img src="/post/一种快速毛玻璃虚化效果实现/fastblur_20.png" alt="scaleRatio_20"></li>
+<li>scaleRatio = 35<br><img src="/post/一种快速毛玻璃虚化效果实现/fastblur_35.png" alt="scaleRatio_35"></li>
+<li>scaleRatio = 50<br><img src="/post/一种快速毛玻璃虚化效果实现/fastblur_50.png" alt="scaleRatio_50"></li>
+<li>scaleRatio = 100<br><img src="/post/一种快速毛玻璃虚化效果实现/fastblur_100.png" alt="scaleRatio_100"></li>
+</ul>
+<p>通过上面对比图我们可以找出最适合自己的虚化效果。</p>
+<h3 id="Performance_analysis"><a href="#Performance_analysis" class="headerlink" title="Performance analysis"></a>Performance analysis</h3><p>那么，要实现这样的效果，是否具有损害用户体验的风险呢？下面，我们从<code>消耗时间</code>和<code>占据内存</code>的角度来进行分析。</p>
+<h4 id="Time_Consuming"><a href="#Time_Consuming" class="headerlink" title="Time Consuming"></a>Time Consuming</h4><p>为了分析虚化一张图片所消耗的时间，本文通过同时虚化<code>100</code>来获取平均消耗时间。以期对虚化耗时和不同缩放比对耗时的影响得到一定的认识。</p>
+<pre><code>long start = System.currentTimeMillis();
+Bitmap scaledBitmap, blurBitmap;
+int scaleRatio = 10;
+for (int i=0; i&lt;100; i++) {
+  scaledBitmap = Bitmap.createScaledBitmap(originBitmap,
+      originBitmap.getWidth() / scaleRatio,
+      originBitmap.getHeight() / scaleRatio,
+      false);
+  blurBitmap = FastBlur.doBlur(scaledBitmap, 8, true);
+}
+Log.i(&quot;blurtime&quot;, String.valueOf(System.currentTimeMillis() - start));
+</code></pre><ul>
+<li>scaleRatio = 10: 耗时<code>887ms</code>，平均耗时<code>8.87ms</code>;</li>
+<li>scaleRatio = 20: 耗时<code>224ms</code>，平均耗时<code>2.24ms</code>;</li>
+<li>scaleRatio = 35: 耗时<code>99ms</code>，平均耗时<code>0.99ms</code>;</li>
+<li>scaleRatio = 50: 耗时<code>55ms</code>，平均耗时<code>0.55ms</code>;</li>
+<li>scaleRatio = 100: 耗时<code>29ms</code>，平均耗时<code>0.29ms</code>;</li>
+</ul>
+<p>为了方便读者了解效果，我通过多组数据拟合了下面的曲线：<br><img src="/post/一种快速毛玻璃虚化效果实现/timeconsume_statisic.png" alt=""></p>
+<p>从该模拟图可以看出时间随着缩放比的增大而不断减小，当缩放比达到30以上时所消耗的时间不到1ms，因此，我认为应该是完全不会产生时延破坏用户体验的。</p>
+<h4 id="Memory_Consuming"><a href="#Memory_Consuming" class="headerlink" title="Memory Consuming"></a>Memory Consuming</h4><p>既然时间没问题，那么，主要问题：内存占用就来了，所以我们需要考察生成一张虚化图片所占用的内存。</p>
 </span>
       
     </div>
@@ -324,9 +378,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/cool/" rel="tag">#cool</a>
-          
-            <a href="/tags/动效/" rel="tag">#动效</a>
+            <a href="/tags/Android/" rel="tag">#Android</a>
           
         </div>
       
@@ -335,17 +387,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/02/交大－影/" rel="next" title="交大－影">
-                <i class="fa fa-chevron-left"></i> 交大－影
+              <a href="/2016/02/20/计划清单/" rel="next" title="计划清单">
+                <i class="fa fa-chevron-left"></i> 计划清单
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/19/今年之计/" rel="prev" title="今年之计">
-                今年之计 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -489,7 +537,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#StackBlur"><span class="nav-number">1.</span> <span class="nav-text">StackBlur</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OOM"><span class="nav-number">2.</span> <span class="nav-text">OOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ReScale"><span class="nav-number">3.</span> <span class="nav-text">ReScale</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance_analysis"><span class="nav-number">4.</span> <span class="nav-text">Performance analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Time_Consuming"><span class="nav-number">4.1.</span> <span class="nav-text">Time Consuming</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Memory_Consuming"><span class="nav-number">4.2.</span> <span class="nav-text">Memory Consuming</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -550,9 +598,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'wingjay';
-      var disqus_identifier = '2016/01/25/有趣的曲线在Android上的实现/';
-      var disqus_title = '有趣的曲线在Android上的实现';
-      var disqus_url = 'http://wingjay.com/2016/01/25/有趣的曲线在Android上的实现/';
+      var disqus_identifier = '2016/03/12/一种快速毛玻璃虚化效果实现/';
+      var disqus_title = '一种快速毛玻璃虚化效果实现';
+      var disqus_url = 'http://wingjay.com/2016/03/12/一种快速毛玻璃虚化效果实现/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
