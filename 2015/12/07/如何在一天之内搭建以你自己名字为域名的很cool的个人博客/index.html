@@ -67,7 +67,7 @@
 <meta property="og:image" content="http://wingjay.com/img/hexo目录.png">
 <meta property="og:image" content="http://wingjay.com/img/域名解析.png">
 <meta property="og:image" content="https://avatars0.githubusercontent.com/u/9619875?v=3&s=460">
-<meta property="og:updated_time" content="2016-01-25T10:43:03.000Z">
+<meta property="og:updated_time" content="2016-03-26T12:10:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在一天之内搭建以你自己名字为域名又具备cool属性的个人博客">
 <meta name="twitter:description" content="对程序员而言，最好的简历就是个人博客和GitHub
@@ -367,8 +367,7 @@
 <p>不过，对于<code>Hexo 3</code>，<strong>这里有一个坑要注意</strong>：大家应该还记得上文说的，master分支里的内容都是自动生成的，而且会完全覆盖之前的内容。如果我们直接创建一个新文件CNAME，填好域名。但会发现在下一次部署后这个文件就消失了。不用惊讶，因为hexo并不会自动生成CNAME文件，所以在部署时被覆盖删除了。</p>
 <p>所以，我们就需要这个CNAME工具<a href="https://github.com/leecrossley/hexo-generator-cname" target="_blank" rel="external">hexo-generator-cname</a>，这时会自动在public里生成一个CNAME文件，把你的域名加进去再部署一下吧！</p>
 <h3 id="HTTP_-_26gt_3B_HTTPS"><a href="#HTTP_-_26gt_3B_HTTPS" class="headerlink" title="HTTP -&gt; HTTPS"></a>HTTP -&gt; HTTPS</h3><p>HTTPS是安全版的HTTP协议，它在http协议与TCP之间加入SSL层，采用端口443，不仅会对传输数据加密，还会进行身份验证。当然个人博客并没有强制性要求采用该协议，这也只是本人的好奇而为。</p>
-<p>目前Github Pages已经支持https了，但是不支持自定义证书。不过我们可以利用<a href="https://www.cloudflare.com" target="_blank" rel="external">CloudFlare</a>来实现。具体实现可以<a href="https://www.benburwell.com/posts/configuring-cloudflare-universal-ssl/" target="_blank" rel="external">参考这里</a></p>
-<p>说明：本网站的https正处在申请中</p>
+<p>[Update] 目前，我的博客采用了<a href="https://kloudsec.com/github-pages" target="_blank" rel="external">Kloudsec</a>来做的https，大家可以点进去看。通过与服务商联系后，我了解到目前这项服务是免费的，不仅做https还能做负载均衡。</p>
 <h3 id="u7591_u96BE_u6742_u75C7"><a href="#u7591_u96BE_u6742_u75C7" class="headerlink" title="疑难杂症"></a>疑难杂症</h3><ol>
 <li>本地deploy成功，但是github上的master并没有收到该commit。<br>目前不知道是什么原因，本人感觉是two-factor的开启，使得本地不具备权限直接push。比较无语。<br>解决方法：<br>在code分支上，创建一个.deploy的文件夹，在该文件夹内把master clone下来；<br>当有新的改动后，generate后把public文件夹的内容拷入进上面clone的文件夹内；<br>进入上面clone下来的文件夹，手动push到master上来更新。<br>该思路就是自己维护一个master文件夹，手动把生成的public内容复制进去，再push上去。</li>
 </ol>
@@ -377,7 +376,7 @@
 <p>除了上面的功能，本人还完成了<code>支持双域名同时登陆</code>，其中，支持双域名的解决思路是考虑到<a href="https://help.github.com/articles/adding-a-cname-file-to-your-repository/" target="_blank" rel="external">Github Pages的CNAME纪录只允许添加一个域名</a>，所以本人又在<a href="https://gitcafe.com" target="_blank" rel="external">Gitcafe</a>上部署了一套。不过考虑到这点大家不一定能用的上，就没有做介绍，有需要的话可以看下文的联系方式联系我。</p>
 <h2 id="u4E00_u5929_u53D8cool_u7CFB_u5217_u6587_u7AE0"><a href="#u4E00_u5929_u53D8cool_u7CFB_u5217_u6587_u7AE0" class="headerlink" title="一天变cool系列文章"></a>一天变cool系列文章</h2><p><a href="http://www.jianshu.com/p/cf496fc408b2" target="_blank" rel="external">如何在一天之内完成一款具备cool属性的Android产品&lt;简诗&gt;</a></p>
 <p><a href="http://www.jianshu.com/p/99665608d295" target="_blank" rel="external">如何在一天之内搭建以你自己名字为域名且具备cool属性的个人博客</a></p>
-<h2 id="u5173_u4E8E_u4F5C_u8005"><a href="#u5173_u4E8E_u4F5C_u8005" class="headerlink" title="关于作者"></a>关于作者</h2><p>欢迎各位关注<br><a href="https://github.com/wingjay" target="_blank" rel="external">我的Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br>和<br><a href="http://wingjay.com">我的个人博客</a>: <a href="http://wingjay.com">http://wingjay.com</a><br>和<br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a><br>如果有问题，可以给我留言或发邮件<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#x79;&#x69;&#x6e;&#x6a;&#105;&#101;&#x73;&#104;&#x40;&#x31;&#50;&#54;&#46;&#99;&#111;&#x6d;">&#x79;&#x69;&#x6e;&#x6a;&#105;&#101;&#x73;&#104;&#x40;&#x31;&#50;&#54;&#46;&#99;&#111;&#x6d;</a></p>
+<h2 id="u5173_u4E8E_u4F5C_u8005"><a href="#u5173_u4E8E_u4F5C_u8005" class="headerlink" title="关于作者"></a>关于作者</h2><p>欢迎各位关注<br><a href="https://github.com/wingjay" target="_blank" rel="external">我的Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br>和<br><a href="http://wingjay.com">我的个人博客</a>: <a href="http://wingjay.com">http://wingjay.com</a><br>和<br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a><br>如果有问题，可以给我留言或发邮件<a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x79;&#x69;&#110;&#x6a;&#x69;&#x65;&#115;&#x68;&#x40;&#49;&#50;&#x36;&#46;&#x63;&#x6f;&#109;">&#x79;&#x69;&#110;&#x6a;&#x69;&#x65;&#115;&#x68;&#x40;&#49;&#50;&#x36;&#46;&#x63;&#x6f;&#109;</a></p>
 <p><img src="https://avatars0.githubusercontent.com/u/9619875?v=3&amp;s=460" alt=""></p>
 </span>
       
