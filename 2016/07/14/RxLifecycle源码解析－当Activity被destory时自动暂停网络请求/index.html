@@ -55,7 +55,7 @@
 一、 介绍本文分析思路不是从源码里抽代码出来一步步跟踪，而是提出问题，一步步思考解决方法，从而学习到开源项目的思维精华，而不仅仅是了解该项目的具体实现。笔者认为这种方式更有利于读者提高自身思维方式和技术能力。
 二、 开源项目RxLifecycle 地址：https://github.com/trello/RxLifecycle 。该项目是为了防止RxJava中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RxLifecycle源码解析－当Activity被destory时自动暂停网络请求">
+<meta property="og:title" content="RxLifecycle源码解析－当Activity被destory时自动停掉网络请求">
 <meta property="og:url" content="http://wingjay.com/2016/07/14/RxLifecycle源码解析－当Activity被destory时自动暂停网络请求/index.html">
 <meta property="og:site_name" content="wingjay">
 <meta property="og:description" content="此文需要读者对RxJava有一定了解
@@ -63,9 +63,9 @@
 二、 开源项目RxLifecycle 地址：https://github.com/trello/RxLifecycle 。该项目是为了防止RxJava中">
 <meta property="og:image" content="https://avatars0.githubusercontent.com/u/9619875?v=3&s=460">
 <meta property="og:image" content="http://wingjay.com/img/打赏.JPG">
-<meta property="og:updated_time" content="2016-07-14T14:28:56.000Z">
+<meta property="og:updated_time" content="2016-07-14T14:32:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RxLifecycle源码解析－当Activity被destory时自动暂停网络请求">
+<meta name="twitter:title" content="RxLifecycle源码解析－当Activity被destory时自动停掉网络请求">
 <meta name="twitter:description" content="此文需要读者对RxJava有一定了解
 一、 介绍本文分析思路不是从源码里抽代码出来一步步跟踪，而是提出问题，一步步思考解决方法，从而学习到开源项目的思维精华，而不仅仅是了解该项目的具体实现。笔者认为这种方式更有利于读者提高自身思维方式和技术能力。
 二、 开源项目RxLifecycle 地址：https://github.com/trello/RxLifecycle 。该项目是为了防止RxJava中">
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title> RxLifecycle源码解析－当Activity被destory时自动暂停网络请求 | wingjay </title>
+  <title> RxLifecycle源码解析－当Activity被destory时自动停掉网络请求 | wingjay </title>
   <!-- <link rel="canonical" href=" { { site.url } }{ { page.url } }" /> -->
   <script type="text/javascript">
     // var host = "wingjay.com";
@@ -259,7 +259,7 @@
             
             
               
-                RxLifecycle源码解析－当Activity被destory时自动暂停网络请求
+                RxLifecycle源码解析－当Activity被destory时自动停掉网络请求
               
             
           </h1>
@@ -309,6 +309,7 @@
 <h2 id="u4E8C_u3001__u5F00_u6E90_u9879_u76EE"><a href="#u4E8C_u3001__u5F00_u6E90_u9879_u76EE" class="headerlink" title="二、 开源项目"></a>二、 开源项目</h2><p><a href="https://github.com/trello/RxLifecycle" target="_blank" rel="external">RxLifecycle</a> 地址：<a href="https://github.com/trello/RxLifecycle" target="_blank" rel="external">https://github.com/trello/RxLifecycle</a> 。该项目是为了防止<code>RxJava</code>中<code>subscription</code>导致内存泄漏而诞生的，核心思想是通过监听<code>Activity</code>、<code>Fragment</code>的生命周期，来自动断开<code>subscription</code>以防止内存泄漏。</p>
 <p>基本用法如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myObservable</span><br><span class="line">    .compose(RxLifecycle.bindUntilEvent(lifecycle, ActivityEvent.DESTROY))</span><br><span class="line">    .subscribe();</span><br></pre></td></tr></table></figure></p>
 <p>此处<code>myObservable</code>可以看成一个耗时的网络请求，通过绑定到<code>ActivityEvent.DESTROY</code>，一旦Activity发生了<code>DESTORY</code>生命周期，数据就不会再流向<code>subscriber</code>，即不会对这些数据进行任何处理和UI绘制，从而提高安全性。</p>
+<a id="more"></a>
 <h2 id="u4E09_u3001__u95EE_u9898"><a href="#u4E09_u3001__u95EE_u9898" class="headerlink" title="三、 问题"></a>三、 问题</h2><p>Android开发中常会有这样一个场景：</p>
 <ol>
 <li>发送网络请求 -&gt; 2. 服务器处理请求并返回数据 -&gt; 3. client端接收数据，绘制UI。</li>
@@ -356,7 +357,7 @@
 <li>对于Fragment中的处理方法也是类似。</li>
 </ol>
 <p>谢谢！</p>
-<h2 id="wingjay"><a href="#wingjay" class="headerlink" title="wingjay"></a>wingjay</h2><p>欢迎各位关注<br><a href="https://github.com/wingjay" target="_blank" rel="external">我的Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br>和<br><a href="http://wingjay.com">我的个人博客</a>: <a href="http://wingjay.com">http://wingjay.com</a><br>和<br><a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">我的简书</a>: <a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/da333fd63fe5/latest_articles</a><br>和<br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a><br>如果有问题，可以给我留言或发邮件<a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x79;&#x69;&#x6e;&#106;&#x69;&#x65;&#x73;&#104;&#x40;&#x31;&#50;&#54;&#x2e;&#x63;&#x6f;&#x6d;">&#x79;&#x69;&#x6e;&#106;&#x69;&#x65;&#x73;&#104;&#x40;&#x31;&#50;&#54;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<h2 id="wingjay"><a href="#wingjay" class="headerlink" title="wingjay"></a>wingjay</h2><p>欢迎各位关注<br><a href="https://github.com/wingjay" target="_blank" rel="external">我的Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br>和<br><a href="http://wingjay.com">我的个人博客</a>: <a href="http://wingjay.com">http://wingjay.com</a><br>和<br><a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">我的简书</a>: <a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/da333fd63fe5/latest_articles</a><br>和<br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a><br>如果有问题，可以给我留言或发邮件<a href="&#109;&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#121;&#105;&#x6e;&#106;&#x69;&#x65;&#x73;&#104;&#x40;&#49;&#50;&#x36;&#x2e;&#99;&#111;&#109;">&#121;&#105;&#x6e;&#106;&#x69;&#x65;&#x73;&#104;&#x40;&#49;&#50;&#x36;&#x2e;&#99;&#111;&#109;</a></p>
 <p><img src="https://avatars0.githubusercontent.com/u/9619875?v=3&amp;s=460" alt=""></p>
 <p><img src="/img/打赏.JPG" alt=""></p>
 </span>
@@ -598,7 +599,7 @@
     <script type="text/javascript">
       var disqus_shortname = 'wingjay';
       var disqus_identifier = '2016/07/14/RxLifecycle源码解析－当Activity被destory时自动暂停网络请求/';
-      var disqus_title = 'RxLifecycle源码解析－当Activity被destory时自动暂停网络请求';
+      var disqus_title = 'RxLifecycle源码解析－当Activity被destory时自动停掉网络请求';
       var disqus_url = 'http://wingjay.com/2016/07/14/RxLifecycle源码解析－当Activity被destory时自动暂停网络请求/';
 
       function run_disqus_script(disqus_script){
