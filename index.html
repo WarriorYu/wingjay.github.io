@@ -260,6 +260,110 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/02/干货-Glow-Android-优化实践/" itemprop="url">
+                  [干货] Glow Android 优化实践
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-11-02T19:58:15+08:00" content="2016-11-02">
+              2016-11-02
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/11/02/干货-Glow-Android-优化实践/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/11/02/干货-Glow-Android-优化实践/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          <span id="busuanzi_container_page_pv">
+            &nbsp; | &nbsp;
+            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+          </span>
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>了解 Glow 的朋友应该知道，我们主营四款 App，分别是Eve、Glow、Nuture和Baby。作为创业公司，我们的四款 App 都处于高速开发中，平均每个 Android App 由两人负责开发，包括 Android 和 Server 开发，在满足 PM 各种需求的同时，我们的session crash free率保持不低于 99.8%，其中两款 App 接近 100%。</p>
+<p>本文将对 Glow 当前 Android 对现有工具的探索及优化作出讲解，希望对读者有所启发。</p>
+<h2 id="u6574_u4F53_u7ED3_u6784_u6982_u89C8"><a href="#u6574_u4F53_u7ED3_u6784_u6982_u89C8" class="headerlink" title="整体结构概览"></a>整体结构概览</h2><p>由于架构都是为了实际业务服务，因此在深入讲解前，需要先展示 Android 端的大体结构：</p>
+<p> <img src="http://upload-images.jianshu.io/upload_images/281665-6a05f7e014dc6234.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Glow Android 整体结构"></p>
+<p>我们有四个 Android App，它们共用同一个 Community 社区，最底层是 Base-Library，存放公用的模块组件，如支付模块，Logging模块等等。</p>
+<p>下面，我将依次从以下几个方面进行讲解：</p>
+<ul>
+<li>网络层优化</li>
+<li>内存优化实践</li>
+<li>在App和Library中集成依赖注入</li>
+<li>etc.</li>
+</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/02/干货-Glow-Android-优化实践/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/30/谈谈移动应用的安全性实践/" itemprop="url">
                   谈谈移动应用的安全性实践
                 </a>
@@ -357,6 +461,103 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/21/带你学开源项目：OkHttp-自己动手实现okhttp/" itemprop="url">
+                  带你学开源项目：OkHttp--自己动手实现okhttp
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-07-21T14:54:33+08:00" content="2016-07-21">
+              2016-07-21
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/07/21/带你学开源项目：OkHttp-自己动手实现okhttp/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/21/带你学开源项目：OkHttp-自己动手实现okhttp/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          <span id="busuanzi_container_page_pv">
+            &nbsp; | &nbsp;
+            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+          </span>
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p><img src="https://images.unsplash.com/photo-1468924483202-98db115dfd8e?dpr=1&amp;auto=format&amp;crop=entropy&amp;fit=crop&amp;w=1500&amp;h=1001&amp;q=80" alt=""></p>
+<blockquote>
+<p>公众号：CoolCoder，我会第一时间发布我最新的文章，欢迎关注。对开源项目分析感兴趣？欢迎加入我们的<a href="https://github.com/wingjay/android-open-source-project-cracking">android-open-source-project-cracking</a></p>
+</blockquote>
+<h2 id="u4E00_u3001_u5F00_u6E90_u9879_u76EE_OkHttp"><a href="#u4E00_u3001_u5F00_u6E90_u9879_u76EE_OkHttp" class="headerlink" title="一、开源项目 OkHttp"></a>一、开源项目 OkHttp</h2><p>在Android、Java开发领域中，相信大家都听过或者在使用Square家大名鼎鼎的网络请求库——<a href="https://github.com/square/okhttp">OkHttp</a>——<a href="https://github.com/square/okhttp">https://github.com/square/okhttp</a> ，当前多数著名的开源项目如 <a href="https://github.com/facebook/fresco">Fresco</a>、<a href="https://github.com/bumptech/glide">Glide</a>、 <a href="https://github.com/square/picasso">Picasso</a>、 <a href="https://github.com/square/retrofit">Retrofit</a>都在使用OkHttp，这足以说明其质量，而且该项目仍处在<a href="https://github.com/square/okhttp/commits/master">不断维护中</a>。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/21/带你学开源项目：OkHttp-自己动手实现okhttp/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/14/RxLifecycle源码解析－当Activity被destory时自动暂停网络请求/" itemprop="url">
                   RxLifecycle源码解析－当Activity被destory时自动停掉网络请求
                 </a>
@@ -412,6 +613,197 @@
 <p>此处<code>myObservable</code>可以看成一个耗时的网络请求，通过绑定到<code>ActivityEvent.DESTROY</code>，一旦Activity发生了<code>DESTORY</code>生命周期，数据就不会再流向<code>subscriber</code>，即不会对这些数据进行任何处理和UI绘制，从而提高安全性。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/07/14/RxLifecycle源码解析－当Activity被destory时自动暂停网络请求/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/10/Walk-in-ShangHai/" itemprop="url">
+                  Walk in ShangHai
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-07-10T16:11:38+08:00" content="2016-07-10">
+              2016-07-10
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/07/10/Walk-in-ShangHai/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/10/Walk-in-ShangHai/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          <span id="busuanzi_container_page_pv">
+            &nbsp; | &nbsp;
+            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+          </span>
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>扫街进行中</p>
+<p>天气：阴<br>目的地：淮海中路＋陕西南路</p>
+<p><img src="http://wingjay.com/img/walk_in_sh/1.JPG"></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/10/Walk-in-ShangHai/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/06/梦想升起的地方/" itemprop="url">
+                  梦想升起的地方
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-06-06T22:42:14+08:00" content="2016-06-06">
+              2016-06-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/06/06/梦想升起的地方/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/06/梦想升起的地方/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          <span id="busuanzi_container_page_pv">
+            &nbsp; | &nbsp;
+            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+          </span>
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p><img src="http://wingjay.com/img/dream.jpg" alt=""></p>
+<p>好赖，我毕业了🎓。</p>
+<p>从本科毕业时懵懂迷茫的自己，到现在坚定方向不为所动的自己。</p>
+<p>两三年的磨砺，我成长了非常多。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/06/梦想升起的地方/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -645,6 +1037,102 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/12/一种快速毛玻璃虚化效果实现/" itemprop="url">
+                  一种快速毛玻璃虚化效果实现
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-03-12T09:30:50+08:00" content="2016-03-12">
+              2016-03-12
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/03/12/一种快速毛玻璃虚化效果实现/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/12/一种快速毛玻璃虚化效果实现/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          <span id="busuanzi_container_page_pv">
+            &nbsp; | &nbsp;
+            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+          </span>
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p><img src="http://wingjay.com/img/fastblur/iosblur.jpg" width="300"></p>
+<p>在iOS设备上我们随处可见毛玻璃效果，而且最近越来越多的场合应用到了这种美观的虚化效果，包括本人的一个开源项目<a href="https://github.com/wingjay/BlurImageView">BlureImageView</a>也是受此启发。所以，恰到好处的虚化效果能很好的改善用户体验，而且也能让你的app显得更加优雅。</p>
+<p>不过，我们目前在android上很少见到毛玻璃效果，我认为很重要的原因是性能问题，虚化一张图片所需要的时间会因设备而异，如果为了虚化使得用户需要刻意等待，那么就是弊大于利。另外，Google官方提供的renderScript一般只是做一些小幅度的虚化，很难达到毛玻璃这类深度虚化效果。</p>
+<p>所以本文的角度是能够在android设备上快速实现毛玻璃效果。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/12/一种快速毛玻璃虚化效果实现/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/02/20/计划清单/" itemprop="url">
                   计划清单
                 </a>
@@ -718,106 +1206,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/02/19/今年之计/" itemprop="url">
-                  今年之计
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2016-02-19T16:39:37+08:00" content="2016-02-19">
-              2016-02-19
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/02/19/今年之计/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/02/19/今年之计/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          <span id="busuanzi_container_page_pv">
-            &nbsp; | &nbsp;
-            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-          </span>
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p><img src="https://drscdn.500px.org/photo/40352952/q%3D80_m%3D2000/b8ea73af7f5aef17d99af0e0bf1ee1b0" alt="今年之计"></p>
-<p>结束了家中热闹的腊月，提早返回校中，好好为今年做一番规划。</p>
-<p>俗话说得好：一年之计在于春。</p>
-<p>今年两件事：</p>
-<ol>
-<li>毕业</li>
-<li>步入职场</li>
-</ol>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/02/19/今年之计/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -864,7 +1252,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
