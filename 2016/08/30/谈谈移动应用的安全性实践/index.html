@@ -51,23 +51,17 @@
 
 
 
-<meta name="description" content="虽然没有完美的安全性，但我们所做的每一步都能加大被攻击的难度。
-
-本文将从用户注册流程出发，介绍下个人实践中在提高数据安全性方面采用的一些策略方法，供读者参考。下文将从 Android 和 服务端 两部分来进行讲解。">
+<meta name="description" content="虽然没有完美的安全性，但我们所做的每一步都能加大被攻击的难度。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="谈谈移动应用的安全性实践">
 <meta property="og:url" content="http://wingjay.com/2016/08/30/谈谈移动应用的安全性实践/index.html">
 <meta property="og:site_name" content="wingjay">
-<meta property="og:description" content="虽然没有完美的安全性，但我们所做的每一步都能加大被攻击的难度。
-
-本文将从用户注册流程出发，介绍下个人实践中在提高数据安全性方面采用的一些策略方法，供读者参考。下文将从 Android 和 服务端 两部分来进行讲解。">
+<meta property="og:description" content="虽然没有完美的安全性，但我们所做的每一步都能加大被攻击的难度。">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/281665-29572b7461c3d279.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2016-08-30T14:28:37.000Z">
+<meta property="og:updated_time" content="2017-03-19T08:07:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="谈谈移动应用的安全性实践">
-<meta name="twitter:description" content="虽然没有完美的安全性，但我们所做的每一步都能加大被攻击的难度。
-
-本文将从用户注册流程出发，介绍下个人实践中在提高数据安全性方面采用的一些策略方法，供读者参考。下文将从 Android 和 服务端 两部分来进行讲解。">
+<meta name="twitter:description" content="虽然没有完美的安全性，但我们所做的每一步都能加大被攻击的难度。">
 
 
 
@@ -298,9 +292,9 @@
         <span itemprop="articleBody"><blockquote>
 <p>虽然没有完美的安全性，但我们所做的每一步都能加大被攻击的难度。</p>
 </blockquote>
+<a id="more"></a>
 <p>本文将从用户注册流程出发，介绍下个人实践中在提高数据安全性方面采用的一些策略方法，供读者参考。下文将从 <code>Android</code> 和 <code>服务端</code> 两部分来进行讲解。</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/281665-29572b7461c3d279.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<a id="more"></a>
 <h3 id="u4ECE_u6CE8_u518C_u8BF4_u8D77"><a href="#u4ECE_u6CE8_u518C_u8BF4_u8D77" class="headerlink" title="从注册说起"></a>从注册说起</h3><p>用户第一次打开app时便会进入注册页面。然后客户端会要求用户输入用户名、密码并传递给服务端去创建一个新的user。此时通过明文传递用户名密码便是一个安全性隐患。或者说，如果有人监听注册API，那么很快就可以窃取到很多用户的账户信息，而且可以偷偷利用这些账户信息随时获取甚至更改用户数据。</p>
 <p>这对于任何一家企业而言都是非常可怕的。</p>
 <h3 id="u5168_u7AD9Https"><a href="#u5168_u7AD9Https" class="headerlink" title="全站Https"></a>全站Https</h3><p>因此，为了应对数据明文传输隐患这个问题，我们可以<u>采用<a href="https://en.wikipedia.org/wiki/HTTPS" target="_blank" rel="external">Https</a>方式通信</u>。在Android端推荐<a href="http://square.github.io/" target="_blank" rel="external">Square</a>家的<a href="https://github.com/square/okhttp" target="_blank" rel="external">OkHttp3</a>作为网络层，为应用层提供Https服务。</p>

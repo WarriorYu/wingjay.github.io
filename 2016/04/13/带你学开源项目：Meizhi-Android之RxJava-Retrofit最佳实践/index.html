@@ -51,25 +51,20 @@
 
 
 
-<meta name="description" content="零、背景比起阅读枯燥的技术文档，独自苦苦摸索新技术的基本用法，还有一种更好更快速也更有效的提高自身技术的方法，那就是阅读学习优质的开源项目，通过仿写、练习最终达到理解，潜移默化提升自身编程技能。
-《带你学开源项目》系列将带领你深入阅读及分析当前流行的一些开源项目，并针对其中采用的新技术与精妙之处进行细致的阐述，以期让你快速掌握Android开发中的多种强大技能点。">
+<meta name="description" content="私以为，阅读开源项目是与世界级技术大牛直接对话的最好方式。此次来分享下 Meizhi Android 源码的分析。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="带你学开源项目：Meizhi Android之RxJava & Retrofit最佳实践">
 <meta property="og:url" content="http://wingjay.com/2016/04/13/带你学开源项目：Meizhi-Android之RxJava-Retrofit最佳实践/index.html">
 <meta property="og:site_name" content="wingjay">
-<meta property="og:description" content="零、背景比起阅读枯燥的技术文档，独自苦苦摸索新技术的基本用法，还有一种更好更快速也更有效的提高自身技术的方法，那就是阅读学习优质的开源项目，通过仿写、练习最终达到理解，潜移默化提升自身编程技能。
-《带你学开源项目》系列将带领你深入阅读及分析当前流行的一些开源项目，并针对其中采用的新技术与精妙之处进行细致的阐述，以期让你快速掌握Android开发中的多种强大技能点。">
-<meta property="og:image" content="https://wallcat.imgix.net/os43HKoEfD.jpg?crop=entropy&dpr=2&h=800&ixjsv=2.1.0&q=70&w=1400">
+<meta property="og:description" content="私以为，阅读开源项目是与世界级技术大牛直接对话的最好方式。此次来分享下 Meizhi Android 源码的分析。">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/281665-50854bb575db05f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/281665-2129d871aff9a884.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/281665-91320f2cce108a8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://avatars0.githubusercontent.com/u/9619875?v=3&s=460">
-<meta property="og:image" content="http://wingjay.com/img/打赏.JPG">
-<meta property="og:updated_time" content="2016-07-21T07:04:35.000Z">
+<meta property="og:updated_time" content="2017-03-19T08:26:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="带你学开源项目：Meizhi Android之RxJava & Retrofit最佳实践">
-<meta name="twitter:description" content="零、背景比起阅读枯燥的技术文档，独自苦苦摸索新技术的基本用法，还有一种更好更快速也更有效的提高自身技术的方法，那就是阅读学习优质的开源项目，通过仿写、练习最终达到理解，潜移默化提升自身编程技能。
-《带你学开源项目》系列将带领你深入阅读及分析当前流行的一些开源项目，并针对其中采用的新技术与精妙之处进行细致的阐述，以期让你快速掌握Android开发中的多种强大技能点。">
+<meta name="twitter:description" content="私以为，阅读开源项目是与世界级技术大牛直接对话的最好方式。此次来分享下 Meizhi Android 源码的分析。">
 
 
 
@@ -297,10 +292,12 @@
       
 
       
-        <span itemprop="articleBody"><p><img src="https://wallcat.imgix.net/os43HKoEfD.jpg?crop=entropy&amp;dpr=2&amp;h=800&amp;ixjsv=2.1.0&amp;q=70&amp;w=1400" alt=""></p>
+        <span itemprop="articleBody"><blockquote>
+<p>私以为，阅读开源项目是与世界级技术大牛直接对话的最好方式。<br>此次来分享下 Meizhi Android 源码的分析。</p>
+</blockquote>
+<a id="more"></a>
 <h2 id="u96F6_u3001_u80CC_u666F"><a href="#u96F6_u3001_u80CC_u666F" class="headerlink" title="零、背景"></a>零、背景</h2><p>比起阅读枯燥的技术文档，独自苦苦摸索新技术的基本用法，还有一种更好更快速也更有效的提高自身技术的方法，那就是阅读学习优质的开源项目，通过仿写、练习最终达到理解，潜移默化提升自身编程技能。</p>
 <p>《带你学开源项目》系列将带领你深入阅读及分析当前流行的一些开源项目，并针对其中采用的新技术与精妙之处进行细致的阐述，以期让你快速掌握Android开发中的多种强大技能点。</p>
-<a id="more"></a>
 <h2 id="u4E00_u3001_u672C_u671F_u5F00_u6E90_u9879_u76EEMeizhi_Android"><a href="#u4E00_u3001_u672C_u671F_u5F00_u6E90_u9879_u76EEMeizhi_Android" class="headerlink" title="一、本期开源项目Meizhi Android"></a>一、本期开源项目Meizhi Android</h2><p>本次的开源项目选择了<a href="https://github.com/drakeet/Meizhi" target="_blank" rel="external">Meizhi Android</a>，本文主要介绍该项目中采用的<code>RxJava</code>、<code>Retrofit</code>两种技术，这二者在Android开发者中非常流行，不仅能够<code>优美地处理异步回调</code>，而且能<code>提高代码的性能和稳定性</code>。而Meizhi Android中较好的覆盖了二者的多种应用场景，能够给多数开发者一个全面的学习。</p>
 <p>下面本人会<code>对原项目的代码进行详细的介绍</code>，同时为了读者看的清楚其中的逻辑关系，可能会做一定调整以帮助读者理解，比如把lambda表达式还原成普通java函数形式，以避免很多读者对lambda并不熟悉。</p>
 <h2 id="u4E8C_u3001_u539F_u9879_u76EE_u5206_u6790"><a href="#u4E8C_u3001_u539F_u9879_u76EE_u5206_u6790" class="headerlink" title="二、原项目分析"></a>二、原项目分析</h2><h3 id="0-_clone_u9879_u76EE_u5230_u672C_u5730"><a href="#0-_clone_u9879_u76EE_u5230_u672C_u5730" class="headerlink" title="0. clone项目到本地"></a>0. clone项目到本地</h3><p>第一步当然是把项目clone下来，编译，运行。有兴趣的同学可以执行这一步。</p>
@@ -473,9 +470,8 @@ protected void onDestroy() {
 <p>最后，如果读者有意见欢迎评论，本人后续还会挑选优质的开源项目，分析其精髓，供读者学习领悟。</p>
 <p>谢谢！</p>
 <p>wingjay</p>
-<p>欢迎各位关注<br><a href="https://github.com/wingjay" target="_blank" rel="external">我的Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br>和<br><a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">我的简书</a>: <a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/da333fd63fe5/latest_articles</a><br>和<br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a><br>如果有问题，可以给我留言或发邮件<a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#x79;&#105;&#x6e;&#106;&#105;&#x65;&#115;&#x68;&#64;&#49;&#x32;&#54;&#x2e;&#x63;&#111;&#x6d;">&#x79;&#105;&#x6e;&#106;&#105;&#x65;&#115;&#x68;&#64;&#49;&#x32;&#54;&#x2e;&#x63;&#111;&#x6d;</a></p>
+<p>欢迎各位关注<br><a href="https://github.com/wingjay" target="_blank" rel="external">我的Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br>和<br><a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">我的简书</a>: <a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/da333fd63fe5/latest_articles</a><br>和<br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a><br>如果有问题，可以给我留言或发邮件<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#121;&#x69;&#110;&#x6a;&#x69;&#101;&#115;&#104;&#64;&#x31;&#x32;&#x36;&#46;&#x63;&#111;&#109;">&#121;&#x69;&#110;&#x6a;&#x69;&#101;&#115;&#104;&#64;&#x31;&#x32;&#x36;&#46;&#x63;&#111;&#109;</a></p>
 <p><img src="https://avatars0.githubusercontent.com/u/9619875?v=3&amp;s=460" alt=""></p>
-<p><img src="/img/打赏.JPG" alt=""></p>
 </span>
       
     </div>

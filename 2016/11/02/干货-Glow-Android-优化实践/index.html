@@ -51,21 +51,18 @@
 
 
 
-<meta name="description" content="了解 Glow 的朋友应该知道，我们主营四款 App，分别是Eve、Glow、Nuture和Baby。作为创业公司，我们的四款 App 都处于高速开发中，平均每个 Android App 由两人负责开发，包括 Android 和 Server 开发，在满足 PM 各种需求的同时，我们的session crash free率保持不低于 99.8%，其中两款 App 接近 100%。
-本文将对 Glo">
+<meta name="description" content="分享下自己在实际工作中积累的技术经验。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[干货] Glow Android 优化实践">
 <meta property="og:url" content="http://wingjay.com/2016/11/02/干货-Glow-Android-优化实践/index.html">
 <meta property="og:site_name" content="wingjay">
-<meta property="og:description" content="了解 Glow 的朋友应该知道，我们主营四款 App，分别是Eve、Glow、Nuture和Baby。作为创业公司，我们的四款 App 都处于高速开发中，平均每个 Android App 由两人负责开发，包括 Android 和 Server 开发，在满足 PM 各种需求的同时，我们的session crash free率保持不低于 99.8%，其中两款 App 接近 100%。
-本文将对 Glo">
+<meta property="og:description" content="分享下自己在实际工作中积累的技术经验。">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/281665-6a05f7e014dc6234.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/281665-483c8a864c09503d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2016-11-02T12:01:35.000Z">
+<meta property="og:updated_time" content="2017-03-19T08:14:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[干货] Glow Android 优化实践">
-<meta name="twitter:description" content="了解 Glow 的朋友应该知道，我们主营四款 App，分别是Eve、Glow、Nuture和Baby。作为创业公司，我们的四款 App 都处于高速开发中，平均每个 Android App 由两人负责开发，包括 Android 和 Server 开发，在满足 PM 各种需求的同时，我们的session crash free率保持不低于 99.8%，其中两款 App 接近 100%。
-本文将对 Glo">
+<meta name="twitter:description" content="分享下自己在实际工作中积累的技术经验。">
 
 
 
@@ -293,7 +290,11 @@
       
 
       
-        <span itemprop="articleBody"><p>了解 Glow 的朋友应该知道，我们主营四款 App，分别是Eve、Glow、Nuture和Baby。作为创业公司，我们的四款 App 都处于高速开发中，平均每个 Android App 由两人负责开发，包括 Android 和 Server 开发，在满足 PM 各种需求的同时，我们的session crash free率保持不低于 99.8%，其中两款 App 接近 100%。</p>
+        <span itemprop="articleBody"><blockquote>
+<p>分享下自己在实际工作中积累的技术经验。</p>
+</blockquote>
+<a id="more"></a>
+<p>了解 Glow 的朋友应该知道，我们主营四款 App，分别是Eve、Glow、Nuture和Baby。作为创业公司，我们的四款 App 都处于高速开发中，平均每个 Android App 由两人负责开发，包括 Android 和 Server 开发，在满足 PM 各种需求的同时，我们的session crash free率保持不低于 99.8%，其中两款 App 接近 100%。</p>
 <p>本文将对 Glow 当前 Android 对现有工具的探索及优化作出讲解，希望对读者有所启发。</p>
 <h2 id="u6574_u4F53_u7ED3_u6784_u6982_u89C8"><a href="#u6574_u4F53_u7ED3_u6784_u6982_u89C8" class="headerlink" title="整体结构概览"></a>整体结构概览</h2><p>由于架构都是为了实际业务服务，因此在深入讲解前，需要先展示 Android 端的大体结构：</p>
 <p> <img src="http://upload-images.jianshu.io/upload_images/281665-6a05f7e014dc6234.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Glow Android 整体结构"></p>
@@ -305,7 +306,6 @@
 <li>在App和Library中集成依赖注入</li>
 <li>etc.</li>
 </ul>
-<a id="more"></a>
 <h2 id="u7F51_u7EDC_u5C42_u4F18_u5316"><a href="#u7F51_u7EDC_u5C42_u4F18_u5316" class="headerlink" title="网络层优化"></a>网络层优化</h2><h4 id="1-_Retrofit2_+_OkHttp3_+_RxJava"><a href="#1-_Retrofit2_+_OkHttp3_+_RxJava" class="headerlink" title="1. Retrofit2 + OkHttp3 + RxJava"></a>1. Retrofit2 + OkHttp3 + RxJava</h4><p>上面这套结构是目前最为流行的网络层架构，可以帮我们写出简洁而稳定的网络请求代码，比起以前复杂的异步回调、主次线程切换等代码更为易用，而且能支持 <code>https</code> 请求。</p>
 <p>基本用法如下:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UserApi userApi = retrofit.create(UserApi.class);</span><br></pre></td></tr></table></figure>

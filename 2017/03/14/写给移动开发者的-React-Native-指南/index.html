@@ -51,13 +51,12 @@
 
 
 
-<meta name="description" content="前言React Native 诞生于 2015 年，名副其实的富二代，主要使命是为父出征，与 Apple 和 Google 抗衡，为开发者带去一套跨平台、动态更新的 Javascript 框架，口号是：Learn once, write anywhere：Build mobile apps with React。在试图推翻 Android 和 iOS 压制的同时，还提携了一把自家兄弟：React。">
+<meta name="description" content="React Native 所代表的跨平台、动态更新技术已经引起了全世界开发者关注，而且这种技术势必会是未来的需求和潮流。React Native 不一定会成功，但至少目前 React Native 已经是这一领域的领跑者。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="写给移动开发者的 React Native 指南">
 <meta property="og:url" content="http://wingjay.com/2017/03/14/写给移动开发者的-React-Native-指南/index.html">
 <meta property="og:site_name" content="wingjay">
-<meta property="og:description" content="前言React Native 诞生于 2015 年，名副其实的富二代，主要使命是为父出征，与 Apple 和 Google 抗衡，为开发者带去一套跨平台、动态更新的 Javascript 框架，口号是：Learn once, write anywhere：Build mobile apps with React。在试图推翻 Android 和 iOS 压制的同时，还提携了一把自家兄弟：React。">
-<meta property="og:image" content="http://wingjay.com/img/react-native.png">
+<meta property="og:description" content="React Native 所代表的跨平台、动态更新技术已经引起了全世界开发者关注，而且这种技术势必会是未来的需求和潮流。React Native 不一定会成功，但至少目前 React Native 已经是这一领域的领跑者。">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/281665-fdd239b44898ea4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/281665-8691544719a34a57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/281665-09965625af9b3a49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -65,10 +64,10 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/281665-6531d24c41982690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/281665-d2fb4470d8ae27b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/281665-fee3f3c3da3e5d15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-03-14T04:21:44.000Z">
+<meta property="og:updated_time" content="2017-03-19T08:15:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="写给移动开发者的 React Native 指南">
-<meta name="twitter:description" content="前言React Native 诞生于 2015 年，名副其实的富二代，主要使命是为父出征，与 Apple 和 Google 抗衡，为开发者带去一套跨平台、动态更新的 Javascript 框架，口号是：Learn once, write anywhere：Build mobile apps with React。在试图推翻 Android 和 iOS 压制的同时，还提携了一把自家兄弟：React。">
+<meta name="twitter:description" content="React Native 所代表的跨平台、动态更新技术已经引起了全世界开发者关注，而且这种技术势必会是未来的需求和潮流。React Native 不一定会成功，但至少目前 React Native 已经是这一领域的领跑者。">
 
 
 
@@ -296,7 +295,10 @@
       
 
       
-        <span itemprop="articleBody"><p><img src="/img/react-native.png" alt=""></p>
+        <span itemprop="articleBody"><blockquote>
+<p>React Native 所代表的跨平台、动态更新技术已经引起了全世界开发者关注，而且这种技术势必会是未来的需求和潮流。React Native 不一定会成功，但至少目前 React Native 已经是这一领域的领跑者。</p>
+</blockquote>
+<a id="more"></a>
 <h3 id="u524D_u8A00"><a href="#u524D_u8A00" class="headerlink" title="前言"></a>前言</h3><p>React Native 诞生于 2015 年，名副其实的富二代，主要使命是为父出征，与 Apple 和 Google 抗衡，为开发者带去一套跨平台、动态更新的 Javascript 框架，口号是：Learn once, write anywhere：Build mobile apps with React。在试图推翻 Android 和 iOS 压制的同时，还提携了一把自家兄弟：React。</p>
 <p>从诞生之日 React Native 就充满了期待和争议。期待是无数开发者希望不用忍受频繁发版的噩梦，也不用同时为两个平台开发业务逻辑几无差别的两个 App；争议是 React Native 真的能以一己之力救大众于水火吗？React Native 在跨平台时还能保持良好的用户体验吗？</p>
 <p>当然我们知道，这种问题向来都是仁者见仁，智者见智。比起一味的疑惑、争论，还不如来好好看看这货究竟是个啥？甚至自己动手来玩一把。</p>
@@ -305,7 +307,6 @@
 <li>想要入门 RN 的人，在阅读官方文档前先对 RN 形成一个整体的印象</li>
 <li>对 RN 心存好奇，在犹豫是否要入坑的开发者，可以通过本文对 RN 更客观全面的认识</li>
 </ul>
-<a id="more"></a>
 <h3 id="u76EE_u5F55"><a href="#u76EE_u5F55" class="headerlink" title="目录"></a>目录</h3><ul>
 <li>React Native 好在哪<ul>
 <li>跨平台＋动态更新</li>

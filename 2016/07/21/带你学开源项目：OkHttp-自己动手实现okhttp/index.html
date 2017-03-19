@@ -51,29 +51,21 @@
 
 
 
-<meta name="description" content="公众号：CoolCoder，我会第一时间发布我最新的文章，欢迎关注。对开源项目分析感兴趣？欢迎加入我们的android-open-source-project-cracking
-
-一、开源项目 OkHttp在Android、Java开发领域中，相信大家都听过或者在使用Square家大名鼎鼎的网络请求库——OkHttp——https://github.com/square/okhttp ，当前多数著">
+<meta name="description" content="私以为，阅读开源项目是与世界级技术大牛直接对话的最好方式。此次来分享下 OkHttp 源码的分析。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="带你学开源项目：OkHttp--自己动手实现okhttp">
 <meta property="og:url" content="http://wingjay.com/2016/07/21/带你学开源项目：OkHttp-自己动手实现okhttp/index.html">
 <meta property="og:site_name" content="wingjay">
-<meta property="og:description" content="公众号：CoolCoder，我会第一时间发布我最新的文章，欢迎关注。对开源项目分析感兴趣？欢迎加入我们的android-open-source-project-cracking
-
-一、开源项目 OkHttp在Android、Java开发领域中，相信大家都听过或者在使用Square家大名鼎鼎的网络请求库——OkHttp——https://github.com/square/okhttp ，当前多数著">
-<meta property="og:image" content="https://images.unsplash.com/photo-1468924483202-98db115dfd8e?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1001&q=80">
+<meta property="og:description" content="私以为，阅读开源项目是与世界级技术大牛直接对话的最好方式。此次来分享下 OkHttp 源码的分析。">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/281665-62df4e64fd04dc24.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/281665-00ec5b478499a386.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/281665-aa94adfc49da4e40.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/281665-1b58154250ce74d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://avatars0.githubusercontent.com/u/9619875?v=3&s=460">
-<meta property="og:image" content="http://wingjay.com/img/打赏.JPG">
-<meta property="og:updated_time" content="2016-10-05T10:31:53.000Z">
+<meta property="og:updated_time" content="2017-03-19T08:26:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="带你学开源项目：OkHttp--自己动手实现okhttp">
-<meta name="twitter:description" content="公众号：CoolCoder，我会第一时间发布我最新的文章，欢迎关注。对开源项目分析感兴趣？欢迎加入我们的android-open-source-project-cracking
-
-一、开源项目 OkHttp在Android、Java开发领域中，相信大家都听过或者在使用Square家大名鼎鼎的网络请求库——OkHttp——https://github.com/square/okhttp ，当前多数著">
+<meta name="twitter:description" content="私以为，阅读开源项目是与世界级技术大牛直接对话的最好方式。此次来分享下 OkHttp 源码的分析。">
 
 
 
@@ -301,12 +293,11 @@
       
 
       
-        <span itemprop="articleBody"><p><img src="https://images.unsplash.com/photo-1468924483202-98db115dfd8e?dpr=1&amp;auto=format&amp;crop=entropy&amp;fit=crop&amp;w=1500&amp;h=1001&amp;q=80" alt=""></p>
-<blockquote>
-<p>公众号：CoolCoder，我会第一时间发布我最新的文章，欢迎关注。对开源项目分析感兴趣？欢迎加入我们的<a href="https://github.com/wingjay/android-open-source-project-cracking" target="_blank" rel="external">android-open-source-project-cracking</a></p>
+        <span itemprop="articleBody"><blockquote>
+<p>私以为，阅读开源项目是与世界级技术大牛直接对话的最好方式。<br>此次来分享下 OkHttp 源码的分析。</p>
 </blockquote>
-<h2 id="u4E00_u3001_u5F00_u6E90_u9879_u76EE_OkHttp"><a href="#u4E00_u3001_u5F00_u6E90_u9879_u76EE_OkHttp" class="headerlink" title="一、开源项目 OkHttp"></a>一、开源项目 OkHttp</h2><p>在Android、Java开发领域中，相信大家都听过或者在使用Square家大名鼎鼎的网络请求库——<a href="https://github.com/square/okhttp" target="_blank" rel="external">OkHttp</a>——<a href="https://github.com/square/okhttp" target="_blank" rel="external">https://github.com/square/okhttp</a> ，当前多数著名的开源项目如 <a href="https://github.com/facebook/fresco" target="_blank" rel="external">Fresco</a>、<a href="https://github.com/bumptech/glide" target="_blank" rel="external">Glide</a>、 <a href="https://github.com/square/picasso" target="_blank" rel="external">Picasso</a>、 <a href="https://github.com/square/retrofit" target="_blank" rel="external">Retrofit</a>都在使用OkHttp，这足以说明其质量，而且该项目仍处在<a href="https://github.com/square/okhttp/commits/master" target="_blank" rel="external">不断维护中</a>。</p>
 <a id="more"></a>
+<h2 id="u4E00_u3001_u5F00_u6E90_u9879_u76EE_OkHttp"><a href="#u4E00_u3001_u5F00_u6E90_u9879_u76EE_OkHttp" class="headerlink" title="一、开源项目 OkHttp"></a>一、开源项目 OkHttp</h2><p>在Android、Java开发领域中，相信大家都听过或者在使用Square家大名鼎鼎的网络请求库——<a href="https://github.com/square/okhttp" target="_blank" rel="external">OkHttp</a>——<a href="https://github.com/square/okhttp" target="_blank" rel="external">https://github.com/square/okhttp</a> ，当前多数著名的开源项目如 <a href="https://github.com/facebook/fresco" target="_blank" rel="external">Fresco</a>、<a href="https://github.com/bumptech/glide" target="_blank" rel="external">Glide</a>、 <a href="https://github.com/square/picasso" target="_blank" rel="external">Picasso</a>、 <a href="https://github.com/square/retrofit" target="_blank" rel="external">Retrofit</a>都在使用OkHttp，这足以说明其质量，而且该项目仍处在<a href="https://github.com/square/okhttp/commits/master" target="_blank" rel="external">不断维护中</a>。</p>
 <h2 id="u4E8C_u3001_u95EE_u9898"><a href="#u4E8C_u3001_u95EE_u9898" class="headerlink" title="二、问题"></a>二、问题</h2><p>在分析okhttp源码之前，我想先提出一个问题，如果我们自己来设计一个网络请求库，这个库应该长什么样子？大致是什么结构呢？</p>
 <p>下面我和大家一起来构建一个网络请求库，并在其中融入okhttp中核心的设计思想，希望借此让读者感受并学习到okhttp中的精华之处，而非仅限于了解其实现。</p>
 <p>笔者相信，如果你能耐心阅读完本篇，不仅能对http协议有进一步理解，更能够学习到世界级项目的思维精华，提高自身思维方式。</p>
@@ -408,9 +399,8 @@
 <p>如果有问题欢迎联系我。</p>
 <p>谢谢！</p>
 <p>wingjay</p>
-<p>欢迎各位关注<br><a href="https://github.com/wingjay" target="_blank" rel="external">我的Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br>和<br><a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">我的简书</a>: <a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/da333fd63fe5/latest_articles</a><br>和<br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a><br>如果有问题，可以给我留言或发邮件<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x79;&#x69;&#x6e;&#x6a;&#105;&#101;&#115;&#104;&#x40;&#x31;&#x32;&#x36;&#46;&#99;&#x6f;&#x6d;">&#x79;&#x69;&#x6e;&#x6a;&#105;&#101;&#115;&#104;&#x40;&#x31;&#x32;&#x36;&#46;&#99;&#x6f;&#x6d;</a></p>
+<p>欢迎各位关注<br><a href="https://github.com/wingjay" target="_blank" rel="external">我的Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br>和<br><a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">我的简书</a>: <a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/da333fd63fe5/latest_articles</a><br>和<br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a><br>如果有问题，可以给我留言或发邮件<a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#121;&#105;&#110;&#106;&#105;&#x65;&#115;&#104;&#x40;&#x31;&#x32;&#x36;&#x2e;&#99;&#x6f;&#109;">&#121;&#105;&#110;&#106;&#105;&#x65;&#115;&#104;&#x40;&#x31;&#x32;&#x36;&#x2e;&#99;&#x6f;&#109;</a></p>
 <p><img src="https://avatars0.githubusercontent.com/u/9619875?v=3&amp;s=460" alt=""></p>
-<p><img src="/img/打赏.JPG" alt=""></p>
 </span>
       
     </div>
