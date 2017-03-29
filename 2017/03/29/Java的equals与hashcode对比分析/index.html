@@ -51,19 +51,16 @@
 
 
 
-<meta name="description" content="在阅读《Effective Java》第3章里读到了关于 equals() 和 hashcode() 的一些介绍，这两个方法是很多Java程序员容易弄混的，因此本文针对这两个方法的用法和具体实现来做一些介绍。
-equals() 与 hashcode() 的用处？我们一般用equals()来比较两个对象的逻辑意义上的值是否相同。举个例子：12345class Person &amp;#123;    Str">
+<meta name="description" content="在阅读《Effective Java》第3章里读到了关于 equals() 和 hashcode() 的一些介绍，这两个方法是很多Java程序员容易弄混的，因此本文针对这两个方法的用法和具体实现来做一些介绍。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java的equals与hashcode对比分析">
 <meta property="og:url" content="http://wingjay.com/2017/03/29/Java的equals与hashcode对比分析/index.html">
 <meta property="og:site_name" content="wingjay">
-<meta property="og:description" content="在阅读《Effective Java》第3章里读到了关于 equals() 和 hashcode() 的一些介绍，这两个方法是很多Java程序员容易弄混的，因此本文针对这两个方法的用法和具体实现来做一些介绍。
-equals() 与 hashcode() 的用处？我们一般用equals()来比较两个对象的逻辑意义上的值是否相同。举个例子：12345class Person &amp;#123;    Str">
-<meta property="og:updated_time" content="2017-03-29T14:59:25.000Z">
+<meta property="og:description" content="在阅读《Effective Java》第3章里读到了关于 equals() 和 hashcode() 的一些介绍，这两个方法是很多Java程序员容易弄混的，因此本文针对这两个方法的用法和具体实现来做一些介绍。">
+<meta property="og:updated_time" content="2017-03-29T15:00:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java的equals与hashcode对比分析">
-<meta name="twitter:description" content="在阅读《Effective Java》第3章里读到了关于 equals() 和 hashcode() 的一些介绍，这两个方法是很多Java程序员容易弄混的，因此本文针对这两个方法的用法和具体实现来做一些介绍。
-equals() 与 hashcode() 的用处？我们一般用equals()来比较两个对象的逻辑意义上的值是否相同。举个例子：12345class Person &amp;#123;    Str">
+<meta name="twitter:description" content="在阅读《Effective Java》第3章里读到了关于 equals() 和 hashcode() 的一些介绍，这两个方法是很多Java程序员容易弄混的，因此本文针对这两个方法的用法和具体实现来做一些介绍。">
 
 
 
@@ -291,7 +288,10 @@ equals() 与 hashcode() 的用处？我们一般用equals()来比较两个对象
       
 
       
-        <span itemprop="articleBody"><p>在阅读《Effective Java》第3章里读到了关于 equals() 和 hashcode() 的一些介绍，这两个方法是很多Java程序员容易弄混的，因此本文针对这两个方法的用法和具体实现来做一些介绍。</p>
+        <span itemprop="articleBody"><blockquote>
+<p>在阅读《Effective Java》第3章里读到了关于 equals() 和 hashcode() 的一些介绍，这两个方法是很多Java程序员容易弄混的，因此本文针对这两个方法的用法和具体实现来做一些介绍。</p>
+</blockquote>
+<a id="more"></a>
 <h2 id="equals_28_29__u4E0E_hashcode_28_29__u7684_u7528_u5904_uFF1F"><a href="#equals_28_29__u4E0E_hashcode_28_29__u7684_u7528_u5904_uFF1F" class="headerlink" title="equals() 与 hashcode() 的用处？"></a>equals() 与 hashcode() 的用处？</h2><p>我们一般用<code>equals()</code>来比较两个对象的<code>逻辑意义</code>上的值是否相同。举个例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">long</span> id;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>我们现在有两个Person的对象，person1 和person2，那么什么时候这两个是相等的呢？对于两个人而言，我们认为如果他们俩名字、年龄和ID都完全一样，那么就是同一个人。也就是说，如果<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">person1<span class="class">.name</span> = person2<span class="class">.name</span></span><br><span class="line">person1<span class="class">.age</span> = person2<span class="class">.age</span></span><br><span class="line">person1<span class="class">.id</span> = person2.id</span><br></pre></td></tr></table></figure></p>
 <p>那么我们就认为 <code>person1.equals(person2)=true</code>。这就是表示equals是指二者逻辑意义上相等即可。</p>
