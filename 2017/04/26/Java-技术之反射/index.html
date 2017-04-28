@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="wingjay">
 <meta property="og:description" content="关于Java反射机制的文章很多，这次换种方式来讲解反射的作用。
 本文涉及到的知识点：class.getDeclaredXXX()、XXX.getModifiers()、method.getReturnType()、method.getParameterTypes()、method.isAnnotationPresent(XXX.class)、Modifier.isStatic(method.get">
-<meta property="og:updated_time" content="2017-04-26T16:35:26.000Z">
+<meta property="og:updated_time" content="2017-04-28T02:46:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 技术之反射">
 <meta name="twitter:description" content="关于Java反射机制的文章很多，这次换种方式来讲解反射的作用。
@@ -294,6 +294,7 @@
         <span itemprop="articleBody"><blockquote>
 <p>关于Java反射机制的文章很多，这次换种方式来讲解反射的作用。</p>
 <p>本文涉及到的知识点：<code>class.getDeclaredXXX()</code>、<code>XXX.getModifiers()</code>、<code>method.getReturnType()</code>、<code>method.getParameterTypes()</code>、<code>method.isAnnotationPresent(XXX.class)</code>、<code>Modifier.isStatic(method.getModifiers())</code> 和 <code>constructor.newInstance(XX)</code></p>
+<p>本文涉及代码：<a href="https://github.com/wingjay/HelloJava/blob/master/data-structure/src/reflection/ForArticle.java" target="_blank" rel="external">https://github.com/wingjay/HelloJava/blob/master/data-structure/src/reflection/ForArticle.java</a>   </p>
 </blockquote>
 <a id="more"></a>
 <h2 id="u5148_u6765_u770B_u4E00_u4E2A_u719F_u6089_u7684_Class"><a href="#u5148_u6765_u770B_u4E00_u4E2A_u719F_u6089_u7684_Class" class="headerlink" title="先来看一个熟悉的 Class"></a>先来看一个熟悉的 Class</h2><p>首先，简单来说，反射就是在运行时可以获取任意 <code>Class</code> 或 <code>Object</code> 内部所有成员属性，如成员变量、成员方法、构造函数和 Annotation。</p>

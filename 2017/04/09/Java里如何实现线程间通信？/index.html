@@ -52,18 +52,21 @@
 
 
 <meta name="description" content="正常情况下，每个子线程完成各自的任务就可以结束了。不过有的时候，我们希望多个线程协同工作来完成某个任务，这时就涉及到了线程间通信了。
-本文涉及到的知识点：thread.join(), object.wait(), object.notify(), CountdownLatch, CyclicBarrier, FutureTask, Callable 等。">
+本文涉及到的知识点：thread.join(), object.wait(), object.notify(), CountdownLatch, CyclicBarrier, FutureTask, Callable 等。
+本文涉及代码：https://github">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java里如何实现线程间通信？">
 <meta property="og:url" content="http://wingjay.com/2017/04/09/Java里如何实现线程间通信？/index.html">
 <meta property="og:site_name" content="wingjay">
 <meta property="og:description" content="正常情况下，每个子线程完成各自的任务就可以结束了。不过有的时候，我们希望多个线程协同工作来完成某个任务，这时就涉及到了线程间通信了。
-本文涉及到的知识点：thread.join(), object.wait(), object.notify(), CountdownLatch, CyclicBarrier, FutureTask, Callable 等。">
-<meta property="og:updated_time" content="2017-04-15T06:45:05.000Z">
+本文涉及到的知识点：thread.join(), object.wait(), object.notify(), CountdownLatch, CyclicBarrier, FutureTask, Callable 等。
+本文涉及代码：https://github">
+<meta property="og:updated_time" content="2017-04-28T02:45:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java里如何实现线程间通信？">
 <meta name="twitter:description" content="正常情况下，每个子线程完成各自的任务就可以结束了。不过有的时候，我们希望多个线程协同工作来完成某个任务，这时就涉及到了线程间通信了。
-本文涉及到的知识点：thread.join(), object.wait(), object.notify(), CountdownLatch, CyclicBarrier, FutureTask, Callable 等。">
+本文涉及到的知识点：thread.join(), object.wait(), object.notify(), CountdownLatch, CyclicBarrier, FutureTask, Callable 等。
+本文涉及代码：https://github">
 
 
 
@@ -293,7 +296,8 @@
       
         <span itemprop="articleBody"><blockquote>
 <p>正常情况下，每个子线程完成各自的任务就可以结束了。不过有的时候，我们希望多个线程协同工作来完成某个任务，这时就涉及到了线程间通信了。</p>
-<p>本文涉及到的知识点：<code>thread.join()</code>, <code>object.wait()</code>, <code>object.notify()</code>, <code>CountdownLatch</code>, <code>CyclicBarrier</code>, <code>FutureTask</code>, <code>Callable</code> 等。<br><a id="more"></a></p>
+<p>本文涉及到的知识点：<code>thread.join()</code>, <code>object.wait()</code>, <code>object.notify()</code>, <code>CountdownLatch</code>, <code>CyclicBarrier</code>, <code>FutureTask</code>, <code>Callable</code> 等。</p>
+<p>本文涉及代码：<a href="https://github.com/wingjay/HelloJava/blob/master/multi-thread/src/ForArticle.java" target="_blank" rel="external">https://github.com/wingjay/HelloJava/blob/master/multi-thread/src/ForArticle.java</a><br><a id="more"></a></p>
 </blockquote>
 <p>下面我从几个例子作为切入点来讲解下 Java 里有哪些方法来实现线程间通信。</p>
 <ul>
