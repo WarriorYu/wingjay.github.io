@@ -61,7 +61,8 @@
 <meta property="og:description" content="正常情况下，每个子线程完成各自的任务就可以结束了。不过有的时候，我们希望多个线程协同工作来完成某个任务，这时就涉及到了线程间通信了。
 本文涉及到的知识点：thread.join(), object.wait(), object.notify(), CountdownLatch, CyclicBarrier, FutureTask, Callable 等。
 本文涉及代码：https://github">
-<meta property="og:updated_time" content="2017-04-28T02:45:38.000Z">
+<meta property="og:image" content="https://avatars0.githubusercontent.com/u/9619875?v=3&s=460">
+<meta property="og:updated_time" content="2017-04-28T08:46:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java里如何实现线程间通信？">
 <meta name="twitter:description" content="正常情况下，每个子线程完成各自的任务就可以结束了。不过有的时候，我们希望多个线程协同工作来完成某个任务，这时就涉及到了线程间通信了。
@@ -392,6 +393,10 @@
 <p>这里我们可以学到，通过 <code>FutureTask</code> 和 <code>Callable</code> 可以直接在主线程获得子线程的运算结果，只不过需要阻塞主线程。当然，如果不希望阻塞主线程，可以考虑利用 <code>ExecutorService</code>，把 <code>FutureTask</code> 放到线程池去管理执行。</p>
 <h2 id="u5C0F_u7ED3"><a href="#u5C0F_u7ED3" class="headerlink" title="小结"></a>小结</h2><p>多线程是现代语言的共同特性，而线程间通信、线程同步、线程安全是很重要的话题。本文针对 Java 的线程间通信进行了大致的讲解，后续还会对线程同步、线程安全进行讲解。</p>
 <p>谢谢。</p>
+<p>wingjay</p>
+<p><a href="https://github.com/wingjay" target="_blank" rel="external">我的Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a></p>
+<p>如果有问题，可以给我留言或发邮件<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;&#58;&#121;&#105;&#110;&#106;&#105;&#101;&#115;&#x68;&#64;&#x31;&#x32;&#54;&#46;&#x63;&#111;&#109;">&#121;&#105;&#110;&#106;&#105;&#101;&#115;&#x68;&#64;&#x31;&#x32;&#54;&#46;&#x63;&#111;&#109;</a></p>
+<p><img src="https://avatars0.githubusercontent.com/u/9619875?v=3&amp;s=460" alt=""></p>
 </span>
       
     </div>
