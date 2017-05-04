@@ -52,22 +52,21 @@
 
 
 <meta name="description" content="为什么要了解注解 Annotation注解这种语法本身很有意思，当前很多流行库如 Dagger、ButterKnife等都是基于注解这种语法。
-熟练使用注解，既能让你的代码变得简洁易读，动态运行时执行你想要的操作，还能帮你生成代码，省去重复代码写作。
-注解的生命周期与修饰对象对于 Java 代码从编写到运行有三个时期：代码编辑；编译成 .class 文件；读取到 JVM 运行。针对这三个时期有三种">
+熟练使用注解，既能让你的代码变得简洁易读，动态运行时执行你想要的操作，还能帮你生成代码，省去重复代码写作。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 技术之注解 Annotation">
 <meta property="og:url" content="http://wingjay.com/2017/05/03/Java-技术之注解-Annotation/index.html">
 <meta property="og:site_name" content="wingjay">
 <meta property="og:description" content="为什么要了解注解 Annotation注解这种语法本身很有意思，当前很多流行库如 Dagger、ButterKnife等都是基于注解这种语法。
-熟练使用注解，既能让你的代码变得简洁易读，动态运行时执行你想要的操作，还能帮你生成代码，省去重复代码写作。
-注解的生命周期与修饰对象对于 Java 代码从编写到运行有三个时期：代码编辑；编译成 .class 文件；读取到 JVM 运行。针对这三个时期有三种">
+熟练使用注解，既能让你的代码变得简洁易读，动态运行时执行你想要的操作，还能帮你生成代码，省去重复代码写作。">
+<meta property="og:image" content="http://wingjay.com/img/annotation/warning.png">
+<meta property="og:image" content="http://wingjay.com/img/annotation/no-warning.png">
 <meta property="og:image" content="https://avatars0.githubusercontent.com/u/9619875?v=3&s=460">
-<meta property="og:updated_time" content="2017-05-03T16:05:18.000Z">
+<meta property="og:updated_time" content="2017-05-04T00:27:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 技术之注解 Annotation">
 <meta name="twitter:description" content="为什么要了解注解 Annotation注解这种语法本身很有意思，当前很多流行库如 Dagger、ButterKnife等都是基于注解这种语法。
-熟练使用注解，既能让你的代码变得简洁易读，动态运行时执行你想要的操作，还能帮你生成代码，省去重复代码写作。
-注解的生命周期与修饰对象对于 Java 代码从编写到运行有三个时期：代码编辑；编译成 .class 文件；读取到 JVM 运行。针对这三个时期有三种">
+熟练使用注解，既能让你的代码变得简洁易读，动态运行时执行你想要的操作，还能帮你生成代码，省去重复代码写作。">
 
 
 
@@ -297,6 +296,7 @@
       
         <span itemprop="articleBody"><h2 id="u4E3A_u4EC0_u4E48_u8981_u4E86_u89E3_u6CE8_u89E3_Annotation"><a href="#u4E3A_u4EC0_u4E48_u8981_u4E86_u89E3_u6CE8_u89E3_Annotation" class="headerlink" title="为什么要了解注解 Annotation"></a>为什么要了解注解 Annotation</h2><p><code>注解</code>这种语法本身很有意思，当前很多流行库如 <code>Dagger</code>、<code>ButterKnife</code>等都是基于注解这种语法。</p>
 <p>熟练使用<code>注解</code>，既能让你的代码变得简洁易读，动态运行时执行你想要的操作，还能帮你生成代码，省去重复代码写作。</p>
+<a id="more"></a>
 <h2 id="u6CE8_u89E3_u7684_u751F_u547D_u5468_u671F_u4E0E_u4FEE_u9970_u5BF9_u8C61"><a href="#u6CE8_u89E3_u7684_u751F_u547D_u5468_u671F_u4E0E_u4FEE_u9970_u5BF9_u8C61" class="headerlink" title="注解的生命周期与修饰对象"></a>注解的生命周期与修饰对象</h2><p>对于 Java 代码从编写到运行有三个时期：代码编辑；编译成 <code>.class</code> 文件；读取到 JVM 运行。针对这三个时期有三种 <code>Annotation</code> 对应：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">RetentionPolicy<span class="class">.SOURCE</span>  <span class="comment">// 只在代码编辑期生效</span></span><br><span class="line"></span><br><span class="line">RetentionPolicy<span class="class">.CLASS</span>  <span class="comment">// 在编译期生效，默认值</span></span><br><span class="line"></span><br><span class="line">RetentionPolicy<span class="class">.RUNTIME</span> <span class="comment">// 在代码运行时生效</span></span><br></pre></td></tr></table></figure></p>
 <p>除了生命周期，我们还可以指定 <code>Annotation</code> 用来指定的对象，比如修饰方法、类、变量、参数等，例如：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@Annotation</span> </span><br><span class="line">public void <span class="function">getName</span>() &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">@Annotation</span> </span><br><span class="line">String name;</span><br><span class="line"></span><br><span class="line"><span class="tag">public</span> <span class="tag">void</span> <span class="tag">setName</span>(<span class="variable">@Annotation</span> String name) &#123;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>Java 提供了 <code>@Target</code> 这个<code>元注解</code>来指定某个 <code>Annotation</code> 修饰的目标对象。</p>
@@ -307,6 +307,7 @@
 <p>比较常用的有 <code>SuppressWarnings</code>，<code>Override</code>。</p>
 <p><code>SuppressWarnings</code>是抑制编译器生成警告信息，比如我们调用了某个被标记为 <code>Deprecated</code> 的方法，这时编译器会发出警告，而我们又不得不使用这个方法时，就可以用<code>@SuppressWarnings</code>来抑制这个警告。<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Retention(RetentionPolicy.SOURCE)</span><br><span class="line"><span class="keyword">public</span> @<span class="keyword">interface</span> <span class="title">SuppressWarnings</span> &#123;</span><br><span class="line">    String[] <span class="keyword">value</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>其作用如下图，<code>@SuppressWarnings(&quot;deprecation&quot;)</code> 可以把 <code>deprecation</code> 相关的警告给抑制掉。</p>
+<p><img src="/img/annotation/warning.png" alt="warning"><br><img src="/img/annotation/no-warning.png" alt="no-warning"></p>
 <p><code>Override</code>用来标记重写父类某个方法，万一不小心写错方法名或者父类该方法发生改动，IDE 就会发出警告。<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@Retention</span>(RetentionPolicy.SOURCE)</span><br><span class="line">public <span class="variable">@interface</span> Override &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>当然，对于开发者而言，这一类的 Annotation 我们很少自定义，更重要的是学会使用。其实 Java 和 Android 里提供了非常多有用的静态检查的 Annotation，有助于提高代码的正确率，省去人工的代码检查，方便代码给他人使用。</p>
 <p>之后的文章我会具体介绍 Android 内部[<code>support-annotations</code>]很多有趣有用的 Annotation。</p>
@@ -361,7 +362,7 @@
 <p>谢谢。</p>
 <p>wingjay</p>
 <p><a href="https://github.com/wingjay" target="_blank" rel="external">我的Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a></p>
-<p>如果有问题，可以给我留言或发邮件<a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#121;&#105;&#110;&#x6a;&#x69;&#x65;&#115;&#x68;&#64;&#49;&#x32;&#x36;&#x2e;&#99;&#111;&#109;">&#121;&#105;&#110;&#x6a;&#x69;&#x65;&#115;&#x68;&#64;&#49;&#x32;&#x36;&#x2e;&#99;&#111;&#109;</a></p>
+<p>如果有问题，可以给我留言或发邮件<a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x79;&#105;&#x6e;&#106;&#x69;&#x65;&#x73;&#104;&#x40;&#x31;&#50;&#x36;&#46;&#x63;&#x6f;&#109;">&#x79;&#105;&#x6e;&#106;&#x69;&#x65;&#x73;&#104;&#x40;&#x31;&#50;&#x36;&#46;&#x63;&#x6f;&#109;</a></p>
 <p><img src="https://avatars0.githubusercontent.com/u/9619875?v=3&amp;s=460" alt=""></p>
 </span>
       
