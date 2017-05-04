@@ -51,22 +51,25 @@
 
 
 
-<meta name="description" content="为什么要了解注解 Annotation注解这种语法本身很有意思，当前很多流行库如 Dagger、ButterKnife等都是基于注解这种语法。
-熟练使用注解，既能让你的代码变得简洁易读，动态运行时执行你想要的操作，还能帮你生成代码，省去重复代码写作。">
+<meta name="description" content="注解这种语法本身很有意思，当前很多流行库如 Dagger、ButterKnife等都是基于注解这种语法。
+熟练使用注解，既能让你的代码变得简洁易读，动态运行时执行你想要的操作，还能帮你生成代码，省去重复代码写作。
+本文涉及知识点：注解的生命周期，代码编辑时注解，编译时注解代码生成，运行时注解动态反射。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 技术之注解 Annotation">
 <meta property="og:url" content="http://wingjay.com/2017/05/03/Java-技术之注解-Annotation/index.html">
 <meta property="og:site_name" content="wingjay">
-<meta property="og:description" content="为什么要了解注解 Annotation注解这种语法本身很有意思，当前很多流行库如 Dagger、ButterKnife等都是基于注解这种语法。
-熟练使用注解，既能让你的代码变得简洁易读，动态运行时执行你想要的操作，还能帮你生成代码，省去重复代码写作。">
+<meta property="og:description" content="注解这种语法本身很有意思，当前很多流行库如 Dagger、ButterKnife等都是基于注解这种语法。
+熟练使用注解，既能让你的代码变得简洁易读，动态运行时执行你想要的操作，还能帮你生成代码，省去重复代码写作。
+本文涉及知识点：注解的生命周期，代码编辑时注解，编译时注解代码生成，运行时注解动态反射。">
 <meta property="og:image" content="http://wingjay.com/img/annotation/warning.png">
 <meta property="og:image" content="http://wingjay.com/img/annotation/no-warning.png">
 <meta property="og:image" content="https://avatars0.githubusercontent.com/u/9619875?v=3&s=460">
-<meta property="og:updated_time" content="2017-05-04T00:27:11.000Z">
+<meta property="og:updated_time" content="2017-05-04T00:30:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 技术之注解 Annotation">
-<meta name="twitter:description" content="为什么要了解注解 Annotation注解这种语法本身很有意思，当前很多流行库如 Dagger、ButterKnife等都是基于注解这种语法。
-熟练使用注解，既能让你的代码变得简洁易读，动态运行时执行你想要的操作，还能帮你生成代码，省去重复代码写作。">
+<meta name="twitter:description" content="注解这种语法本身很有意思，当前很多流行库如 Dagger、ButterKnife等都是基于注解这种语法。
+熟练使用注解，既能让你的代码变得简洁易读，动态运行时执行你想要的操作，还能帮你生成代码，省去重复代码写作。
+本文涉及知识点：注解的生命周期，代码编辑时注解，编译时注解代码生成，运行时注解动态反射。">
 
 
 
@@ -294,8 +297,11 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="u4E3A_u4EC0_u4E48_u8981_u4E86_u89E3_u6CE8_u89E3_Annotation"><a href="#u4E3A_u4EC0_u4E48_u8981_u4E86_u89E3_u6CE8_u89E3_Annotation" class="headerlink" title="为什么要了解注解 Annotation"></a>为什么要了解注解 Annotation</h2><p><code>注解</code>这种语法本身很有意思，当前很多流行库如 <code>Dagger</code>、<code>ButterKnife</code>等都是基于注解这种语法。</p>
+        <span itemprop="articleBody"><blockquote>
+<p><code>注解</code>这种语法本身很有意思，当前很多流行库如 <code>Dagger</code>、<code>ButterKnife</code>等都是基于注解这种语法。</p>
 <p>熟练使用<code>注解</code>，既能让你的代码变得简洁易读，动态运行时执行你想要的操作，还能帮你生成代码，省去重复代码写作。</p>
+<p>本文涉及知识点：注解的生命周期，代码编辑时注解，编译时注解代码生成，运行时注解动态反射。</p>
+</blockquote>
 <a id="more"></a>
 <h2 id="u6CE8_u89E3_u7684_u751F_u547D_u5468_u671F_u4E0E_u4FEE_u9970_u5BF9_u8C61"><a href="#u6CE8_u89E3_u7684_u751F_u547D_u5468_u671F_u4E0E_u4FEE_u9970_u5BF9_u8C61" class="headerlink" title="注解的生命周期与修饰对象"></a>注解的生命周期与修饰对象</h2><p>对于 Java 代码从编写到运行有三个时期：代码编辑；编译成 <code>.class</code> 文件；读取到 JVM 运行。针对这三个时期有三种 <code>Annotation</code> 对应：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">RetentionPolicy<span class="class">.SOURCE</span>  <span class="comment">// 只在代码编辑期生效</span></span><br><span class="line"></span><br><span class="line">RetentionPolicy<span class="class">.CLASS</span>  <span class="comment">// 在编译期生效，默认值</span></span><br><span class="line"></span><br><span class="line">RetentionPolicy<span class="class">.RUNTIME</span> <span class="comment">// 在代码运行时生效</span></span><br></pre></td></tr></table></figure></p>
 <p>除了生命周期，我们还可以指定 <code>Annotation</code> 用来指定的对象，比如修饰方法、类、变量、参数等，例如：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@Annotation</span> </span><br><span class="line">public void <span class="function">getName</span>() &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">@Annotation</span> </span><br><span class="line">String name;</span><br><span class="line"></span><br><span class="line"><span class="tag">public</span> <span class="tag">void</span> <span class="tag">setName</span>(<span class="variable">@Annotation</span> String name) &#123;&#125;</span><br></pre></td></tr></table></figure></p>
@@ -362,7 +368,7 @@
 <p>谢谢。</p>
 <p>wingjay</p>
 <p><a href="https://github.com/wingjay" target="_blank" rel="external">我的Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a></p>
-<p>如果有问题，可以给我留言或发邮件<a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x79;&#105;&#x6e;&#106;&#x69;&#x65;&#x73;&#104;&#x40;&#x31;&#50;&#x36;&#46;&#x63;&#x6f;&#109;">&#x79;&#105;&#x6e;&#106;&#x69;&#x65;&#x73;&#104;&#x40;&#x31;&#50;&#x36;&#46;&#x63;&#x6f;&#109;</a></p>
+<p>如果有问题，可以给我留言或发邮件<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#121;&#105;&#x6e;&#106;&#105;&#x65;&#x73;&#x68;&#64;&#x31;&#50;&#x36;&#46;&#99;&#111;&#109;">&#121;&#105;&#x6e;&#106;&#105;&#x65;&#x73;&#x68;&#64;&#x31;&#50;&#x36;&#46;&#99;&#111;&#109;</a></p>
 <p><img src="https://avatars0.githubusercontent.com/u/9619875?v=3&amp;s=460" alt=""></p>
 </span>
       
@@ -533,7 +539,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E3A_u4EC0_u4E48_u8981_u4E86_u89E3_u6CE8_u89E3_Annotation"><span class="nav-number">1.</span> <span class="nav-text">为什么要了解注解 Annotation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6CE8_u89E3_u7684_u751F_u547D_u5468_u671F_u4E0E_u4FEE_u9970_u5BF9_u8C61"><span class="nav-number">2.</span> <span class="nav-text">注解的生命周期与修饰对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-__u4EE3_u7801_u7F16_u8F91_u65F6_u6CE8_u89E3"><span class="nav-number">3.</span> <span class="nav-text">1. 代码编辑时注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-__u8FD0_u884C_u65F6_u6CE8_u89E3"><span class="nav-number">4.</span> <span class="nav-text">2. 运行时注解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Alias__u529F_u80FD_u5B9E_u73B0_uFF1A_u8BBE_u7F6E_u53D8_u91CF_u522B_u540D_u5E76_u5728_u8FD0_u884C_u65F6_u6253_u5370_u522B_u540D"><span class="nav-number">4.0.1.</span> <span class="nav-text">Alias 功能实现：设置变量别名并在运行时打印别名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Test_u529F_u80FD_u5B9E_u73B0_uFF1A_u8C03_u7528_u6240_u6709_u88ABTest_u6807_u8BB0_u7684_u65B9_u6CD5_uFF0C_u5F97_u51FA_u6D4B_u8BD5_u901A_u8FC7_u7387"><span class="nav-number">4.0.2.</span> <span class="nav-text">Test功能实现：调用所有被Test标记的方法，得出测试通过率</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-__u7F16_u8BD1_u65F6_u6CE8_u89E3"><span class="nav-number">5.</span> <span class="nav-text">3. 编译时注解</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u5B9A_u4E49_@Inject"><span class="nav-number">5.0.0.1.</span> <span class="nav-text">定义 @Inject</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u5B9A_u4E49_Processor__u7C7B"><span class="nav-number">5.0.0.2.</span> <span class="nav-text">定义 Processor 类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u91CD_u5199_Processor__u5185_u90E8_u7684_process__u65B9_u6CD5"><span class="nav-number">5.0.0.3.</span> <span class="nav-text">重写 Processor 内部的 process 方法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5C0F_u7ED3"><span class="nav-number">6.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u6CE8_u89E3_u7684_u751F_u547D_u5468_u671F_u4E0E_u4FEE_u9970_u5BF9_u8C61"><span class="nav-number">1.</span> <span class="nav-text">注解的生命周期与修饰对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-__u4EE3_u7801_u7F16_u8F91_u65F6_u6CE8_u89E3"><span class="nav-number">2.</span> <span class="nav-text">1. 代码编辑时注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-__u8FD0_u884C_u65F6_u6CE8_u89E3"><span class="nav-number">3.</span> <span class="nav-text">2. 运行时注解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Alias__u529F_u80FD_u5B9E_u73B0_uFF1A_u8BBE_u7F6E_u53D8_u91CF_u522B_u540D_u5E76_u5728_u8FD0_u884C_u65F6_u6253_u5370_u522B_u540D"><span class="nav-number">3.0.1.</span> <span class="nav-text">Alias 功能实现：设置变量别名并在运行时打印别名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Test_u529F_u80FD_u5B9E_u73B0_uFF1A_u8C03_u7528_u6240_u6709_u88ABTest_u6807_u8BB0_u7684_u65B9_u6CD5_uFF0C_u5F97_u51FA_u6D4B_u8BD5_u901A_u8FC7_u7387"><span class="nav-number">3.0.2.</span> <span class="nav-text">Test功能实现：调用所有被Test标记的方法，得出测试通过率</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-__u7F16_u8BD1_u65F6_u6CE8_u89E3"><span class="nav-number">4.</span> <span class="nav-text">3. 编译时注解</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u5B9A_u4E49_@Inject"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">定义 @Inject</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u5B9A_u4E49_Processor__u7C7B"><span class="nav-number">4.0.0.2.</span> <span class="nav-text">定义 Processor 类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u91CD_u5199_Processor__u5185_u90E8_u7684_process__u65B9_u6CD5"><span class="nav-number">4.0.0.3.</span> <span class="nav-text">重写 Processor 内部的 process 方法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5C0F_u7ED3"><span class="nav-number">5.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
