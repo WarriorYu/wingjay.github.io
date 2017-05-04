@@ -64,7 +64,7 @@
 <meta property="og:image" content="http://wingjay.com/img/annotation/warning.png">
 <meta property="og:image" content="http://wingjay.com/img/annotation/no-warning.png">
 <meta property="og:image" content="https://avatars0.githubusercontent.com/u/9619875?v=3&s=460">
-<meta property="og:updated_time" content="2017-05-04T00:30:53.000Z">
+<meta property="og:updated_time" content="2017-05-04T01:08:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 技术之注解 Annotation">
 <meta name="twitter:description" content="注解这种语法本身很有意思，当前很多流行库如 Dagger、ButterKnife等都是基于注解这种语法。
@@ -355,7 +355,8 @@
 <p>全部正常打印。其中，由于 <code>testFailure()</code> 的 <code>@Test</code> 里未设置 <code>value()</code>，因此直接打印了它的函数名；针对<code>static</code>方法，直接调用<code>method.invoke(null)</code>；针对<code>private</code>，利用<code>method.setAccessible(true);</code>获取了权限。</p>
 <p>当然这里有一点要注意，我在 <code>invoke method</code> 时，直接使用 <code>method.invoke(object);</code>，没有传任何参数。这是由于我在 <code>UserBean</code> 里写的几个方法都不用传参数。如果需要传参数的话，那就还需要再单独判断是哪个函数，并传递对应的参数进去。</p>
 <h2 id="3-__u7F16_u8BD1_u65F6_u6CE8_u89E3"><a href="#3-__u7F16_u8BD1_u65F6_u6CE8_u89E3" class="headerlink" title="3. 编译时注解"></a>3. 编译时注解</h2><p>当 .java 文件写好了准备进行编译时，我们有另一种 Annotation 可以在这时发挥效果。</p>
-<p>我们知道，Java 源代码编译的过程会对所有的文件进行扫描，而<code>编译时 Annotation</code> 的作用就是<code>在编译过程中生成代码</code>。这里不讲具体例子，大概说明下整体的过程。</p>
+<p>我们知道，Java 源代码编译的过程会对所有的文件进行扫描，而<code>编译时 Annotation</code> 的作用就是<code>在编译过程中生成代码</code>。在 Java 里提供了 apt 工具来处理注解，同时有一套 Mirror API 来描述编译时的程序语义结构，它可以在编译时获取到被注解 Java 元素的信息以方便我们处理。该处理过程的核心是编写注解处理器 <code>AnnotationProcessor</code> 接口。</p>
+<p>大概说明下整体的过程。</p>
 <p>假设我们希望用某个 <code>Annotation</code>：<code>@Inject</code> 来生成一些代码，那么我们要做下面几步：</p>
 <h5 id="u5B9A_u4E49_@Inject"><a href="#u5B9A_u4E49_@Inject" class="headerlink" title="定义 @Inject"></a>定义 @Inject</h5><p>由于它是编译时注解，因此是 <code>RetentionPolicy.CLASS</code>，对象的话就是变量和构造函数，因此得到：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@Retention</span>(RetentionPolicy.CLASS)</span><br><span class="line"><span class="variable">@Target</span>(&#123;ElementType.CONSTRUCTOR, ElementType.FIELD&#125;)</span><br><span class="line">public <span class="variable">@interface</span> Inject &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h5 id="u5B9A_u4E49_Processor__u7C7B"><a href="#u5B9A_u4E49_Processor__u7C7B" class="headerlink" title="定义 Processor 类"></a>定义 Processor 类</h5><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Helper to define the Processor</span></span><br><span class="line"><span class="variable">@AutoService</span>(Processor.class)</span><br><span class="line"><span class="comment">// Define the supported Java source code version</span></span><br><span class="line"><span class="variable">@SupportedSourceVersion</span>(SourceVersion.RELEASE_7)</span><br><span class="line"><span class="comment">// Define which annotation you want to process</span></span><br><span class="line"><span class="variable">@SupportedAnnotationTypes</span>(<span class="string">"com.wingjay.annotation.Inject"</span>)</span><br><span class="line">public class MyProcessor extends AbstractProcessor &#123;  ...  &#125;</span><br></pre></td></tr></table></figure>
@@ -368,7 +369,7 @@
 <p>谢谢。</p>
 <p>wingjay</p>
 <p><a href="https://github.com/wingjay" target="_blank" rel="external">我的Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a></p>
-<p>如果有问题，可以给我留言或发邮件<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#121;&#105;&#x6e;&#106;&#105;&#x65;&#x73;&#x68;&#64;&#x31;&#50;&#x36;&#46;&#99;&#111;&#109;">&#121;&#105;&#x6e;&#106;&#105;&#x65;&#x73;&#x68;&#64;&#x31;&#50;&#x36;&#46;&#99;&#111;&#109;</a></p>
+<p>如果有问题，可以给我留言或发邮件<a href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#x3a;&#121;&#x69;&#x6e;&#x6a;&#x69;&#x65;&#115;&#x68;&#x40;&#49;&#x32;&#x36;&#46;&#x63;&#x6f;&#x6d;">&#121;&#x69;&#x6e;&#x6a;&#x69;&#x65;&#115;&#x68;&#x40;&#49;&#x32;&#x36;&#46;&#x63;&#x6f;&#x6d;</a></p>
 <p><img src="https://avatars0.githubusercontent.com/u/9619875?v=3&amp;s=460" alt=""></p>
 </span>
       
