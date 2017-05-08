@@ -51,18 +51,27 @@
 
 
 
-<meta name="description" content="类加载机制是 Java 语言的一大亮点，使得 Java 类可以被动态加载到 Java 虚拟机中。这次我们抛开术语和概念，从例子入手，由浅入深地讲解 Java 的类加载机制。本文涉及知识点：双亲委托机制、BootstrapClassLoader、ExtClassLoader、AppClassLoader、自定义网络类加载器等文章涉及代码：https://github.com/wingjay/Hell">
+<meta name="description" content="类加载机制是 Java 语言的一大亮点，使得 Java 类可以被动态加载到 Java 虚拟机中。
+这次我们抛开术语和概念，从例子入手，由浅入深地讲解 Java 的类加载机制。
+本文涉及知识点：双亲委托机制、BootstrapClassLoader、ExtClassLoader、AppClassLoader、自定义网络类加载器等
+文章涉及代码：https://github.com/wingjay/H">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 技术之类加载机制">
 <meta property="og:url" content="http://wingjay.com/2017/05/08/java_classloader/index.html">
 <meta property="og:site_name" content="wingjay">
-<meta property="og:description" content="类加载机制是 Java 语言的一大亮点，使得 Java 类可以被动态加载到 Java 虚拟机中。这次我们抛开术语和概念，从例子入手，由浅入深地讲解 Java 的类加载机制。本文涉及知识点：双亲委托机制、BootstrapClassLoader、ExtClassLoader、AppClassLoader、自定义网络类加载器等文章涉及代码：https://github.com/wingjay/Hell">
+<meta property="og:description" content="类加载机制是 Java 语言的一大亮点，使得 Java 类可以被动态加载到 Java 虚拟机中。
+这次我们抛开术语和概念，从例子入手，由浅入深地讲解 Java 的类加载机制。
+本文涉及知识点：双亲委托机制、BootstrapClassLoader、ExtClassLoader、AppClassLoader、自定义网络类加载器等
+文章涉及代码：https://github.com/wingjay/H">
 <meta property="og:image" content="http://wingjay.com/img/classloader/order.png">
 <meta property="og:image" content="https://avatars0.githubusercontent.com/u/9619875?v=3&s=460">
-<meta property="og:updated_time" content="2017-05-08T15:59:41.000Z">
+<meta property="og:updated_time" content="2017-05-08T16:00:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 技术之类加载机制">
-<meta name="twitter:description" content="类加载机制是 Java 语言的一大亮点，使得 Java 类可以被动态加载到 Java 虚拟机中。这次我们抛开术语和概念，从例子入手，由浅入深地讲解 Java 的类加载机制。本文涉及知识点：双亲委托机制、BootstrapClassLoader、ExtClassLoader、AppClassLoader、自定义网络类加载器等文章涉及代码：https://github.com/wingjay/Hell">
+<meta name="twitter:description" content="类加载机制是 Java 语言的一大亮点，使得 Java 类可以被动态加载到 Java 虚拟机中。
+这次我们抛开术语和概念，从例子入手，由浅入深地讲解 Java 的类加载机制。
+本文涉及知识点：双亲委托机制、BootstrapClassLoader、ExtClassLoader、AppClassLoader、自定义网络类加载器等
+文章涉及代码：https://github.com/wingjay/H">
 
 
 
@@ -306,7 +315,10 @@
 
       
         <span itemprop="articleBody"><blockquote>
-<p>类加载机制是 Java 语言的一大亮点，使得 Java 类可以被动态加载到 Java 虚拟机中。<br>这次我们抛开术语和概念，从例子入手，由浅入深地讲解 Java 的类加载机制。<br>本文涉及知识点：双亲委托机制、BootstrapClassLoader、ExtClassLoader、AppClassLoader、自定义网络类加载器等<br>文章涉及代码：<a href="https://github.com/wingjay/HelloJava/blob/master/common/src/classloader/HelloClassLoader.java" target="_blank" rel="external">https://github.com/wingjay/HelloJava/blob/master/common/src/classloader/HelloClassLoader.java</a></p>
+<p>类加载机制是 Java 语言的一大亮点，使得 Java 类可以被动态加载到 Java 虚拟机中。</p>
+<p>这次我们抛开术语和概念，从例子入手，由浅入深地讲解 Java 的类加载机制。</p>
+<p>本文涉及知识点：双亲委托机制、BootstrapClassLoader、ExtClassLoader、AppClassLoader、自定义网络类加载器等</p>
+<p>文章涉及代码：<a href="https://github.com/wingjay/HelloJava/blob/master/common/src/classloader/HelloClassLoader.java" target="_blank" rel="external">https://github.com/wingjay/HelloJava/blob/master/common/src/classloader/HelloClassLoader.java</a></p>
 </blockquote>
 <a id="more"></a>
 <h2 id="u4EC0_u4E48_u662F_Java__u7C7B_u52A0_u8F7D_u673A_u5236_3F"><a href="#u4EC0_u4E48_u662F_Java__u7C7B_u52A0_u8F7D_u673A_u5236_3F" class="headerlink" title="什么是 Java 类加载机制?"></a>什么是 Java 类加载机制?</h2><p>Java 虚拟机一般使用 Java 类的流程为：首先将开发者编写的 Java 源代码（.java文件）编译成 Java 字节码（.class文件），然后类加载器会读取这个 .class 文件，并转换成 java.lang.Class 的实例。有了该 Class 实例后，Java 虚拟机可以利用 newInstance 之类的方法创建其真正对象了。</p>
