@@ -57,10 +57,7 @@
 什么是堆内存？
 什么是垃圾？
 有哪些方法回收这些垃圾？
-什么是分代回收机制？
-
-
-什么是 Java 堆内存堆是在 JVM 启动时创建的，主要用来维护">
+什么是分代回收机制？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 技术之垃圾回收机制">
 <meta property="og:url" content="http://wingjay.com/2017/05/24/Java-技术之垃圾回收机制/index.html">
@@ -71,10 +68,7 @@
 什么是堆内存？
 什么是垃圾？
 有哪些方法回收这些垃圾？
-什么是分代回收机制？
-
-
-什么是 Java 堆内存堆是在 JVM 启动时创建的，主要用来维护">
+什么是分代回收机制？">
 <meta property="og:image" content="http://wingjay.com/img/gc/reachable.JPG">
 <meta property="og:image" content="http://wingjay.com/img/gc/garbage.png">
 <meta property="og:image" content="http://wingjay.com/img/gc/mark-sweep.png">
@@ -83,7 +77,7 @@
 <meta property="og:image" content="http://wingjay.com/img/gc/young_1.png">
 <meta property="og:image" content="http://wingjay.com/img/gc/young_2.png">
 <meta property="og:image" content="http://wingjay.com/img/gc/young_3.png">
-<meta property="og:updated_time" content="2017-05-30T14:54:51.000Z">
+<meta property="og:updated_time" content="2017-05-30T15:05:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 技术之垃圾回收机制">
 <meta name="twitter:description" content="垃圾回收机制是 Java 非常重要的特性之一，也是面试题的常客。它让开发者无需关注空间的创建和释放，而是以守护进程的形式在后台自动回收垃圾。这样做不仅提高了开发效率，更改善了内存的使用状况。
@@ -92,10 +86,7 @@
 什么是堆内存？
 什么是垃圾？
 有哪些方法回收这些垃圾？
-什么是分代回收机制？
-
-
-什么是 Java 堆内存堆是在 JVM 启动时创建的，主要用来维护">
+什么是分代回收机制？">
 
 
 
@@ -348,6 +339,7 @@
 <li>什么是分代回收机制？</li>
 </ul>
 </blockquote>
+<a id="more"></a>
 <h2 id="u4EC0_u4E48_u662F_Java__u5806_u5185_u5B58"><a href="#u4EC0_u4E48_u662F_Java__u5806_u5185_u5B58" class="headerlink" title="什么是 Java 堆内存"></a>什么是 Java 堆内存</h2><p>堆是在 JVM 启动时创建的，主要用来维护运行时数据，如运行过程中创建的对象和数组都是基于这块内存空间。Java 堆是非常重要的元素，如果我们动态创建的对象没有得到及时回收，持续堆积，最后会导致堆空间被占满，内存溢出。</p>
 <p>因此，Java 提供了一种垃圾回收机制，在后台创建一个守护进程。该进程会在内存紧张的时候自动跳出来，把堆空间的垃圾全部进行回收，从而保证程序的正常运行。</p>
 <h2 id="u90A3_u4EC0_u4E48_u662F_u5783_u573E_u5462_uFF1F"><a href="#u90A3_u4EC0_u4E48_u662F_u5783_u573E_u5462_uFF1F" class="headerlink" title="那什么是垃圾呢？"></a>那什么是垃圾呢？</h2><p>所谓“垃圾”，就是指所有不再存活的对象。常见的判断是否存活有两种方法：引用计数法和可达性分析。</p>
