@@ -310,11 +310,8 @@
             
           
 
-          <span id="busuanzi_container_page_pv">
-            &nbsp; | &nbsp;
-            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-          </span>
-
+          
+          
           
 
         </div>
@@ -347,7 +344,449 @@
       
 
       
+
       
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/24/Java-技术之垃圾回收机制/" itemprop="url">
+                  Java 技术之垃圾回收机制
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2017-05-24T21:19:26+08:00" content="2017-05-24">
+              2017-05-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/深入理解Java技术/" itemprop="url" rel="index">
+                    <span itemprop="name">深入理解Java技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>垃圾回收机制是 Java 非常重要的特性之一，也是面试题的常客。它让开发者无需关注空间的创建和释放，而是以守护进程的形式在后台自动回收垃圾。这样做不仅提高了开发效率，更改善了内存的使用状况。</p>
+<p>今天本文来对垃圾回收机制进行讲解，主要涉及下面几个问题：</p>
+<ul>
+<li>什么是堆内存？</li>
+<li>什么是垃圾？</li>
+<li>有哪些方法回收这些垃圾？</li>
+<li>什么是分代回收机制？</li>
+</ul>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/05/24/Java-技术之垃圾回收机制/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/14/dig_into_leakcanary/" itemprop="url">
+                  带你学开源项目：LeakCanary- 如何检测 Activity 是否泄漏
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2017-05-14T19:29:33+08:00" content="2017-05-14">
+              2017-05-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/带你学开源项目/" itemprop="url" rel="index">
+                    <span itemprop="name">带你学开源项目</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>OOM 是 Android 开发中常见的问题，而内存泄漏往往是罪魁祸首。</p>
+<p>为了简单方便的检测内存泄漏，Square 开源了 <a href="https://github.com/square/leakcanary"><code>LeakCanary</code></a>，它可以实时监测 Activity 是否发生了泄漏，一旦发现就会自动弹出提示及相关的泄漏信息供分析。</p>
+<p>本文的目的是试图通过分析 <code>LeakCanary</code> 源码来探讨它的 Activity 泄漏检测机制。</p>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/05/14/dig_into_leakcanary/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/08/java_classloader/" itemprop="url">
+                  Java 技术之类加载机制
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2017-05-08T20:46:38+08:00" content="2017-05-08">
+              2017-05-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/深入理解Java技术/" itemprop="url" rel="index">
+                    <span itemprop="name">深入理解Java技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>类加载机制是 Java 语言的一大亮点，使得 Java 类可以被动态加载到 Java 虚拟机中。</p>
+<p>这次我们抛开术语和概念，从例子入手，由浅入深地讲解 Java 的类加载机制。</p>
+<p>本文涉及知识点：双亲委托机制、BootstrapClassLoader、ExtClassLoader、AppClassLoader、自定义网络类加载器等</p>
+<p>文章涉及代码：<br><a href="https://github.com/wingjay/HelloJava/blob/master/common/src/classloader/HelloClassLoader.java">https://github.com/wingjay/HelloJava/blob/master/common/src/classloader/HelloClassLoader.java</a></p>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/05/08/java_classloader/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/03/Java-技术之注解-Annotation/" itemprop="url">
+                  Java 技术之注解 Annotation
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2017-05-03T10:47:11+08:00" content="2017-05-03">
+              2017-05-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/深入理解Java技术/" itemprop="url" rel="index">
+                    <span itemprop="name">深入理解Java技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p><code>注解</code>这种语法本身很有意思，当前很多流行库如 <code>Dagger</code>、<code>ButterKnife</code>等都是基于注解这种语法。</p>
+<p>熟练使用<code>注解</code>，既能让你的代码变得简洁易读，动态运行时执行你想要的操作，还能帮你生成代码，省去重复代码写作。</p>
+<p>本文涉及知识点：注解的生命周期，代码编辑时注解，编译时注解代码生成，运行时注解动态反射。</p>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/05/03/Java-技术之注解-Annotation/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
       
       
         <div class="post-eof"></div>
@@ -415,11 +854,8 @@
             
           
 
-          <span id="busuanzi_container_page_pv">
-            &nbsp; | &nbsp;
-            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-          </span>
-
+          
+          
           
 
         </div>
@@ -456,7 +892,7 @@
       
 
       
-      
+
       
       
         <div class="post-eof"></div>
@@ -524,11 +960,8 @@
             
           
 
-          <span id="busuanzi_container_page_pv">
-            &nbsp; | &nbsp;
-            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-          </span>
-
+          
+          
           
 
         </div>
@@ -565,7 +998,7 @@
       
 
       
-      
+
       
       
         <div class="post-eof"></div>
@@ -633,11 +1066,8 @@
             
           
 
-          <span id="busuanzi_container_page_pv">
-            &nbsp; | &nbsp;
-            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-          </span>
-
+          
+          
           
 
         </div>
@@ -672,7 +1102,7 @@
       
 
       
-      
+
       
       
         <div class="post-eof"></div>
@@ -740,11 +1170,8 @@
             
           
 
-          <span id="busuanzi_container_page_pv">
-            &nbsp; | &nbsp;
-            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-          </span>
-
+          
+          
           
 
         </div>
@@ -779,7 +1206,7 @@
       
 
       
-      
+
       
       
         <div class="post-eof"></div>
@@ -847,11 +1274,8 @@
             
           
 
-          <span id="busuanzi_container_page_pv">
-            &nbsp; | &nbsp;
-            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-          </span>
-
+          
+          
           
 
         </div>
@@ -886,7 +1310,7 @@
       
 
       
-      
+
       
       
         <div class="post-eof"></div>
@@ -1036,8 +1460,12 @@
   </a>
 </div>
 
+<span>
+  这都被你发现了，欢迎 wingjay.com 的第 <span id="busuanzi_value_site_uv"></span> 个小伙伴
+</span>
+<br>
 <span id="busuanzi_container_site_pv">
-    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
 </span>
 <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
