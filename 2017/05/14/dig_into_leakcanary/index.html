@@ -51,6 +51,7 @@
 
 
 
+
 <meta name="description" content="OOM 是 Android 开发中常见的问题，而内存泄漏往往是罪魁祸首。
 为了简单方便的检测内存泄漏，Square 开源了 LeakCanary，它可以实时监测 Activity 是否发生了泄漏，一旦发现就会自动弹出提示及相关的泄漏信息供分析。
 本文的目的是试图通过分析 LeakCanary 源码来探讨它的 Activity 泄漏检测机制。">
@@ -296,13 +297,6 @@
 
           
             
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2017/05/14/dig_into_leakcanary/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/14/dig_into_leakcanary/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
           
 
           <span id="busuanzi_container_page_pv">
@@ -475,6 +469,8 @@
 
       
       
+      
+      
     </footer>
   </article>
 
@@ -493,10 +489,6 @@
 
         
   <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      </div>
     
   </div>
 
@@ -539,21 +531,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -676,27 +668,6 @@
     
     
 
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'wingjay';
-      var disqus_identifier = '2017/05/14/dig_into_leakcanary/';
-      var disqus_title = '带你学开源项目：LeakCanary- 如何检测 Activity 是否泄漏';
-      var disqus_url = 'http://wingjay.com/2017/05/14/dig_into_leakcanary/';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-      
-        run_disqus_script('embed.js');
-      
-    </script>
   
 
 

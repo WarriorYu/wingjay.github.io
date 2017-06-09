@@ -51,6 +51,7 @@
 
 
 
+
 <meta name="description" content="私以为，阅读开源项目是与世界级技术大牛直接对话的最好方式。此次来分享下 OkHttp 源码的分析。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="带你学开源项目：OkHttp-- 自己动手实现 okhttp">
@@ -293,13 +294,6 @@
 
           
             
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/07/21/带你学开源项目：OkHttp-自己动手实现okhttp/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/21/带你学开源项目：OkHttp-自己动手实现okhttp/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
           
 
           <span id="busuanzi_container_page_pv">
@@ -426,7 +420,7 @@
 <p>如果有问题欢迎联系我。</p>
 <p>谢谢！</p>
 <p>wingjay</p>
-<p>欢迎各位关注 <br><a href="https://github.com/wingjay" target="_blank" rel="external"> 我的 Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br>和 <br><a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external"> 我的简书 </a>: <a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/da333fd63fe5/latest_articles</a><br> 和<br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a><br>如果有问题，可以给我留言或发邮件<a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#58;&#121;&#105;&#x6e;&#106;&#105;&#101;&#x73;&#x68;&#64;&#x31;&#50;&#54;&#x2e;&#99;&#x6f;&#109;">&#121;&#105;&#x6e;&#106;&#105;&#101;&#x73;&#x68;&#64;&#x31;&#50;&#54;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p>欢迎各位关注 <br><a href="https://github.com/wingjay" target="_blank" rel="external"> 我的 Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br>和 <br><a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external"> 我的简书 </a>: <a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/da333fd63fe5/latest_articles</a><br> 和<br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a><br>如果有问题，可以给我留言或发邮件<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#x79;&#105;&#110;&#106;&#x69;&#101;&#x73;&#104;&#x40;&#x31;&#50;&#54;&#46;&#99;&#111;&#109;">&#x79;&#105;&#110;&#106;&#x69;&#101;&#x73;&#104;&#x40;&#x31;&#50;&#54;&#46;&#99;&#111;&#109;</a></p>
 <p><img src="https://avatars0.githubusercontent.com/u/9619875?v=3&amp;s=460" alt=""></p>
 </span>
       
@@ -469,6 +463,8 @@
 
       
       
+      
+      
     </footer>
   </article>
 
@@ -487,10 +483,6 @@
 
         
   <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      </div>
     
   </div>
 
@@ -533,21 +525,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -670,27 +662,6 @@
     
     
 
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'wingjay';
-      var disqus_identifier = '2016/07/21/带你学开源项目：OkHttp-自己动手实现okhttp/';
-      var disqus_title = '带你学开源项目：OkHttp-- 自己动手实现 okhttp';
-      var disqus_url = 'http://wingjay.com/2016/07/21/带你学开源项目：OkHttp-自己动手实现okhttp/';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-      
-        run_disqus_script('embed.js');
-      
-    </script>
   
 
 

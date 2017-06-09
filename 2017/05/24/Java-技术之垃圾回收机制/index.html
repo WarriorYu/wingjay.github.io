@@ -51,6 +51,7 @@
 
 
 
+
 <meta name="description" content="垃圾回收机制是 Java 非常重要的特性之一，也是面试题的常客。它让开发者无需关注空间的创建和释放，而是以守护进程的形式在后台自动回收垃圾。这样做不仅提高了开发效率，更改善了内存的使用状况。
 今天本文来对垃圾回收机制进行讲解，主要涉及下面几个问题：
 
@@ -302,13 +303,6 @@
 
           
             
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2017/05/24/Java-技术之垃圾回收机制/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/24/Java-技术之垃圾回收机制/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
           
 
           <span id="busuanzi_container_page_pv">
@@ -450,10 +444,16 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/06/08/自己动手改造个人博客/" rel="prev" title="自己动手改造个人博客">
+                自己动手改造个人博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
 
+      
+      
       
       
     </footer>
@@ -474,10 +474,6 @@
 
         
   <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      </div>
     
   </div>
 
@@ -520,21 +516,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -657,27 +653,6 @@
     
     
 
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'wingjay';
-      var disqus_identifier = '2017/05/24/Java-技术之垃圾回收机制/';
-      var disqus_title = 'Java 技术之垃圾回收机制';
-      var disqus_url = 'http://wingjay.com/2017/05/24/Java-技术之垃圾回收机制/';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-      
-        run_disqus_script('embed.js');
-      
-    </script>
   
 
 

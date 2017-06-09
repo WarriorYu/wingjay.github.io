@@ -51,6 +51,7 @@
 
 
 
+
 <meta name="description" content="私以为，阅读开源项目是与世界级技术大牛直接对话的最好方式。此次来分享下 RxLifecycle 源码的分析。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RxLifecycle 源码解析－当 Activity 被 destory 时自动停掉网络请求">
@@ -289,13 +290,6 @@
 
           
             
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/07/14/RxLifecycle源码解析－当Activity被destory时自动暂停网络请求/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/14/RxLifecycle源码解析－当Activity被destory时自动暂停网络请求/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
           
 
           <span id="busuanzi_container_page_pv">
@@ -372,7 +366,7 @@
 <li>对于 Fragment 中的处理方法也是类似。</li>
 </ol>
 <p>谢谢！</p>
-<h2 id="wingjay"><a href="#wingjay" class="headerlink" title="wingjay"></a>wingjay</h2><p>欢迎各位关注 <br><a href="https://github.com/wingjay" target="_blank" rel="external"> 我的 Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br>和 <br><a href="http://wingjay.com"> 我的个人博客 </a>: <a href="http://wingjay.com">http://wingjay.com</a><br> 和<br><a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">我的简书 </a>: <a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/da333fd63fe5/latest_articles</a><br> 和<br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a><br>如果有问题，可以给我留言或发邮件<a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#x3a;&#121;&#105;&#110;&#106;&#x69;&#x65;&#115;&#104;&#x40;&#x31;&#50;&#54;&#x2e;&#x63;&#111;&#109;">&#121;&#105;&#110;&#106;&#x69;&#x65;&#115;&#104;&#x40;&#x31;&#50;&#54;&#x2e;&#x63;&#111;&#109;</a></p>
+<h2 id="wingjay"><a href="#wingjay" class="headerlink" title="wingjay"></a>wingjay</h2><p>欢迎各位关注 <br><a href="https://github.com/wingjay" target="_blank" rel="external"> 我的 Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br>和 <br><a href="http://wingjay.com"> 我的个人博客 </a>: <a href="http://wingjay.com">http://wingjay.com</a><br> 和<br><a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">我的简书 </a>: <a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/da333fd63fe5/latest_articles</a><br> 和<br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a><br>如果有问题，可以给我留言或发邮件<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#x3a;&#121;&#105;&#x6e;&#x6a;&#105;&#x65;&#x73;&#104;&#64;&#49;&#x32;&#54;&#x2e;&#x63;&#x6f;&#109;">&#121;&#105;&#x6e;&#x6a;&#105;&#x65;&#x73;&#104;&#64;&#49;&#x32;&#54;&#x2e;&#x63;&#x6f;&#109;</a></p>
 <p><img src="https://avatars0.githubusercontent.com/u/9619875?v=3&amp;s=460" alt=""></p>
 </span>
       
@@ -417,6 +411,8 @@
 
       
       
+      
+      
     </footer>
   </article>
 
@@ -435,10 +431,6 @@
 
         
   <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      </div>
     
   </div>
 
@@ -481,21 +473,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -618,27 +610,6 @@
     
     
 
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'wingjay';
-      var disqus_identifier = '2016/07/14/RxLifecycle源码解析－当Activity被destory时自动暂停网络请求/';
-      var disqus_title = 'RxLifecycle 源码解析－当 Activity 被 destory 时自动停掉网络请求';
-      var disqus_url = 'http://wingjay.com/2016/07/14/RxLifecycle源码解析－当Activity被destory时自动暂停网络请求/';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-      
-        run_disqus_script('embed.js');
-      
-    </script>
   
 
 
