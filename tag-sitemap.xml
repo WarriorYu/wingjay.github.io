@@ -86,41 +86,6 @@
     </url>
 
     <url>
-        <loc>http://wingjay.com/tags/GitHub/</loc>
-        <lastmod>2017-06-18T08:09:26.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://wingjay.com/tags/Blog/</loc>
-        <lastmod>2017-06-18T08:09:26.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://wingjay.com/tags/Hexo/</loc>
-        <lastmod>2017-06-18T08:09:26.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://wingjay.com/tags/%E4%B8%80%E5%A4%A9%E5%8F%98cool-%E7%B3%BB%E5%88%97/</loc>
-        <lastmod>2017-06-18T08:10:34.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://wingjay.com/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-        <lastmod>2017-06-18T08:10:34.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://wingjay.com/tags/%E9%9A%8F%E7%AC%94/</loc>
         <lastmod>2017-06-18T08:14:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -144,6 +109,41 @@
     <url>
         <loc>http://wingjay.com/tags/%E5%8A%A8%E6%95%88/</loc>
         <lastmod>2017-06-18T08:19:44.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://wingjay.com/tags/GitHub/</loc>
+        <lastmod>2017-06-18T09:50:33.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://wingjay.com/tags/Blog/</loc>
+        <lastmod>2017-06-18T09:50:33.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://wingjay.com/tags/Hexo/</loc>
+        <lastmod>2017-06-18T09:50:33.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://wingjay.com/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+        <lastmod>2017-06-18T09:50:33.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://wingjay.com/tags/%E4%B8%80%E5%A4%A9%E5%8F%98cool/</loc>
+        <lastmod>2017-06-18T09:50:33.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
