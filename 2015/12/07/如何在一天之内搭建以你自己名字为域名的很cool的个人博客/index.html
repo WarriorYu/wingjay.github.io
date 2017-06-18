@@ -58,11 +58,11 @@
 <meta property="og:url" content="http://wingjay.com/2015/12/07/如何在一天之内搭建以你自己名字为域名的很cool的个人博客/index.html">
 <meta property="og:site_name" content="wingjay">
 <meta property="og:description" content="对程序员而言，最好的简历就是个人博客和GitHub。">
-<meta property="og:image" content="http://wingjay.com/img/ 我的博客.png">
-<meta property="og:image" content="http://wingjay.com/img/hexo 目录.png">
-<meta property="og:image" content="http://wingjay.com/img/ 域名解析.png">
+<meta property="og:image" content="http://wingjay.com/img/myblog.png">
+<meta property="og:image" content="http://wingjay.com/img/hexo-directory.png">
+<meta property="og:image" content="http://wingjay.com/img/host.png">
 <meta property="og:image" content="https://avatars0.githubusercontent.com/u/9619875?v=3&s=460">
-<meta property="og:updated_time" content="2017-05-08T16:05:21.000Z">
+<meta property="og:updated_time" content="2017-06-18T08:10:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在一天之内搭建以你自己名字为域名又具备 cool 属性的个人博客">
 <meta name="twitter:description" content="对程序员而言，最好的简历就是个人博客和GitHub。">
@@ -317,7 +317,7 @@
 <p>对程序员而言，最好的简历就是个人博客和 GitHub。</p>
 </blockquote>
 <a id="more"></a>
-<p><img src="/img/ 我的博客.png" alt="个人博客"></p>
+<p><img src="/img/myblog.png" alt="个人博客"></p>
 <h2 id="u4E2A_u4EBA_u535A_u5BA2"><a href="#u4E2A_u4EBA_u535A_u5BA2" class="headerlink" title="个人博客"></a>个人博客 </h2><p> 每个优秀的程序员都会有个人独占的一方网络空间，那里是他个人的舞台，听说过他的人会逐渐汇聚进来，认识他，熟悉他，鼓励他，赞扬他。而对他个人而言，他有了一个可以畅所欲言的小房间，他可以专研学术，聊聊情怀。同时和喜爱他的读者成为好友，共同成长。</p>
 <p>这难道不是一件很 cool 的事情吗？</p>
 <h2 id="u5148_u770B_u6210_u679C"><a href="#u5148_u770B_u6210_u679C" class="headerlink" title="先看成果"></a>先看成果 </h2><p> 教方法前先来看看最终的效果吧。<a href="http://wingjay.com">http://wingjay.com</a>是本人搭建的个人博客，主要有以下几点：</p>
@@ -347,7 +347,7 @@
 <p>好了，此时会自动在 <code>myblog</code> 目录下创建子文件夹<code>wingjay.github.io</code>, 那里就是我们博客的代码，以后的操作都在 git 的管理之下了，此时默认的 branch 为<code>master</code>。</p>
 <h4 id="u521D_u59CB_u5316Hexo"><a href="#u521D_u59CB_u5316Hexo" class="headerlink" title="初始化 Hexo"></a>初始化 Hexo</h4><p>请参考 <a href="https://hexo.io/docs/setup.html" target="_blank" rel="external"> 文档 </a>。init 命令中的<code>&lt;folder&gt;</code> 就是文件夹 <code>wingjay.github.io</code>。初始化后，<code>wingjay.github.io</code> 里面就已经有完整的 Hexo 框架了。</p>
 <h4 id="u719F_u6089Hexo"><a href="#u719F_u6089Hexo" class="headerlink" title="熟悉 Hexo"></a>熟悉 Hexo</h4><p>为了让读者快速了解 <code>Hexo</code>，我作几个简单介绍吧。当然，更多的还是需要仔细阅读<a href="https://hexo.io/docs/writing.html" target="_blank" rel="external"> 文档 </a> 才能了解更详细。</p>
-<p><img src="/img/hexo 目录.png" alt="hexo 目录结构"></p>
+<p><img src="/img/hexo-directory.png" alt="hexo 目录结构"></p>
 <ul>
 <li><code>_config.yml</code>是整体的配置文件，很多基础配置、插件配置等都需要在里面进行。要注意的是，该文件格式要求极为严格，缺少一个空格都会导致运行错误。小提示：不要用 Tab 缩进，用两个空格符。</li>
 <li><code>layout</code>，包括 <code>draft(草稿)、page(页面)、post(文章)</code>。这个就是三种文件的基本格式，其中<code>post</code> 是你发表的文章，会显示在你的网站里，一篇 post 会包括 <code>title 标题、date 日期、tags 标签</code> 等信息；<code>draft</code>是草稿，只有你在本地能看到，必须要 <code>publish</code> 后才能成为 <code>post</code>，draft 和 post 差别是 date，因为 draft 没有发表，所以不需要指定日期。<code>page</code> 是一个页面，对应一个新的 html 页面，比如 <a href="http://wingjay.com/2015/12/06/%E8%AF%B4%E4%B8%80%E8%AF%B4%E5%8D%9A%E5%AE%A2/"> 博客内容展示页 </a> 是一个页面，<a href="http://wingjay.com/guestbook/">留言本 </a> 也是一个页面。</li>
@@ -370,7 +370,7 @@
 <h3 id="u66FF_u6362_u81EA_u5DF1_u7684_u57DF_u540D"><a href="#u66FF_u6362_u81EA_u5DF1_u7684_u57DF_u540D" class="headerlink" title="替换自己的域名"></a>替换自己的域名 </h3><p> 好了，经过上面的步骤，博客已经拥有了一个全新的主题啦。</p>
 <p>下面，我们要对域名 <a href="http://wingjay.github.io" target="_blank" rel="external">http://wingjay.github.io</a> 下手啦。</p>
 <h4 id="u8D2D_u4E70_u57DF_u540D"><a href="#u8D2D_u4E70_u57DF_u540D" class="headerlink" title="购买域名"></a>购买域名 </h4><p> 速速前往 <a href="http://wanwang.aliyun.com/" target="_blank" rel="external"> 万网</a>，支付宝刷的一声，你就拥有了一个闪闪发光的个人域名啦</p>
-<h4 id="u57DF_u540D_u89E3_u6790_1"><a href="#u57DF_u540D_u89E3_u6790_1" class="headerlink" title="域名解析_1"></a>域名解析_1</h4><p>以购买的域名 <code>wingjay.com</code> 为例，我们希望在访问这个域名时能自动进入 Github Pages，所以我们要在万网建立一个 CNAME 纪录来帮我们做一个域名跳转：<code>wingjay.com</code> -&gt; <code>wingjay.github.io</code>，<code>www.wingjay.com</code> -&gt; <code>wingjay.github.io</code>。添加方法 <a href="http://www.sudu.cn/service/detail/1/0/0/3/10036.html" target="_blank" rel="external"> 参考这里 </a>，添加后可以看到两条记录：<img src="/img/ 域名解析.png" alt="域名解析">。然后万网会在世界各地的 DNS 服务器上添加这两条记录，当用户访问<code>wingjay.com</code> 时会自动去访问<code>wingjay.github.io</code>。</p>
+<h4 id="u57DF_u540D_u89E3_u6790_1"><a href="#u57DF_u540D_u89E3_u6790_1" class="headerlink" title="域名解析_1"></a>域名解析_1</h4><p>以购买的域名 <code>wingjay.com</code> 为例，我们希望在访问这个域名时能自动进入 Github Pages，所以我们要在万网建立一个 CNAME 纪录来帮我们做一个域名跳转：<code>wingjay.com</code> -&gt; <code>wingjay.github.io</code>，<code>www.wingjay.com</code> -&gt; <code>wingjay.github.io</code>。添加方法 <a href="http://www.sudu.cn/service/detail/1/0/0/3/10036.html" target="_blank" rel="external"> 参考这里 </a>，添加后可以看到两条记录：<img src="/img/host.png" alt="域名解析">。然后万网会在世界各地的 DNS 服务器上添加这两条记录，当用户访问<code>wingjay.com</code> 时会自动去访问<code>wingjay.github.io</code>。</p>
 <h4 id="u57DF_u540D_u89E3_u6790_2"><a href="#u57DF_u540D_u89E3_u6790_2" class="headerlink" title="域名解析_2"></a>域名解析_2</h4><p>但是，此时并不能成功访问，因为 github pages 是有限制的，它不允许任意域名都跳转过来，而是只限制一个域名，而且这个域名必须声明在 CNAME 文件中。</p>
 <p>所以，我们需要添加一个 CNAME 文件到项目的 master 中才行，<a href="https://help.github.com/articles/adding-a-cname-file-to-your-repository/" target="_blank" rel="external">参考这里</a>。读者可以参考本人的<a href="https://github.com/wingjay/wingjay.github.io/blob/master/CNAME" target="_blank" rel="external">CNAME 文件内容</a>。</p>
 <p>不过，对于 <code>Hexo 3</code>，<strong> 这里有一个坑要注意</strong>：大家应该还记得上文说的，master 分支里的内容都是自动生成的，而且会完全覆盖之前的内容。如果我们直接创建一个新文件 CNAME，填好域名。但会发现在下一次部署后这个文件就消失了。不用惊讶，因为 hexo 并不会自动生成 CNAME 文件，所以在部署时被覆盖删除了。</p>
@@ -387,7 +387,7 @@
 <p><a href="http://www.jianshu.com/p/99665608d295" target="_blank" rel="external">如何在一天之内搭建以你自己名字为域名且具备 cool 属性的个人博客</a></p>
 <p>谢谢！</p>
 <p>wingjay</p>
-<p>欢迎各位关注 <br><a href="https://github.com/wingjay" target="_blank" rel="external"> 我的 Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br>和 <br><a href="http://wingjay.com"> 我的个人博客 </a>: <a href="http://wingjay.com">http://wingjay.com</a><br> 和<br><a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">我的简书 </a>: <a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/da333fd63fe5/latest_articles</a><br> 和<br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a><br>如果有问题，可以给我留言或发邮件<a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x79;&#105;&#110;&#x6a;&#105;&#x65;&#x73;&#104;&#x40;&#x31;&#50;&#54;&#46;&#99;&#111;&#x6d;">&#x79;&#105;&#110;&#x6a;&#105;&#x65;&#x73;&#104;&#x40;&#x31;&#50;&#54;&#46;&#99;&#111;&#x6d;</a></p>
+<p>欢迎各位关注 <br><a href="https://github.com/wingjay" target="_blank" rel="external"> 我的 Github</a>: <a href="https://github.com/wingjay" target="_blank" rel="external">https://github.com/wingjay</a><br>和 <br><a href="http://wingjay.com"> 我的个人博客 </a>: <a href="http://wingjay.com">http://wingjay.com</a><br> 和<br><a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">我的简书 </a>: <a href="http://www.jianshu.com/users/da333fd63fe5/latest_articles" target="_blank" rel="external">http://www.jianshu.com/users/da333fd63fe5/latest_articles</a><br> 和<br><a href="http://weibo.com/u/1625892654" target="_blank" rel="external">微博 iam_wingjay</a>: <a href="http://weibo.com/u/1625892654" target="_blank" rel="external">http://weibo.com/u/1625892654</a><br>如果有问题，可以给我留言或发邮件<a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#121;&#105;&#x6e;&#x6a;&#x69;&#101;&#x73;&#104;&#64;&#49;&#x32;&#54;&#x2e;&#99;&#x6f;&#109;">&#121;&#105;&#x6e;&#x6a;&#x69;&#101;&#x73;&#104;&#64;&#49;&#x32;&#54;&#x2e;&#99;&#x6f;&#109;</a></p>
 <p><img src="https://avatars0.githubusercontent.com/u/9619875?v=3&amp;s=460" alt=""></p>
 </span>
       
