@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="theme-next   use-motion ">
+<html class="theme-next ">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -41,6 +41,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="wingjay" type="application/atom+xml" />
+
 
 
 
@@ -70,7 +72,7 @@
   var CONFIG = {
     scheme: 'Mist',
     sidebar: 'always',
-    motion: true
+    motion: false
   };
 </script>
 
@@ -163,6 +165,16 @@
               <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
             我的简历
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-rss">
+          <a href="/atom.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            RSS
           </a>
         </li>
       
@@ -339,7 +351,9 @@
       
 
       
-        <h3>相关文章：</h3><ul class="related-posts"><li><a href="/2015/12/06/说一说博客/">说一说我和博客</a></li><li><a href="/2015/12/29/我与代码的相知相遇/">我与代码的相知相遇</a></li><li><a href="/2017/03/29/对未来个人技术博客的一些思考/">对未来个人技术博客的一些思考</a></li></ul>
+        <div class="post-nav">
+          <h3>相关文章：</h3><ul class="related-posts"><li><a href="/2015/12/06/说一说博客/">说一说我和博客</a></li><li><a href="/2015/12/29/我与代码的相知相遇/">我与代码的相知相遇</a></li><li><a href="/2017/03/29/对未来个人技术博客的一些思考/">对未来个人技术博客的一些思考</a></li></ul>
+        </div>  
       
       
       
@@ -447,6 +461,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
