@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://wingjay.com/2017/03/29/%E5%AF%B9%E6%9C%AA%E6%9D%A5%E4%B8%AA%E4%BA%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</loc>
+    <lastmod>2017-06-19T07:33:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>对未来个人技术博客的一些思考</title>
+        <pubTime>2017-03-29T10:16:25.000Z</pubTime>
+        
+        <tag>随笔</tag>
+         
+         
+           
+             
+              <breadCrumb title="Blog" url="http://wingjay.com/categories/Blog/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wingjay.com/2017/06/08/rebuild-personal-blog/</loc>
     <lastmod>2017-06-19T03:39:48.000Z</lastmod>
     <data>
@@ -212,26 +232,6 @@
            
              
               <breadCrumb title="深入理解Java技术" url="http://wingjay.com/categories/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wingjay.com/2017/03/29/%E5%AF%B9%E6%9C%AA%E6%9D%A5%E4%B8%AA%E4%BA%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</loc>
-    <lastmod>2017-05-16T15:43:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>对未来个人技术博客的一些思考</title>
-        <pubTime>2017-03-29T10:16:25.000Z</pubTime>
-        
-        <tag>随笔</tag>
-         
-         
-           
-             
-              <breadCrumb title="Blog" url="http://wingjay.com/categories/Blog/"/>
           
         </display>
     </data>
