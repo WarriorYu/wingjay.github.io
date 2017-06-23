@@ -53,6 +53,8 @@
 
 
 
+  <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
 
 <meta name="description" content="2016年自己的博客产出并不多，主要原因是自己希望在博客中只分享技术干货，而非泛泛而谈，所以一直克制自己写文的想法。不过这里其实存在一个漏洞，那就是平常的开发过程中并没有那么多的难题要解决，也就导致工作中并不能提供那么多干货素材。因此，我才来重新考虑自己2017年的博客计划和方向。">
 <meta property="og:type" content="article">
@@ -60,7 +62,7 @@
 <meta property="og:url" content="http://wingjay.com/2017/03/29/对未来个人技术博客的一些思考/index.html">
 <meta property="og:site_name" content="wingjay">
 <meta property="og:description" content="2016年自己的博客产出并不多，主要原因是自己希望在博客中只分享技术干货，而非泛泛而谈，所以一直克制自己写文的想法。不过这里其实存在一个漏洞，那就是平常的开发过程中并没有那么多的难题要解决，也就导致工作中并不能提供那么多干货素材。因此，我才来重新考虑自己2017年的博客计划和方向。">
-<meta property="og:updated_time" content="2017-06-19T07:37:28.000Z">
+<meta property="og:updated_time" content="2017-06-23T04:05:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对未来个人技术博客的一些思考">
 <meta name="twitter:description" content="2016年自己的博客产出并不多，主要原因是自己希望在博客中只分享技术干货，而非泛泛而谈，所以一直克制自己写文的想法。不过这里其实存在一个漏洞，那就是平常的开发过程中并没有那么多的难题要解决，也就导致工作中并不能提供那么多干货素材。因此，我才来重新考虑自己2017年的博客计划和方向。">
@@ -316,7 +318,7 @@
 
           <span=>
             &nbsp; | &nbsp;
-            1,078 字
+            1,070 字
           </span>
 
           
@@ -367,14 +369,13 @@
 <li>[Tool] <a href="http://wingjay.com/2017/06/08/rebuild-personal-blog/">自己动手改造个人博客</a></li>
 </ul>
 <h2 id="u5F85_u5B8C_u6210"><a href="#u5F85_u5B8C_u6210" class="headerlink" title="待完成"></a>待完成 </h2><h4 id="u8FD1_u671F"><a href="#u8FD1_u671F" class="headerlink" title="近期"></a> 近期</h4><ul>
+<li>[Glow] React Native 数据通信方式 <a href="http://www.lcode.org/react-native-android/" target="_blank" rel="external">http://www.lcode.org/react-native-android/</a> 集成到已有 app，back button 如何 handle，native navigation，pubsub 模式，数据传递，reactcontext 是什么，native module</li>
 <li>[源码] Gson 解析</li>
 <li>[Java] 进程间通信</li>
 <li>[效率] 多行编辑模式(sublime + Android studio), handy 的一些命令，terminal-notifier</li>
 <li>[Java] Java 编译执行流程</li>
 <li>[Android] 代码混淆机制</li>
 <li>[Java] 多线程同步安全机制</li>
-<li>[React Native] RN Native 数据通信方式 <a href="http://www.lcode.org/react-native-android/" target="_blank" rel="external">http://www.lcode.org/react-native-android/</a></li>
-<li>[React Native] 集成到已有 app，back button 如何 handle，native navigation，pubsub 模式，数据传递，reactcontext 是什么，native module</li>
 <li>[Android] Android 提供的注解 <a href="http://droidyue.com/blog/2016/08/14/android-annnotation/" target="_blank" rel="external">http://droidyue.com/blog/2016/08/14/android-annnotation/</a></li>
 <li>[Android] apk 打包流程</li>
 <li>[Android] 多线程比较：AsyncTask, HandlerThread, ThreadPool, IntentService。（普通 Thread 运行完就自动关闭了，而 HandlerThread 则会有一个 looper 在内部，调用 handlerThread.start()后它就会一直在后台运行，需要它时用 handler 发一个 message 过去就行，随时都可以发 message 让它在后台干活。相比之下，AsyncTask 也类似一次性的，后台执行完，回到 UI 线程运行下，就彻底结束了，不能一直在后台运行且随时与 UI 交互。）</li>
@@ -391,7 +392,6 @@
 <li>[Android] 什么是 aar 文件，与 apk jar 的区别</li>
 <li>[Android] Davlik Jvm 的区别，什么更适合移动端</li>
 <li>[Android] adb shell 进入后的世界，如何查看 cache，lurcache</li>
-<li>[Android] RN pubsub 模型</li>
 <li>[java]java 性能优化的数据结构 CopyOnWrite</li>
 <li>[Java] final 关键字, Lock 与 synchrnoize 区别,  不可变类</li>
 </ul>
@@ -433,6 +433,159 @@
           </div>
         </div>
       
+
+      
+        <!doctype html>
+<html>
+<div class="clearfix"></div>
+<br>
+<div id="comments">
+<div class="post-header bg-">
+  <h1 class="h1 post-title">评论</h1>
+</div>
+
+<article class="post-content">
+<p>本站评论搭建在 Github Issue 上（就是这么神奇），请点击下面按钮进行评论。<br/>
+Comment on Github Issue for this article(Yup I know it's cool)! click below button!</p>
+</article>
+</div>
+
+<script type="text/javascript">
+  function loadComments(data) {
+  	var commentUrl = "window.open('https://github.com/wingjay/wingjay.github.io/issues/9')"
+    $("#comments").append('<div class="submit-comment" style="text-align: center"><button onclick=' + commentUrl + ' class="btn btn-primary">评论</button></div>')
+
+    for (var i=0; i<data.length; i++) {
+      var cuser = data[i].user.login;
+      var cuserlink = data[i].user.html_url;
+      var avatarlink = data[i].user.avatar_url;
+      var clink = data[i].html_url;
+      var cbody = data[i].body_html;
+      var cavatarlink = data[i].user.avatar_url;      
+      var cdate = new Date(data[i].created_at);
+      var dopts = { month: 'short', day: 'numeric', year: 'numeric' }
+
+      $("#comments").append('<div class="timeline-comment-wrapper"><div class="avatar-parent-child timeline-comment-avatar"><a href="' + cuserlink +'"><img width="44" height="44" class="avatar rounded-1" src="' + avatarlink + '"></a></div><div class="timeline-comment current-user"><div class="timeline-comment-header"><h3 class="timeline-comment-header-text text-normal f5"><strong>' + cuser + '</strong><span class="post-meta">' + cdate.toLocaleDateString("en", dopts) + '</span></h3></div><div style="display: block !important; padding: 15px;"><article class="post-content">' + cbody + '</article></div></div></div>');
+    }
+  }
+  $.ajax("https://api.github.com/repos/wingjay/wingjay.github.io/issues/9/comments", {
+    headers: {Accept: "application/vnd.github.v3.html+json"},
+    dataType: "json",
+    success: function(msg){
+      console.log(msg);
+      loadComments(msg);
+   }
+  });
+</script>
+
+
+<style type="text/css">
+.timeline-comment-wrapper {
+    margin-top: 0;
+    position: relative;
+    padding-left: 60px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+.timeline-comment-avatar {
+    float: left;
+    margin-left: -60px;
+    border-radius: 3px;
+}
+.avatar-parent-child {
+    position: relative;
+}
+.timeline-comment-wrapper a {
+    color: #0366d6;
+    text-decoration: none;
+    background-color: transparent;
+}
+.timeline-comment-wrapper .avatar {
+    display: inline-block;
+    overflow: hidden;
+    line-height: 1;
+    vertical-align: middle;
+    border-radius: 3px;
+}
+.timeline-comment-wrapper .rounded-1 {
+    border-radius: 3px !important;
+}
+.timeline-comment.current-user {
+    border-color: #c0d3eb;
+}
+.timeline-comment {
+	position: relative;
+    background-color: #fff;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+}
+.timeline-comment.current-user .timeline-comment-header {
+    background-color: #f1f8ff;
+    border-bottom-color: #c0d3eb;
+}
+.timeline-comment-header {
+	padding-right: 15px;
+    padding-left: 15px;
+    color: #586069;
+    background-color: #f6f8fa;
+    border-bottom: 1px solid #d1d5da;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.timeline-comment-header-text {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.timeline-comment-header h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.timeline-comment-header-text .post-meta {
+	margin-left: 6px;
+}
+.timeline-comment article p {
+	margin: 0px;
+}
+.text-normal {
+    font-weight: normal !important;
+}
+.f5 {
+    font-size: 14px !important;
+}
+.submit-comment .btn {
+    position: relative;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-repeat: repeat-x;
+    background-position: -1px -1px;
+    background-size: 110% 110%;
+    border: 1px solid rgba(27,31,35,0.2);
+    border-radius: 0.25em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.submit-comment .btn-primary {
+    color: #fff;
+    background-color: #28a745;
+    background-image: -webkit-linear-gradient(270deg, #34d058 0%, #28a745 90%);
+    background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
+}
+</style>
+
+</html>
 
       
 
@@ -505,14 +658,14 @@
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

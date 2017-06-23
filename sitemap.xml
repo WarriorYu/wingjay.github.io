@@ -3,22 +3,22 @@
 
     <sitemap>
         <loc>http://wingjay.com/post-sitemap.xml</loc>
-        <lastmod>2017-06-19T07:37:28.000Z</lastmod>
+        <lastmod>2017-06-23T04:12:00.000Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>http://wingjay.com/page-sitemap.xml</loc>
-        <lastmod>2017-06-18T07:43:35.000Z</lastmod>
+        <lastmod>2017-06-22T02:56:48.000Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>http://wingjay.com/category-sitemap.xml</loc>
-        <lastmod>2017-05-08T15:26:42.000Z</lastmod>
+        <lastmod>2017-06-22T02:56:46.000Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>http://wingjay.com/tag-sitemap.xml</loc>
-        <lastmod>2015-12-30T13:26:22.000Z</lastmod>
+        <lastmod>2017-06-22T02:56:46.000Z</lastmod>
     </sitemap>
 
 </sitemapindex>
