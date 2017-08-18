@@ -56,24 +56,14 @@
   <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 
 
-<meta name="description" content="垃圾回收机制是 Java 非常重要的特性之一，也是面试题的常客。它让开发者无需关注空间的创建和释放，而是以守护进程的形式在后台自动回收垃圾。这样做不仅提高了开发效率，更改善了内存的使用状况。
-今天本文来对垃圾回收机制进行讲解，主要涉及下面几个问题：
-
-什么是堆内存？
-什么是垃圾？
-有哪些方法回收这些垃圾？
-什么是分代回收机制？">
+<meta name="description" content="垃圾回收机制是 Java 非常重要的特性之一，也是面试题的常客。它让开发者无需关注空间的创建和释放，而是以守护进程的形式在后台自动回收垃圾。这样做不仅提高了开发效率，更改善了内存的使用状况。 今天本文来对垃圾回收机制进行讲解，主要涉及下面几个问题：  什么是堆内存？ 什么是垃圾？ 有哪些方法回收这些垃圾？ 什么是分代回收机制？">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 技术之垃圾回收机制">
 <meta property="og:url" content="http://wingjay.com/2017/05/24/Java-技术之垃圾回收机制/index.html">
 <meta property="og:site_name" content="wingjay">
-<meta property="og:description" content="垃圾回收机制是 Java 非常重要的特性之一，也是面试题的常客。它让开发者无需关注空间的创建和释放，而是以守护进程的形式在后台自动回收垃圾。这样做不仅提高了开发效率，更改善了内存的使用状况。
-今天本文来对垃圾回收机制进行讲解，主要涉及下面几个问题：
-
-什么是堆内存？
-什么是垃圾？
-有哪些方法回收这些垃圾？
-什么是分代回收机制？">
+<meta property="og:description" content="垃圾回收机制是 Java 非常重要的特性之一，也是面试题的常客。它让开发者无需关注空间的创建和释放，而是以守护进程的形式在后台自动回收垃圾。这样做不仅提高了开发效率，更改善了内存的使用状况。 今天本文来对垃圾回收机制进行讲解，主要涉及下面几个问题：  什么是堆内存？ 什么是垃圾？ 有哪些方法回收这些垃圾？ 什么是分代回收机制？">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wingjay.com/img/gc/reachable.JPG">
 <meta property="og:image" content="http://wingjay.com/img/gc/garbage.png">
 <meta property="og:image" content="http://wingjay.com/img/gc/mark-sweep.png">
@@ -82,16 +72,11 @@
 <meta property="og:image" content="http://wingjay.com/img/gc/young_1.png">
 <meta property="og:image" content="http://wingjay.com/img/gc/young_2.png">
 <meta property="og:image" content="http://wingjay.com/img/gc/young_3.png">
-<meta property="og:updated_time" content="2017-06-22T02:56:46.000Z">
+<meta property="og:updated_time" content="2017-08-18T06:09:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 技术之垃圾回收机制">
-<meta name="twitter:description" content="垃圾回收机制是 Java 非常重要的特性之一，也是面试题的常客。它让开发者无需关注空间的创建和释放，而是以守护进程的形式在后台自动回收垃圾。这样做不仅提高了开发效率，更改善了内存的使用状况。
-今天本文来对垃圾回收机制进行讲解，主要涉及下面几个问题：
-
-什么是堆内存？
-什么是垃圾？
-有哪些方法回收这些垃圾？
-什么是分代回收机制？">
+<meta name="twitter:description" content="垃圾回收机制是 Java 非常重要的特性之一，也是面试题的常客。它让开发者无需关注空间的创建和释放，而是以守护进程的形式在后台自动回收垃圾。这样做不仅提高了开发效率，更改善了内存的使用状况。 今天本文来对垃圾回收机制进行讲解，主要涉及下面几个问题：  什么是堆内存？ 什么是垃圾？ 有哪些方法回收这些垃圾？ 什么是分代回收机制？">
+<meta name="twitter:image" content="http://wingjay.com/img/gc/reachable.JPG">
 
 
 
@@ -344,7 +329,7 @@
 
           <span=>
             &nbsp; | &nbsp;
-            3,067 字
+            3,041 字
           </span>
 
           
@@ -371,15 +356,15 @@
 </ul>
 </blockquote>
 <a id="more"></a>
-<h2 id="u4EC0_u4E48_u662F_Java__u5806_u5185_u5B58"><a href="#u4EC0_u4E48_u662F_Java__u5806_u5185_u5B58" class="headerlink" title="什么是 Java 堆内存"></a>什么是 Java 堆内存 </h2><p> 堆是在 JVM 启动时创建的，主要用来维护运行时数据，如运行过程中创建的对象和数组都是基于这块内存空间。Java 堆是非常重要的元素，如果我们动态创建的对象没有得到及时回收，持续堆积，最后会导致堆空间被占满，内存溢出。</p>
+<h2 id="什么是 -Java- 堆内存"><a href="# 什么是 -Java- 堆内存" class="headerlink" title="什么是 Java 堆内存"></a>什么是 Java 堆内存 </h2><p> 堆是在 JVM 启动时创建的，主要用来维护运行时数据，如运行过程中创建的对象和数组都是基于这块内存空间。Java 堆是非常重要的元素，如果我们动态创建的对象没有得到及时回收，持续堆积，最后会导致堆空间被占满，内存溢出。</p>
 <p>因此，Java 提供了一种垃圾回收机制，在后台创建一个守护进程。该进程会在内存紧张的时候自动跳出来，把堆空间的垃圾全部进行回收，从而保证程序的正常运行。</p>
-<h2 id="u90A3_u4EC0_u4E48_u662F_u5783_u573E_u5462_uFF1F"><a href="#u90A3_u4EC0_u4E48_u662F_u5783_u573E_u5462_uFF1F" class="headerlink" title="那什么是垃圾呢？"></a>那什么是垃圾呢？</h2><p>所谓“垃圾”，就是指所有不再存活的对象。常见的判断是否存活有两种方法：引用计数法和可达性分析。</p>
-<h3 id="u5F15_u7528_u8BA1_u6570_u6CD5"><a href="#u5F15_u7528_u8BA1_u6570_u6CD5" class="headerlink" title="引用计数法"></a>引用计数法 </h3><p> 为每一个创建的对象分配一个引用计数器，用来存储该对象被引用的个数。当该个数为零，意味着没有人再使用这个对象，可以认为“对象死亡”。但是，这种方案存在严重的问题，就是无法检测“循环引用”：当两个对象互相引用，即时它俩都不被外界任何东西引用，它俩的计数都不为零，因此永远不会被回收。而实际上对于开发者而言，这两个对象已经完全没有用处了。</p>
+<h2 id="那什么是垃圾呢？"><a href="# 那什么是垃圾呢？" class="headerlink" title="那什么是垃圾呢？"></a>那什么是垃圾呢？</h2><p>所谓“垃圾”，就是指所有不再存活的对象。常见的判断是否存活有两种方法：引用计数法和可达性分析。</p>
+<h3 id="引用计数法"><a href="# 引用计数法" class="headerlink" title="引用计数法"></a>引用计数法 </h3><p> 为每一个创建的对象分配一个引用计数器，用来存储该对象被引用的个数。当该个数为零，意味着没有人再使用这个对象，可以认为“对象死亡”。但是，这种方案存在严重的问题，就是无法检测“循环引用”：当两个对象互相引用，即时它俩都不被外界任何东西引用，它俩的计数都不为零，因此永远不会被回收。而实际上对于开发者而言，这两个对象已经完全没有用处了。</p>
 <p>因此，Java 里没有采用这样的方案来判定对象的“存活性”。</p>
-<h3 id="u53EF_u8FBE_u6027_u5206_u6790"><a href="#u53EF_u8FBE_u6027_u5206_u6790" class="headerlink" title="可达性分析"></a>可达性分析 </h3><p> 这种方案是目前主流语言里采用的对象存活性判断方案。基本思路是把所有引用的对象想象成一棵树，从树的根结点 GC Roots 出发，持续遍历找出所有连接的树枝对象，这些对象则被称为“可达”对象，或称“存活”对象。其余的对象则被视为“死亡”的“不可达”对象，或称“垃圾”。</p>
+<h3 id="可达性分析"><a href="# 可达性分析" class="headerlink" title="可达性分析"></a>可达性分析 </h3><p> 这种方案是目前主流语言里采用的对象存活性判断方案。基本思路是把所有引用的对象想象成一棵树，从树的根结点 GC Roots 出发，持续遍历找出所有连接的树枝对象，这些对象则被称为“可达”对象，或称“存活”对象。其余的对象则被视为“死亡”的“不可达”对象，或称“垃圾”。</p>
 <p>参考下图，object5,object6 和 object7 便是不可达对象，视为“死亡状态”，应该被垃圾回收器回收。</p>
 <p><img src="/img/gc/reachable.JPG" alt=""></p>
-<h4 id="GC_Roots__u7A76_u7ADF_u6307_u8C01_u5462_uFF1F"><a href="#GC_Roots__u7A76_u7ADF_u6307_u8C01_u5462_uFF1F" class="headerlink" title="GC Roots 究竟指谁呢？"></a>GC Roots 究竟指谁呢？</h4><p>我们可以猜测，GC Roots 本身一定是可达的，这样从它们出发遍历到的对象才能保证一定可达。那么，Java 里有哪些对象是一定可达呢？主要有以下四种：</p>
+<h4 id="GC-Roots- 究竟指谁呢？"><a href="#GC-Roots- 究竟指谁呢？" class="headerlink" title="GC Roots 究竟指谁呢？"></a>GC Roots 究竟指谁呢？</h4><p>我们可以猜测，GC Roots 本身一定是可达的，这样从它们出发遍历到的对象才能保证一定可达。那么，Java 里有哪些对象是一定可达呢？主要有以下四种：</p>
 <ul>
 <li>虚拟机栈（帧栈中的本地变量表）中引用的对象。</li>
 <li>方法区中静态属性引用的对象。</li>
@@ -387,22 +372,22 @@
 <li>本地方法栈中 JNI 引用的对象。</li>
 </ul>
 <p>不少读者可能对这些 GC Roots 似懂非懂，这涉及到 JVM 本身的内存结构等等，未来的文章会再做深入讲解。这里只要知道有这么几种类型的 GC Roots，每次垃圾回收器会从这些根结点开始遍历寻找所有可达节点。</p>
-<h2 id="u6709_u54EA_u4E9B_u65B9_u5F0F_u6765_u56DE_u6536_u8FD9_u4E9B_u5783_u573E_u5462_uFF1F"><a href="#u6709_u54EA_u4E9B_u65B9_u5F0F_u6765_u56DE_u6536_u8FD9_u4E9B_u5783_u573E_u5462_uFF1F" class="headerlink" title="有哪些方式来回收这些垃圾呢？"></a>有哪些方式来回收这些垃圾呢？</h2><p>上面已经知道，所有 GC Roots 不可达的对象都称为垃圾，参考下图，黑色的表示垃圾，灰色表示存活对象，绿色表示空白空间。</p>
+<h2 id="有哪些方式来回收这些垃圾呢？"><a href="# 有哪些方式来回收这些垃圾呢？" class="headerlink" title="有哪些方式来回收这些垃圾呢？"></a>有哪些方式来回收这些垃圾呢？</h2><p>上面已经知道，所有 GC Roots 不可达的对象都称为垃圾，参考下图，黑色的表示垃圾，灰色表示存活对象，绿色表示空白空间。</p>
 <p><img src="/img/gc/garbage.png" alt=""></p>
 <p>那么，我们如何来回收这些垃圾呢？</p>
-<h4 id="u6807_u8BB0_uFF0D_u6E05_u7406"><a href="#u6807_u8BB0_uFF0D_u6E05_u7406" class="headerlink" title="标记－清理"></a>标记－清理 </h4><p> 第一步，所谓“标记”就是利用可达性遍历堆内存，把“存活”对象和“垃圾”对象进行标记，得到的结果如上图；<br>第二步，既然“垃圾”已经标记好了，那我们再遍历一遍，把所有“垃圾”对象所占的空间直接 <code> 清空 </code> 即可。</p>
+<h4 id="标记－清理"><a href="# 标记－清理" class="headerlink" title="标记－清理"></a>标记－清理 </h4><p> 第一步，所谓“标记”就是利用可达性遍历堆内存，把“存活”对象和“垃圾”对象进行标记，得到的结果如上图；<br>第二步，既然“垃圾”已经标记好了，那我们再遍历一遍，把所有“垃圾”对象所占的空间直接 <code> 清空 </code> 即可。</p>
 <p>结果如下：<br><img src="/img/gc/mark-sweep.png" alt=""></p>
 <p>这便是 <code> 标记－清理 </code> 方案，<code>简单方便 </code>，但是容易产生<code> 内存碎片</code>。</p>
-<h4 id="u6807_u8BB0_uFF0D_u6574_u7406"><a href="#u6807_u8BB0_uFF0D_u6574_u7406" class="headerlink" title="标记－整理"></a>标记－整理 </h4><p> 既然上面的方法会产生内存碎片，那好，我在清理的时候，把所有 <code> 存活 </code> 对象扎堆到同一个地方，让它们待在一起，这样就没有内存碎片了。</p>
+<h4 id="标记－整理"><a href="# 标记－整理" class="headerlink" title="标记－整理"></a>标记－整理 </h4><p> 既然上面的方法会产生内存碎片，那好，我在清理的时候，把所有 <code> 存活 </code> 对象扎堆到同一个地方，让它们待在一起，这样就没有内存碎片了。</p>
 <p>结果如下：<br><img src="/img/gc/mark-compact.png" alt=""></p>
 <p>这两种方案适合 <code> 存活对象多，垃圾少 </code> 的情况，它只需要清理掉少量的垃圾，然后挪动下存活对象就可以了。</p>
-<h4 id="u590D_u5236"><a href="#u590D_u5236" class="headerlink" title="复制"></a>复制 </h4><p> 这种方法比较粗暴，直接把堆内存分成两部分，一段时间内只允许在其中一块内存上进行分配，当这块内存被分配完后，则执行垃圾回收，把所有 <code> 存活 </code> 对象全部复制到另一块内存上，当前内存则直接全部清空。</p>
+<h4 id="复制"><a href="# 复制" class="headerlink" title="复制"></a>复制 </h4><p> 这种方法比较粗暴，直接把堆内存分成两部分，一段时间内只允许在其中一块内存上进行分配，当这块内存被分配完后，则执行垃圾回收，把所有 <code> 存活 </code> 对象全部复制到另一块内存上，当前内存则直接全部清空。</p>
 <p>参考下图：<br><img src="/img/gc/copying.png" alt=""></p>
 <p>起初时只使用上面部分的内存，直到内存使用完毕，才进行垃圾回收，把所有存活对象搬到下半部分，并把上半部分进行清空。</p>
 <p>这种做法不容易产生碎片，也简单粗暴；但是，它意味着你在一段时间内只能使用一部分的内存，超过这部分内存的话就意味着堆内存里频繁的 <code> 复制清空</code>。</p>
 <p>这种方案适合 <code> 存活对象少，垃圾多 </code> 的情况，这样在复制时就不需要复制多少对象过去，多数垃圾直接被清空处理。</p>
-<h2 id="Java__u7684_u5206_u4EE3_u56DE_u6536_u673A_u5236"><a href="#Java__u7684_u5206_u4EE3_u56DE_u6536_u673A_u5236" class="headerlink" title="Java 的分代回收机制"></a>Java 的分代回收机制 </h2><p> 上面我们看到有至少三种方法来回收内存，那么 Java 里是如何选择利用这三种回收算法呢？是只用一种还是三种都用呢？</p>
-<h3 id="Java__u7684_u5806_u7ED3_u6784"><a href="#Java__u7684_u5806_u7ED3_u6784" class="headerlink" title="Java 的堆结构"></a>Java 的堆结构 </h3><p> 在选择回收算法前，我们先来看一下 Java 堆的结构。</p>
+<h2 id="Java- 的分代回收机制"><a href="#Java- 的分代回收机制" class="headerlink" title="Java 的分代回收机制"></a>Java 的分代回收机制 </h2><p> 上面我们看到有至少三种方法来回收内存，那么 Java 里是如何选择利用这三种回收算法呢？是只用一种还是三种都用呢？</p>
+<h3 id="Java- 的堆结构"><a href="#Java- 的堆结构" class="headerlink" title="Java 的堆结构"></a>Java 的堆结构 </h3><p> 在选择回收算法前，我们先来看一下 Java 堆的结构。</p>
 <p>一块 Java 堆空间一般分成三部分，这三部分用来存储三类数据：</p>
 <ul>
 <li>刚刚创建的对象。在代码运行时会持续不断地创造新的对象，这些新创建的对象会被统一放在一起。因为有很多局部变量等在新创建后很快会变成 <code> 不可达 </code> 的对象，<code>快速死去 </code>，因此这块区域的特点是<code> 存活对象少，垃圾多 </code>。形象点描述这块区域为：<code> 新生代</code>；</li>
@@ -415,17 +400,17 @@
 <li>老年代：存活对象多、垃圾少</li>
 </ul>
 <p>结合新生代／老年代的存活对象特点和之前提过的几种垃圾回收算法，可以得到如下的回收方案：</p>
-<h3 id="u65B0_u751F_u4EE3_uFF0D_u590D_u5236_u56DE_u6536_u673A_u5236"><a href="#u65B0_u751F_u4EE3_uFF0D_u590D_u5236_u56DE_u6536_u673A_u5236" class="headerlink" title="新生代－<code>复制 </code> 回收机制"></a>新生代－<code>复制 </code> 回收机制 </h3><p> 对于新生代区域，由于每次 GC 都会有大量新对象死去，只有少量存活。因此采用 <code> 复制 </code> 回收算法，GC 时把少量的存活对象复制过去即可。</p>
+<h3 id="新生代－复制回收机制"><a href="# 新生代－复制回收机制" class="headerlink" title="新生代－复制回收机制"></a>新生代－<code>复制 </code> 回收机制 </h3><p> 对于新生代区域，由于每次 GC 都会有大量新对象死去，只有少量存活。因此采用 <code> 复制 </code> 回收算法，GC 时把少量的存活对象复制过去即可。</p>
 <p>那么如何设计这个 <code> 复制 </code> 算法比较好呢？有以下几种方式：</p>
-<h5 id="u601D_u8DEF1-__u628A_u5185_u5B58_u5747_u5206_u6210_1_3A1__u4E24_u7B49_u4EFD"><a href="#u601D_u8DEF1-__u628A_u5185_u5B58_u5747_u5206_u6210_1_3A1__u4E24_u7B49_u4EFD" class="headerlink" title="思路 1. 把内存均分成 <code>1:1</code> 两等份"></a>思路 1. 把内存均分成 <code>1:1</code> 两等份 </h5><p> 如下图拆分内存。<br><img src="/img/gc/young_1.png" alt=""></p>
+<h5 id="思路 1- 把内存均分成 -1-1- 两等份"><a href="# 思路 1- 把内存均分成 -1-1- 两等份" class="headerlink" title="思路 1. 把内存均分成 1:1 两等份"></a>思路 1. 把内存均分成 <code>1:1</code> 两等份 </h5><p> 如下图拆分内存。<br><img src="/img/gc/young_1.png" alt=""></p>
 <p>每次只使用一半的内存，当这一半满了后，就进行垃圾回收，把存活的对象直接复制到另一半内存，并清空当前一半的内存。</p>
 <p>这种分法的缺陷是相当于只有一半的可用内存，对于新生代而言，新对象持续不断地被创建，如果只有一半可用内存，那显然要持续不断地进行垃圾回收工作，反而影响到了正常程序的运行，得不偿失。</p>
-<h5 id="u601D_u8DEF2-__u628A_u5185_u5B58_u6309_9_3A1__u5206"><a href="#u601D_u8DEF2-__u628A_u5185_u5B58_u6309_9_3A1__u5206" class="headerlink" title="思路 2. 把内存按 <code>9:1</code> 分"></a>思路 2. 把内存按 <code>9:1</code> 分 </h5><p> 既然上面的分法导致可用内存只剩一半，那么我做些调整，把 <code>1:1</code>变成<code>9:1</code>，<br><img src="/img/gc/young_2.png" alt=""></p>
+<h5 id="思路 2- 把内存按 -9-1- 分"><a href="# 思路 2- 把内存按 -9-1- 分" class="headerlink" title="思路 2. 把内存按 9:1 分"></a>思路 2. 把内存按 <code>9:1</code> 分 </h5><p> 既然上面的分法导致可用内存只剩一半，那么我做些调整，把 <code>1:1</code>变成<code>9:1</code>，<br><img src="/img/gc/young_2.png" alt=""></p>
 <p>最开始在 <code>9</code> 的内存区使用，当 <code>9</code> 快要满时，执行复制回收，把 <code>9</code> 内仍然存活的对象复制到 <code>1</code> 区，并清空 <code>9</code> 区。</p>
 <p>这样看起来是比上面的方法好了，但是它存在比较严重的问题。</p>
 <p>当我们把 <code>9</code> 区存活对象复制到 <code>1</code> 区时，由于内存空间比例相差比较大，所以很有可能 <code>1</code> 区放不满，此时就不得不把对象移到 <code>老年区 </code>。而这就意味着，可能会有一部分 <code> 并不老 </code> 的 <code>9</code> 区对象由于 <code>1</code> 区放不下了而被放到了 <code> 老年区 </code>，可想而知，这破坏了 <code> 老年区 </code> 的规则。或者说，一定程度上的 <code> 老年区 </code> 并不一定全是 <code> 老年对象</code>。</p>
 <p>那应该如何才能把真正比较 <code>老 </code> 的对象挪到 <code> 老年区</code> 呢？ </p>
-<h5 id="u601D_u8DEF3-__u628A_u5185_u5B58_u6309_8_3A1_3A1__u5206"><a href="#u601D_u8DEF3-__u628A_u5185_u5B58_u6309_8_3A1_3A1__u5206" class="headerlink" title="思路 3. 把内存按 <code>8:1:1</code> 分"></a>思路 3. 把内存按 <code>8:1:1</code> 分</h5><p><img src="/img/gc/young_3.png" alt=""></p>
+<h5 id="思路 3- 把内存按 -8-1-1- 分"><a href="# 思路 3- 把内存按 -8-1-1- 分" class="headerlink" title="思路 3. 把内存按 8:1:1 分"></a>思路 3. 把内存按 <code>8:1:1</code> 分</h5><p><img src="/img/gc/young_3.png" alt=""></p>
 <p>既然 <code>9:1</code> 有可能把年轻对象放到 <code>老年区 </code>，那就换成 <code>8:1:1</code>，依次取名为 <code>Eden</code>、<code>Survivor A</code>、<code>Survivor B</code> 区，其中 <code>Eden</code> 意为伊甸园，形容有很多新生对象在里面创建；<code>Survivor</code>区则为幸存者，即经历 GC 后仍然存活下来的对象。</p>
 <p>工作原理如下：</p>
 <ol>
@@ -438,10 +423,10 @@
 </ol>
 <p>[注意，在真实的 JVM 环境里，可以通过参数 <code>SurvivorRatio</code> 手动配置 <code>Eden</code> 区和单个 <code>Survivor</code> 区的比例，默认为 8。]</p>
 <p>那么，所谓的 <code>Old</code> 区垃圾回收，或称<code>Major GC</code>，应该如何执行呢？</p>
-<h3 id="u8001_u5E74_u4EE3_uFF0D_u6807_u8BB0_u6574_u7406_u56DE_u6536_u673A_u5236"><a href="#u8001_u5E74_u4EE3_uFF0D_u6807_u8BB0_u6574_u7406_u56DE_u6536_u673A_u5236" class="headerlink" title="老年代－<code>标记整理 </code> 回收机制"></a>老年代－<code>标记整理 </code> 回收机制 </h3><p> 根据上面我们知道，老年代一般存放的是存活时间较久的对象，所以每一次 GC 时，存活对象比较较大，也就是说每次只有少部分对象被回收。</p>
+<h3 id="老年代－标记整理回收机制"><a href="# 老年代－标记整理回收机制" class="headerlink" title="老年代－标记整理回收机制"></a>老年代－<code>标记整理 </code> 回收机制 </h3><p> 根据上面我们知道，老年代一般存放的是存活时间较久的对象，所以每一次 GC 时，存活对象比较较大，也就是说每次只有少部分对象被回收。</p>
 <p>因此，根据不同回收机制的特点，这里选择 <code> 存活对象多，垃圾少 </code> 的<code>标记整理 </code> 回收机制，仅仅通过少量地移动对象就能清理垃圾，而且不存在内存碎片化。</p>
 <p>至此，我们已经了解了 Java 堆内存的分代原理，并了解了不同代根据各自特点采用了不同的回收机制，即 <code> 新生代 </code> 采用 <code> 回收 </code> 机制，<code>老年代 </code> 采用 <code> 标记整理 </code> 机制。</p>
-<h2 id="u5C0F_u7ED3"><a href="#u5C0F_u7ED3" class="headerlink" title="小结"></a>小结 </h2><p> 垃圾回收是 Java 非常重要的特性，也是高级 Java 工程师的必经之路。</p>
+<h2 id="小结"><a href="# 小结" class="headerlink" title="小结"></a>小结 </h2><p> 垃圾回收是 Java 非常重要的特性，也是高级 Java 工程师的必经之路。</p>
 <p>如有问题欢迎与我联系。</p>
 <p>谢谢。</p>
 <p>wingjay</p>
@@ -467,7 +452,7 @@
 
       
         <div class="post-nav">
-          <h3>相关文章：</h3><ul class="related-posts"><li><a href="/2017/04/09/Java里如何实现线程间通信？/">Java 里如何实现线程间通信？</a></li><li><a href="/2017/03/29/Java的equals与hashcode对比分析/">Java 的 equals 与 hashcode 对比分析</a></li><li><a href="/2017/05/08/java_classloader/">Java 技术之类加载机制</a></li><li><a href="/2017/05/03/Java-技术之注解-Annotation/">Java 技术之注解 Annotation</a></li><li><a href="/2017/04/26/Java-技术之反射/">Java 技术之反射</a></li></ul>
+          <h3>相关文章：</h3><ul class="related-posts"><li><a href="/2017/04/26/Java-技术之反射/">Java 技术之反射</a></li><li><a href="/2017/05/03/Java-技术之注解-Annotation/">Java 技术之注解 Annotation</a></li><li><a href="/2017/05/08/java_classloader/">Java 技术之类加载机制</a></li><li><a href="/2017/03/29/Java的equals与hashcode对比分析/">Java 的 equals 与 hashcode 对比分析</a></li><li><a href="/2017/04/09/Java里如何实现线程间通信？/">Java 里如何实现线程间通信？</a></li></ul>
         </div>  
       
       
@@ -715,7 +700,7 @@ Comment on Github Issue for this article(Yup I know it's cool)! click below butt
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">分类</span>
               
           </div>
@@ -787,7 +772,7 @@ Comment on Github Issue for this article(Yup I know it's cool)! click below butt
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u4EC0_u4E48_u662F_Java__u5806_u5185_u5B58"><span class="nav-number">1.</span> <span class="nav-text">什么是 Java 堆内存 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u90A3_u4EC0_u4E48_u662F_u5783_u573E_u5462_uFF1F"><span class="nav-number">2.</span> <span class="nav-text">那什么是垃圾呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5F15_u7528_u8BA1_u6570_u6CD5"><span class="nav-number">2.1.</span> <span class="nav-text">引用计数法 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u53EF_u8FBE_u6027_u5206_u6790"><span class="nav-number">2.2.</span> <span class="nav-text">可达性分析 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#GC_Roots__u7A76_u7ADF_u6307_u8C01_u5462_uFF1F"><span class="nav-number">2.2.1.</span> <span class="nav-text">GC Roots 究竟指谁呢？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6709_u54EA_u4E9B_u65B9_u5F0F_u6765_u56DE_u6536_u8FD9_u4E9B_u5783_u573E_u5462_uFF1F"><span class="nav-number">3.</span> <span class="nav-text">有哪些方式来回收这些垃圾呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6807_u8BB0_uFF0D_u6E05_u7406"><span class="nav-number">3.0.1.</span> <span class="nav-text">标记－清理 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6807_u8BB0_uFF0D_u6574_u7406"><span class="nav-number">3.0.2.</span> <span class="nav-text">标记－整理 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u590D_u5236"><span class="nav-number">3.0.3.</span> <span class="nav-text">复制 </span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java__u7684_u5206_u4EE3_u56DE_u6536_u673A_u5236"><span class="nav-number">4.</span> <span class="nav-text">Java 的分代回收机制 </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java__u7684_u5806_u7ED3_u6784"><span class="nav-number">4.1.</span> <span class="nav-text">Java 的堆结构 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u65B0_u751F_u4EE3_uFF0D_u590D_u5236_u56DE_u6536_u673A_u5236"><span class="nav-number">4.2.</span> <span class="nav-text">新生代－复制  回收机制 </span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u601D_u8DEF1-__u628A_u5185_u5B58_u5747_u5206_u6210_1_3A1__u4E24_u7B49_u4EFD"><span class="nav-number">4.2.0.1.</span> <span class="nav-text">思路 1. 把内存均分成 1:1 两等份 </span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u601D_u8DEF2-__u628A_u5185_u5B58_u6309_9_3A1__u5206"><span class="nav-number">4.2.0.2.</span> <span class="nav-text">思路 2. 把内存按 9:1 分 </span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u601D_u8DEF3-__u628A_u5185_u5B58_u6309_8_3A1_3A1__u5206"><span class="nav-number">4.2.0.3.</span> <span class="nav-text">思路 3. 把内存按 8:1:1 分</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8001_u5E74_u4EE3_uFF0D_u6807_u8BB0_u6574_u7406_u56DE_u6536_u673A_u5236"><span class="nav-number">4.3.</span> <span class="nav-text">老年代－标记整理  回收机制 </span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5C0F_u7ED3"><span class="nav-number">5.</span> <span class="nav-text">小结 </span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是 -Java- 堆内存"><span class="nav-number">1.</span> <span class="nav-text">什么是 Java 堆内存 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那什么是垃圾呢？"><span class="nav-number">2.</span> <span class="nav-text">那什么是垃圾呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引用计数法"><span class="nav-number">2.1.</span> <span class="nav-text">引用计数法 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可达性分析"><span class="nav-number">2.2.</span> <span class="nav-text">可达性分析 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#GC-Roots- 究竟指谁呢？"><span class="nav-number">2.2.1.</span> <span class="nav-text">GC Roots 究竟指谁呢？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有哪些方式来回收这些垃圾呢？"><span class="nav-number">3.</span> <span class="nav-text">有哪些方式来回收这些垃圾呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标记－清理"><span class="nav-number">3.0.1.</span> <span class="nav-text">标记－清理 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标记－整理"><span class="nav-number">3.0.2.</span> <span class="nav-text">标记－整理 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制"><span class="nav-number">3.0.3.</span> <span class="nav-text">复制 </span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java- 的分代回收机制"><span class="nav-number">4.</span> <span class="nav-text">Java 的分代回收机制 </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java- 的堆结构"><span class="nav-number">4.1.</span> <span class="nav-text">Java 的堆结构 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新生代－复制回收机制"><span class="nav-number">4.2.</span> <span class="nav-text">新生代－复制  回收机制 </span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#思路 1- 把内存均分成 -1-1- 两等份"><span class="nav-number">4.2.0.1.</span> <span class="nav-text">思路 1. 把内存均分成 1:1 两等份 </span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#思路 2- 把内存按 -9-1- 分"><span class="nav-number">4.2.0.2.</span> <span class="nav-text">思路 2. 把内存按 9:1 分 </span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#思路 3- 把内存按 -8-1-1- 分"><span class="nav-number">4.2.0.3.</span> <span class="nav-text">思路 3. 把内存按 8:1:1 分</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#老年代－标记整理回收机制"><span class="nav-number">4.3.</span> <span class="nav-text">老年代－标记整理  回收机制 </span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">5.</span> <span class="nav-text">小结 </span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
