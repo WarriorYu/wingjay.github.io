@@ -4,6 +4,37 @@
 
     
   <url>
+    <loc>http://wingjay.com/2017/06/08/rebuild-personal-blog/</loc>
+    <lastmod>2017-08-18T09:22:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>自己动手改造个人博客</title>
+        <pubTime>2017-06-08T04:12:37.000Z</pubTime>
+        
+        <tag>一天变cool</tag>
+         
+        <tag>个人博客</tag>
+         
+        <tag>GitHub</tag>
+         
+        <tag>Blog</tag>
+         
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="个人博客" url="http://wingjay.com/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+          
+             
+              <breadCrumb title="一天变cool" url="http://wingjay.com/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E4%B8%80%E5%A4%A9%E5%8F%98cool/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wingjay.com/2017/08/18/new_start_hangzhou/</loc>
     <lastmod>2017-08-18T08:29:35.000Z</lastmod>
     <data>
@@ -76,37 +107,6 @@
           
              
               <breadCrumb title="Performance" url="http://wingjay.com/categories/Android/Performance/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wingjay.com/2017/06/08/rebuild-personal-blog/</loc>
-    <lastmod>2017-08-18T07:39:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>自己动手改造个人博客</title>
-        <pubTime>2017-06-08T04:12:37.000Z</pubTime>
-        
-        <tag>一天变cool</tag>
-         
-        <tag>个人博客</tag>
-         
-        <tag>GitHub</tag>
-         
-        <tag>Blog</tag>
-         
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="个人博客" url="http://wingjay.com/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
-          
-             
-              <breadCrumb title="一天变cool" url="http://wingjay.com/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E4%B8%80%E5%A4%A9%E5%8F%98cool/"/>
           
         </display>
     </data>
