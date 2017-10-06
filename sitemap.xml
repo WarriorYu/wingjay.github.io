@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wingjay.com/resume/index.html</loc>
+    
+    <lastmod>2017-10-06T06:20:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wingjay.com/2017/06/08/rebuild-personal-blog/</loc>
     
     <lastmod>2017-08-20T06:25:05.000Z</lastmod>
@@ -101,13 +108,6 @@
   
   <url>
     <loc>http://wingjay.com/tags/index.html</loc>
-    
-    <lastmod>2017-08-18T06:09:47.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wingjay.com/resume/index.html</loc>
     
     <lastmod>2017-08-18T06:09:47.000Z</lastmod>
     
