@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wingjay.com/"/>
-  <updated>2017-08-18T08:29:35.000Z</updated>
+  <updated>2017-11-06T05:41:09.000Z</updated>
   <id>http://wingjay.com/</id>
   
   <author>
@@ -16,11 +16,56 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>阿里求职付费群问答</title>
+    <link href="http://wingjay.com/2017/11/06/alibaba-qa/"/>
+    <id>http://wingjay.com/2017/11/06/alibaba-qa/</id>
+    <published>2017-11-06T05:39:54.000Z</published>
+    <updated>2017-11-06T05:41:09.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;【阿里求职付费群】提供：&lt;br&gt;及时推送集团内部最新岗位空缺信息 &lt;br&gt; 定期分享针对阿里的最新 Android 面试题及相关技术点 &lt;br&gt; 长期提供阿里集团内各岗位的内推。&lt;br&gt;&lt;a href=&quot;http://www.jianshu.com
+    
+    </summary>
+    
+      <category term="阿里巴巴" scheme="http://wingjay.com/categories/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/"/>
+    
+    
+      <category term="阿里巴巴" scheme="http://wingjay.com/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/"/>
+    
+      <category term="求职" scheme="http://wingjay.com/tags/%E6%B1%82%E8%81%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于阿里求职付费群</title>
+    <link href="http://wingjay.com/2017/11/01/alibaba/"/>
+    <id>http://wingjay.com/2017/11/01/alibaba/</id>
+    <published>2017-11-01T13:08:23.000Z</published>
+    <updated>2017-11-06T05:41:10.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;关于作者&quot;&gt;&lt;a href=&quot;# 关于作者&quot; class=&quot;headerlink&quot; title=&quot;关于作者&quot;&gt;&lt;/a&gt;关于作者 &lt;/h2&gt;&lt;p&gt; 各位读者好，我是 wingjay，Android 工程师，目前就职阿里巴巴，之前在原 Google 创业团队工作。我所
+    
+    </summary>
+    
+      <category term="阿里巴巴" scheme="http://wingjay.com/categories/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/"/>
+    
+    
+      <category term="阿里巴巴" scheme="http://wingjay.com/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/"/>
+    
+      <category term="求职" scheme="http://wingjay.com/tags/%E6%B1%82%E8%81%8C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>新的城市，新的开始</title>
     <link href="http://wingjay.com/2017/08/18/new_start_hangzhou/"/>
     <id>http://wingjay.com/2017/08/18/new_start_hangzhou/</id>
     <published>2017-08-18T08:07:54.000Z</published>
-    <updated>2017-08-18T08:29:35.000Z</updated>
+    <updated>2017-08-27T06:48:57.000Z</updated>
     
     <summary type="html">
     
@@ -187,7 +232,7 @@
     <link href="http://wingjay.com/2017/04/26/Java-%E6%8A%80%E6%9C%AF%E4%B9%8B%E5%8F%8D%E5%B0%84/"/>
     <id>http://wingjay.com/2017/04/26/Java-技术之反射/</id>
     <published>2017-04-26T14:37:55.000Z</published>
-    <updated>2017-08-20T04:03:33.000Z</updated>
+    <updated>2017-08-20T04:26:40.000Z</updated>
     
     <summary type="html">
     
@@ -461,54 +506,6 @@
     
     
       <category term="摄影" scheme="http://wingjay.com/tags/%E6%91%84%E5%BD%B1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>梦想升起的地方</title>
-    <link href="http://wingjay.com/2016/06/06/%E6%A2%A6%E6%83%B3%E5%8D%87%E8%B5%B7%E7%9A%84%E5%9C%B0%E6%96%B9/"/>
-    <id>http://wingjay.com/2016/06/06/梦想升起的地方/</id>
-    <published>2016-06-06T14:42:14.000Z</published>
-    <updated>2017-08-20T02:21:59.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;交大，你赋予了我很多。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="随感" scheme="http://wingjay.com/categories/%E9%9A%8F%E6%84%9F/"/>
-    
-    
-      <category term="随笔" scheme="http://wingjay.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>带你学开源项目：Meizhi Android 之 RxJava &amp; Retrofit 最佳实践</title>
-    <link href="http://wingjay.com/2016/04/13/%E5%B8%A6%E4%BD%A0%E5%AD%A6%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%EF%BC%9AMeizhi-Android%E4%B9%8BRxJava-Retrofit%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/"/>
-    <id>http://wingjay.com/2016/04/13/带你学开源项目：Meizhi-Android之RxJava-Retrofit最佳实践/</id>
-    <published>2016-04-12T16:17:28.000Z</published>
-    <updated>2017-08-18T06:09:46.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;私以为，阅读开源项目是与世界级技术大牛直接对话的最好方式。&lt;br&gt;此次来分享下 Meizhi Android 源码的分析。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="http://wingjay.com/categories/Android/"/>
-    
-      <category term="带你学开源项目" scheme="http://wingjay.com/categories/Android/%E5%B8%A6%E4%BD%A0%E5%AD%A6%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-      <category term="Android" scheme="http://wingjay.com/tags/Android/"/>
-    
-      <category term="带你学开源项目" scheme="http://wingjay.com/tags/%E5%B8%A6%E4%BD%A0%E5%AD%A6%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
