@@ -263,15 +263,121 @@
 
     
     
+
+    
       
+
+  
+  
+
+  
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/11/09/auto-lifecycle/" itemprop="url">
+                  让普通 Java 类自动感知 Activity Lifecycle
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+            <i class="fa fa-bicycle"></i>
+            
+
+
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2017-11-09T23:00:02+08:00" content="2017-11-09">
+              2017-11-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          <span=>
+            &nbsp; | &nbsp;
+            2,046 字
+          </span>
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
       
-        
-        
-        
       
 
       
-    
+        
+          <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在 Android 开发中，我们都很熟悉 Activity 的 Lifecycle，并且会在特定的 Lifecycle 下执行特定的操作。当然，我们清楚 Lifecycle 本身是带有 Android 特质的，那尝试设想下，如果<code>普通的 Java Class 也能自动感知
+ Lifecycle 呢</code>？咋一听这个想法似乎背后意义不大，但在实际探索中，我们发现这个特性能为我们达成一些之前未考虑到或者不易实现的优化。</p>
+<p>本文分享下我们基于这个思想所开发的框架：<code>AutoLifecycle</code> 及其带来的一些有意思的实践。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/11/09/auto-lifecycle/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -1352,123 +1458,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/09/Java里如何实现线程间通信？/" itemprop="url">
-                  Java 里如何实现线程间通信？
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          
-            <i class="fa fa-rocket"></i>
-            
-
-
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2017-04-09T17:24:06+08:00" content="2017-04-09">
-              2017-04-09
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/深入理解Java技术/" itemprop="url" rel="index">
-                    <span itemprop="name">深入理解Java技术</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          <span=>
-            &nbsp; | &nbsp;
-            2,894 字
-          </span>
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>正常情况下，每个子线程完成各自的任务就可以结束了。不过有的时候，我们希望多个线程协同工作来完成某个任务，这时就涉及到了线程间通信了。</p>
-<p>本文涉及到的知识点：<code>thread.join()</code>, <code>object.wait()</code>, <code>object.notify()</code>, <code>CountdownLatch</code>, <code>CyclicBarrier</code>, <code>FutureTask</code>, <code>Callable</code> 等。</p>
-<p>本文涉及代码：<br><a href="https://github.com/wingjay/HelloJava/blob/master/multi-thread/src/ForArticle.java" target="_blank" rel="external">https://github.com/wingjay/HelloJava/blob/master/multi-thread/src/ForArticle.java</a></p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/04/09/Java里如何实现线程间通信？/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1515,7 +1504,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1529,7 +1518,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

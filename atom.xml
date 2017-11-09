@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wingjay.com/"/>
-  <updated>2017-11-06T05:43:32.000Z</updated>
+  <updated>2017-11-09T15:07:30.000Z</updated>
   <id>http://wingjay.com/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>让普通 Java 类自动感知 Activity Lifecycle</title>
+    <link href="http://wingjay.com/2017/11/09/auto-lifecycle/"/>
+    <id>http://wingjay.com/2017/11/09/auto-lifecycle/</id>
+    <published>2017-11-09T15:00:02.000Z</published>
+    <updated>2017-11-09T15:07:30.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;在 Android 开发中，我们都很熟悉 Activity 的 Lifecycle，并且会在特定的 Lifecycle 下执行特定的操作。当然，我们清楚 Lifecycle 本身是带有 Android 特质的，那尝试设想下，如果&lt;code&gt;普通的 Java Class 也能自动感知
+ Lifecycle 呢&lt;/code&gt;？咋一听这个想法似乎背后意义不大，但在实际探索中，我们发现这个特性能为我们达成一些之前未考虑到或者不易实现的优化。&lt;/p&gt;
+&lt;p&gt;本文分享下我们基于这个思想所开发的框架：&lt;code&gt;AutoLifecycle&lt;/code&gt; 及其带来的一些有意思的实践。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://wingjay.com/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://wingjay.com/tags/Android/"/>
+    
+      <category term="Java" scheme="http://wingjay.com/tags/Java/"/>
+    
+      <category term="Lifecycle" scheme="http://wingjay.com/tags/Lifecycle/"/>
+    
+  </entry>
   
   <entry>
     <title>阿里求职付费群问答</title>
@@ -94,7 +120,7 @@
     <link href="http://wingjay.com/2017/06/08/rebuild-personal-blog/"/>
     <id>http://wingjay.com/2017/06/08/rebuild-personal-blog/</id>
     <published>2017-06-08T04:12:37.000Z</published>
-    <updated>2017-08-20T06:25:05.000Z</updated>
+    <updated>2017-11-09T15:04:04.000Z</updated>
     
     <summary type="html">
     
@@ -491,28 +517,6 @@
       <category term="RxJava" scheme="http://wingjay.com/tags/RxJava/"/>
     
       <category term="带你学开源项目" scheme="http://wingjay.com/tags/%E5%B8%A6%E4%BD%A0%E5%AD%A6%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Walk in ShangHai</title>
-    <link href="http://wingjay.com/2016/07/10/Walk-in-ShangHai/"/>
-    <id>http://wingjay.com/2016/07/10/Walk-in-ShangHai/</id>
-    <published>2016-07-10T08:11:38.000Z</published>
-    <updated>2017-08-20T02:24:06.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;魔都是座有趣的城市，每条街道都有故事。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="摄影" scheme="http://wingjay.com/categories/%E6%91%84%E5%BD%B1/"/>
-    
-    
-      <category term="摄影" scheme="http://wingjay.com/tags/%E6%91%84%E5%BD%B1/"/>
     
   </entry>
   
