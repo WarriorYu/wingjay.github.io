@@ -42,58 +42,6 @@
   </entry>
   
   <entry>
-    <title>阿里求职付费群问答</title>
-    <link href="http://wingjay.com/2017/11/06/alibaba-qa/"/>
-    <id>http://wingjay.com/2017/11/06/alibaba-qa/</id>
-    <published>2017-11-06T05:39:54.000Z</published>
-    <updated>2017-11-06T05:43:32.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;【阿里求职付费群】提供：&lt;br&gt;及时推送集团内部最新岗位空缺信息&lt;br&gt;定期分享针对阿里的最新Android面试题及相关技术点&lt;br&gt;长期提供阿里集团内各岗位的内推。&lt;br&gt;&lt;a href=&quot;http://www.jianshu.com/p/655af849aaf6&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.jianshu.com/p/655af849aaf6&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;下面摘取了小部分群内分享提问与回答，作为参考。&lt;/p&gt;
-&lt;p&gt;在群内，每个人可以提出自己关于职业生涯的问题，我会自己回答或者邀请一些大厂的朋友来答复各位。另外，我们也会定期分享最新的Android面试题，并和大家一起讨论如何更好地应对大厂面试。当然，我也会长期随时为各位提供集团内推，能帮助大家最终进入到阿里工作成为同事，我会非常乐意。&lt;/p&gt;
-&lt;h2 id=&quot;问：-关于技术精进&quot;&gt;&lt;a href=&quot;#问：-关于技术精进&quot; class=&quot;headerlink&quot; title=&quot;问： 关于技术精进&quot;&gt;&lt;/a&gt;问： 关于技术精进&lt;/h2&gt;&lt;p&gt;问个 Android 职业发展的问题，相信这也是很多Android开发者的困惑。&lt;/p&gt;
-&lt;p&gt;做了三四年Android开发了，日常开发也基本能满足需求，如何进一步精进呢？如何能有一个自己的亮点，保持自己的竞争力呢？&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="阿里巴巴" scheme="http://wingjay.com/categories/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/"/>
-    
-    
-      <category term="阿里巴巴" scheme="http://wingjay.com/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/"/>
-    
-      <category term="求职" scheme="http://wingjay.com/tags/%E6%B1%82%E8%81%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于阿里求职付费群</title>
-    <link href="http://wingjay.com/2017/11/01/alibaba/"/>
-    <id>http://wingjay.com/2017/11/01/alibaba/</id>
-    <published>2017-11-01T13:08:23.000Z</published>
-    <updated>2017-11-06T05:43:47.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;关于作者&quot;&gt;&lt;a href=&quot;#关于作者&quot; class=&quot;headerlink&quot; title=&quot;关于作者&quot;&gt;&lt;/a&gt;关于作者&lt;/h2&gt;&lt;p&gt;各位读者好，我是wingjay，Android工程师，目前就职阿里巴巴，之前在原Google创业团队工作。我所开发的 Android App 曾获得过全美 Play Store Best of 2016 奖项。&lt;/p&gt;
-&lt;p&gt;个人喜欢在业余时间写作，把所掌握的知识用深入浅出的方式分享出来；写作语言精炼，能把复杂的知识点用简单明了的形式传授给读者；热爱编程，在 GitHub 开源过独立开发的全栈项目。 &lt;/p&gt;
-&lt;h2 id=&quot;阿里求职付费群&quot;&gt;&lt;a href=&quot;#阿里求职付费群&quot; class=&quot;headerlink&quot; title=&quot;阿里求职付费群&quot;&gt;&lt;/a&gt;阿里求职付费群&lt;/h2&gt;&lt;p&gt;经过一段时间的思考和尝试，为了能更好与读者交流技术成长和职业发展，我决定创建自己的【阿里求职付费群】。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="阿里巴巴" scheme="http://wingjay.com/categories/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/"/>
-    
-    
-      <category term="阿里巴巴" scheme="http://wingjay.com/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/"/>
-    
-      <category term="求职" scheme="http://wingjay.com/tags/%E6%B1%82%E8%81%8C/"/>
-    
-  </entry>
-  
-  <entry>
     <title>新的城市，新的开始</title>
     <link href="http://wingjay.com/2017/08/18/new_start_hangzhou/"/>
     <id>http://wingjay.com/2017/08/18/new_start_hangzhou/</id>
@@ -517,6 +465,50 @@
       <category term="RxJava" scheme="http://wingjay.com/tags/RxJava/"/>
     
       <category term="带你学开源项目" scheme="http://wingjay.com/tags/%E5%B8%A6%E4%BD%A0%E5%AD%A6%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Walk in ShangHai</title>
+    <link href="http://wingjay.com/2016/07/10/Walk-in-ShangHai/"/>
+    <id>http://wingjay.com/2016/07/10/Walk-in-ShangHai/</id>
+    <published>2016-07-10T08:11:38.000Z</published>
+    <updated>2017-08-20T02:24:06.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;魔都是座有趣的城市，每条街道都有故事。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="摄影" scheme="http://wingjay.com/categories/%E6%91%84%E5%BD%B1/"/>
+    
+    
+      <category term="摄影" scheme="http://wingjay.com/tags/%E6%91%84%E5%BD%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>梦想升起的地方</title>
+    <link href="http://wingjay.com/2016/06/06/%E6%A2%A6%E6%83%B3%E5%8D%87%E8%B5%B7%E7%9A%84%E5%9C%B0%E6%96%B9/"/>
+    <id>http://wingjay.com/2016/06/06/梦想升起的地方/</id>
+    <published>2016-06-06T14:42:14.000Z</published>
+    <updated>2017-08-20T02:21:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;交大，你赋予了我很多。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="随感" scheme="http://wingjay.com/categories/%E9%9A%8F%E6%84%9F/"/>
+    
+    
+      <category term="随笔" scheme="http://wingjay.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
